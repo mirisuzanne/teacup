@@ -1,0 +1,67 @@
+{% import "utility.macros.njk" as utility %}
+
+{% macro section(
+  title,
+  content=none
+) %}
+  {% set content = content if (content != none) else caller() %}
+
+  <section data-section="cards">
+    {{ utility.section_title(title) }}
+
+    <div
+      data-layout="card-groups">
+      {{ content }}
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro group(
+  title,
+  content=none
+) %}
+  {% set content = content if (content != none) else caller() %}
+
+  <section
+    data-card-group="{{ title | slug }}">
+    <h3
+      data-cards="grouper">
+      <span>{{ title }}</span>
+    </h3>
+    <div data-layout="cards">
+      {{ content }}
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro event(
+  title,
+  meta,
+  summary,
+  feature
+) %}
+<article
+  data-card="item"
+  {{ utility.attr_if('data-feature', feature) }}
+>
+  <div data-card="inner">
+    {% if title %}
+      <h4 data-card="title">
+        {{ title | typogr | safe }}
+      </h4>
+    {% endif %}
+
+    {% if meta %}
+      <div data-meta="card">
+        {{ meta | safe }}
+      </div>
+    {% endif %}
+
+    {% if summary %}
+      <div data-card="summary">
+        {{ summary | safe }}
+      </div>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

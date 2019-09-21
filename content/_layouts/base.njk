@@ -1,0 +1,60 @@
+{%- import 'utility.macros.njk' as utility -%}
+{%- import 'site/macros.njk' as show -%}
+{%- import 'events/macros.njk' as cal -%}
+<!doctype html>
+<html lang="en" data-ccs-colors="dark">
+	{%- set meta_title = renderData.title or title -%}
+	{%- set desc = sub or summary or content or none -%}
+	{%- set desc = desc | mdInline | striptags | truncate | replace('&nbsp;', ' ') | replace('&amp;', '&') if desc else desc -%}
+	{%- set meta_desc = description or desc or site.description -%}
+	{%- set full_title = renderData.banner or banner or meta_title -%}
+	{%- set full_title = show.tag_title(collections) if (full_title == 'show_tags') else full_title | mdInline(false) -%}
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ [meta_title, site.title] | join(' | ') }}</title>
+    <meta name="description"
+      content="{{ meta_desc }}" />
+
+		{% set elsewhere = '_elsewhere' in (tags or []) %}
+		{% set full_url = (site.url + page.url) %}
+		{% set canon = url if elsewhere else full_url %}
+		<link rel="canonical"
+			href="{{ canon | url }}">
+
+		{% for url in site.styles %}
+			<link rel="stylesheet"
+				href="/assets/css/{{ url }}" />
+		{% endfor %}
+
+		{% for url in extra_styles %}
+			<link rel="stylesheet"
+				href="/assets/css/{{ url }}" />
+		{% endfor %}
+
+    {% include 'site/og.njk' %}
+    {% include 'site/feed.njk' %}
+	</head>
+
+	<body
+		data-layout="body">
+		{% include 'site/menu.njk' %}
+		{% include 'icons/logo.svg' %}
+		{% include 'site/banner.njk' %}
+		{% include 'site/nav.njk' %}
+
+		<main data-layout="main">
+			{% include 'site/page.njk' %}
+			{% include 'site/calendar.njk' %}
+		</main>
+
+		{% include 'site/footer.njk' %}
+
+		<script type="text/javascript" src="https://unpkg.com/lunr/lunr.js"></script>
+		<script type="text/javascript" src="/assets/js/scripts.js"></script>
+
+		<!-- Current page: {{ page.url | url }} -->
+	</body>
+</html>

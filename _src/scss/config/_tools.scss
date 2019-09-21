@@ -1,0 +1,5 @@
+@use '../../../node_modules/accoutrement/sass/tools' with (
+  $font-path: '../fonts/',
+);
+
+@forward '../../../node_modules/accoutrement/sass/tools';

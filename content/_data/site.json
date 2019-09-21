@@ -1,0 +1,29 @@
+{
+  "url": "{{ pkg.homepage }}",
+  "title": "{{ pkg.title }}",
+  "description": "{{ pkg.description }}",
+  "author": "{{ pkg.title }}",
+  "email": "band@teacupgorilla.com",
+  "images": "/assets/images/",
+  "icon": "icons/logo.svg",
+  "nav": {
+    "music": "/",
+    "videos": "/videos/",
+    "news": "/blog/",
+    "press & bio": "/adjectives/"
+  },
+  "og": {
+    "locale": "en_US",
+    "type": "website",
+    "img": "video-meta.jpg"
+  },
+  "themes": [
+    "complement",
+    "contrast",
+    "adjacent",
+    "triad",
+    "monochrome"
+  ],
+  "feed": "feed.xml",
+  "styles": ["screen.css"]
+}

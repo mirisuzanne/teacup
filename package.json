@@ -1,0 +1,69 @@
+{
+  "name": "teacup",
+  "title": "Teacup Gorilla",
+  "version": "1.0.0",
+  "description": "Cinematic indie-rock with evocative poetry",
+  "homepage": "https://www.teacupgorilla.com",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "_site/index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirisuzanne/mia.git"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "accoutrement": "^2.1.2",
+    "beeper": "^2.0.0",
+    "cascading-color-systems": "^0.1.0-beta.2",
+    "chalk": "^2.4.2",
+    "cssremedy": "^0.1.0-beta.2",
+    "del": "^4.1.1",
+    "fancy-log": "^1.3.3",
+    "fibers": "^4.0.1",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-prettier-plugin": "^1.3.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^9.0.0",
+    "gulp-terser": "^1.2.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "markdown-it": "^8.4.2",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-mark": "^2.0.0",
+    "prettier": "^1.17.1",
+    "sass": "1.23.0-module.beta.1",
+    "sassdoc": "^2.7.0",
+    "sassdoc-theme-herman": "^3.0.2",
+    "stylelint": "^10.0.1",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.scss": [
+        "prettier --write",
+        "stylelint",
+        "git add"
+      ]
+    }
+  },
+  "dependencies": {}
+}

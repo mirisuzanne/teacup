@@ -1,0 +1,80 @@
+{% import "utility.macros.njk" as utility %}
+{% import "cards.macros.njk" as cards %}
+
+{% macro section(
+  all
+) %}
+  {% set section_title = [all | getTags(null) | list | length, 'tags'] | join(' ') %}
+  {% call cards.section(section_title) %}
+    {% for segment in all | groupTags %}
+      {%- set title -%}
+        {%- if segment.group != 'top' -%}~{%- endif -%}
+        {{ segment.group }}
+      {%- endset -%}
+
+      {{ group(
+        title=title,
+        segment=segment.tags,
+        all=all
+      ) }}
+    {% endfor %}
+  {% endcall %}
+{% endmacro %}
+
+
+{% macro group(
+  title,
+  segment,
+  all
+) %}
+  {% if segment | length %}
+    {{ cards.group(
+      title=title,
+      content=list(segment, all)
+    ) }}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro list(
+  tags,
+  all
+) %}
+  {% for tag in tags %}
+    {{ show_tag(
+      tag=tag,
+      all=all
+    ) }}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro show_tag(
+  tag,
+  all
+) %}
+  {{ cards.event(
+    title=utility.tag_link(tag.tag, all),
+    summary=tag_items(tag.tag, all)
+  ) }}
+{% endmacro %}
+
+
+{% macro tag_items(
+  tag,
+  all
+) %}
+  {% set data = all[tag] %}
+  {% if data %}
+    <ul>
+    {% for item in data | only(0, 5) %}
+      <li>
+        {{ utility.link_if(
+          item.data.title | mdInline,
+          item.url
+        ) }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

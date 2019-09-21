@@ -1,0 +1,238 @@
+{% import "utility.macros.njk" as utility %}
+{% import "cards.macros.njk" as cards %}
+
+
+{% macro get_calendar(
+  events_group,
+  collections,
+  page
+) %}
+  {% set title = 'episodes' %}
+  {% set org_title = 'current orgs' %}
+  {% set events = collections.all | getPage(page) | getEvents %}
+  {% set all_orgs = (events_group == 'all_orgs') %}
+
+  {% if events_group == 'all' %}
+    {% set events = collections.all | getEvents %}
+  {% elif all_orgs %}
+    {% set org_title = 'org history' %}
+    {% set events_group = 'all' %}
+    {% set events = none %}
+  {% elif events_group %}
+    {% set tag_name = events_group | displayName %}
+    {% set title %}
+      {{ tag_name }}
+    {% endset %}
+    {% set org_title %}
+      '{{ tag_name }}' orgs
+    {% endset %}
+    {% set events = collections.all | getEvents(events_group) %}
+  {% endif %}
+
+  {{ show_orgs(
+    org_title,
+    events_group,
+    collections,
+    all_orgs
+  ) }}
+
+  {% if events %}
+    {{ section(
+      title=title,
+      events=events,
+      all=collections,
+      self=page.url
+    ) }}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro show_orgs(
+  title,
+  events_group,
+  collections,
+  all=false
+) %}
+  {% if events_group %}
+    {% set orgs = collections.all_orgs if all else collections.orgs %}
+    {% set orgs = orgs if (events_group == 'all') else orgs | withTag(events_group) %}
+
+    {% if orgs | length %}
+      <section
+        data-orgs="section">
+
+        {{ utility.section_title(title) }}
+
+        <div data-orgs="list">
+          {% for item in orgs %}
+            {% set title = item.data.banner or item.data.renderData.title or item.data.title %}
+            <article
+              data-orgs="item">
+              <time
+                data-meta="org-date"
+                datetime="{{ item.data.start | getDate('iso') }}">
+                {{
+                  item.data.start | getDate('yyyy')
+                }}->{{
+                  item.data.end | getDate('yyyy')
+                  if item.data.end and (item.data.end != 'ongoing')
+                  else ''
+                }}
+              </time>
+              <h3 data-title="orgs">
+                {{ utility.link_if(title, item.url) }}
+              </h3>
+              {% if item.data.sub %}
+                <p data-meta="org-sub">
+                  {{ item.data.sub | mdInline | safe }}
+                </p>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro section(
+  title,
+  events,
+  all,
+  self
+) %}
+  {% set title = [events | countEvents, title] | join(' ') %}
+  {% if events | length %}
+    {{ cards.section(
+      title,
+      content=groups(events, all, self)
+    ) }}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro groups(
+  events,
+  all,
+  self
+) %}
+  {% set this_year = none | getDate('year') %}
+
+  {% for segment in events %}
+    {% if (segment.group == this_year) and not loop.first %}
+      <hr data-divider>
+    {% endif %}
+
+    {{ group(
+      title=segment.group,
+      events=segment.data,
+      all=all,
+      self=self
+    ) }}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro group(
+  title,
+  events,
+  all,
+  self
+) %}
+  {% set is_future = title | groupName %}
+  {% set events = events | reverse if (not is_future) else events %}
+
+  {{ cards.group(
+    title=title,
+    content=list(events, all, self)
+  ) }}
+{% endmacro %}
+
+
+{% macro list(
+  events,
+  all,
+  self
+) %}
+  {% for item in events %}
+    {{ event(item, all, self) }}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro event(
+  item,
+  all,
+  self
+) %}
+  {%- set tags = item.tags | publicTags -%}
+  {%- set not_me = ('inspiration' in tags) -%}
+  {%- set is_self = (item.page.url == self) -%}
+
+  {% set summary = item.page.data.sub if item.event else (item.page.data.summary or item.page.data.sub) %}
+  {% set summary = summary | md if (summary and not is_self) else none %}
+
+  {{ cards.event(
+    title=title(item, is_self, not_me),
+    meta=meta(item, tags, all, is_self),
+    summary=summary,
+    feature=item.feature
+  ) }}
+{% endmacro %}
+
+
+{% macro title(
+  item,
+  is_self=false,
+  not_me=false
+) %}
+  {%- set is_show = not not item.event.start -%}
+  {%- set page_title = item.page.renderData.title or item.page.data.title -%}
+
+  {% if item.page.data.type %}
+    [{{ item.page.data.type }}]
+  {% endif %}
+
+  {% if is_show %}
+    {%- set has_page = not (item.page.fileSlug == 'verbs') -%}
+    {%- set page_url = item.page.data.url or item.page.data.venue_url or item.page.url -%}
+    {%- set event_url = item.event.url or item.event.venue_url -%}
+    {%- set url = page_url if has_page and not is_self else event_url -%}
+    {%- set page_title = page_title if has_page else none -%}
+    {%- set show_title = item.event.title or page_title -%}
+
+    {% if show_title %}
+      {{ utility.link_if(show_title | mdInline, url) }}
+    {% endif %}
+    @
+    {{ utility.link_if(
+      item.event.venue or '[redacted]' | mdInline,
+      url if not show_title
+    ) }}
+  {% else %}
+    {{ utility.link_if(
+      page_title | mdInline,
+      item.page.url
+    ) }}
+  {% endif %}
+{% endmacro %}
+
+
+{% macro meta(
+  item,
+  tags,
+  all
+) %}
+  {{ utility.datetime(
+    pubdate=item.page.data.pubdate or item.page.date,
+    start=item.start,
+    end=item.end,
+    format='md'
+  ) }}
+
+  {%- set venue_adr = item.event.adr or item.page.data.adr -%}
+  {% if venue_adr %}
+    | {{ venue_adr }}
+  {% endif %}
+{% endmacro %}

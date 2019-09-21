@@ -1,0 +1,174 @@
+@use "../../node_modules/cssremedy/css/remedy";
+@use "config";
+@use "ccs";
+
+@include config.import-webfonts;
+
+html {
+  @include config.font-family('body');
+  --gutter: 0.75rem;
+  --gutter-plus: calc(var(--gutter) * 1.5);
+  --double-gutter: calc(var(--gutter) * 2);
+  --shim: calc(var(--gutter) / 2);
+  --half-shim: calc(var(--shim) / 2);
+  --quarter-shim: calc(var(--shim) / 4);
+  --spacer: calc(var(--gutter) + 5vw);
+  --double-spacer: calc(var(--double-gutter) + 8vw);
+  --border-width: var(--quarter-shim);
+  --border-radius: var(--half-shim);
+  --font-large: calc(1rem + 0.5vw);
+  --font-small: 0.75rem;
+  --font-smaller: 0.75em;
+  --line-ratio: 1.4;
+  --rhythm: 1.4rem;
+  --feature-gradient: linear-gradient(
+    to bottom right,
+    var(--ccs-prime--bg1),
+    var(--ccs-accent--bg2)
+  );
+  font-size: calc(1em + 0.6vw);
+  letter-spacing: 0.05em;
+
+  @media (min-width: 35em) {
+    --gutter: 1rem;
+  }
+}
+
+[data-ccs-colors] {
+  --bg: hsl(var(--ccs-h--accent), 2%, var(--ccs-l--bg6));
+  --fg: hsl(var(--ccs-h--accent), 2%, var(--ccs-l--fg5));
+  --action: var(--ccs-prime--fg1);
+  --action--light: var(--ccs-prime--fg-full);
+  --action--focus: var(--ccs-prime--fg4);
+  background: var(--bg);
+  color: var(--fg);
+  text-shadow: 0 calc(1px * var(--ccs-mode--invert)) 0 var(--ccs--bg-full);
+}
+
+a {
+  &:link,
+  &:visited {
+    color: var(--action);
+    text-decoration-color: var(--action--light);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--action--focus);
+    text-decoration-color: var(--action);
+  }
+
+  &[href*='://'] {
+    &::after {
+      content: ' »';
+    }
+  }
+}
+
+.logo {
+  fill: transparent;
+  margin: 0 auto;
+  max-width: 12em;
+  stroke: var(--fg);
+  stroke-width: 3;
+
+  @media (min-width: 25em) {
+    stroke-width: 2;
+  }
+
+  .e,
+  .bang {
+    stroke: var(--ccs-prime);
+  }
+}
+
+// Cards
+// =====
+
+[data-layout='card-groups'] {
+  margin: var(--gutter) 0;
+}
+
+[data-layout='cards'] {
+  --gap: var(--double-gutter) var(--gutter);
+  align-items: start;
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  justify-content: space-evenly;
+  margin: 0 var(--double-gutter);
+  padding: 0 0 var(--double-gutter);
+}
+
+// Groups
+// ------
+
+[data-card-group] {
+  display: grid;
+  grid-template: 'grouper list' auto / auto minmax(0, 1fr);
+  margin: var(--spacer) 0;
+}
+
+[data-cards='grouper'] {
+  background: var(--ccs-prime--bg2);
+  font-size: var(--font-small);
+  grid-area: grouper;
+  margin: 0;
+  padding: var(--shim) var(--quarter-shim) var(--gutter);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+
+  [data-card-group='soon'] &,
+  [data-card-group='now'] & {
+    background: var(--ccs-accent--bg2);
+  }
+}
+
+// Items
+// -----
+
+[data-card='item'] {
+  --feature: -0.006turn;
+
+  &:nth-child(3n),
+  &:nth-last-child(7n-3) {
+    --feature: 0.006turn;
+  }
+
+  &[data-feature] {
+    background: var(--feature-gradient);
+    margin: calc(var(--half-shim) * -1);
+    padding: var(--quarter-shim);
+  }
+}
+
+[data-card='inner'] {
+  [data-feature] & {
+    background: var(--bg);
+    border: 1px solid var(--action);
+    padding: var(--shim);
+    transform: rotate(var(--feature, -0.006turn));
+  }
+}
+
+// Content
+// -------
+
+[data-card='title'] {
+  line-height: var(--rhythm);
+  margin: 0;
+}
+
+[data-meta="card"] {
+  @include config.font-family('alt');
+  text-transform: lowercase;
+
+  time {
+    font-weight: bold;
+  }
+}
+
+[data-card='summary'] {
+  display: none;
+}

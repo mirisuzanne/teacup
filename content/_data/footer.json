@@ -1,0 +1,12 @@
+{
+  "links": [
+    {
+      "name": "minifesto",
+      "url": "/why/"
+    },
+    {
+      "name": "documentation",
+      "url": "/style/"
+    }
+  ]
+}
