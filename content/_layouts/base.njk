@@ -2,7 +2,7 @@
 {%- import 'site/macros.njk' as show -%}
 {%- import 'events/macros.njk' as cal -%}
 <!doctype html>
-<html lang="en" data-ccs-colors="dark">
+<html lang="en" data-ccs-theme="{{ site.themes | first }}" data-ccs-colors="dark">
 	{%- set meta_title = renderData.title or title -%}
 	{%- set desc = sub or summary or content or none -%}
 	{%- set desc = desc | mdInline | striptags | truncate | replace('&nbsp;', ' ') | replace('&amp;', '&') if desc else desc -%}
@@ -14,7 +14,7 @@
 		<meta name="viewport"
       content="width=device-width, initial-scale=1.0" />
 
-    <title>{{ [meta_title, site.title] | join(' | ') }}</title>
+    <title>{{ [meta_title, site.title] | join(' | ') if meta_title else site.title }}</title>
     <meta name="description"
       content="{{ meta_desc }}" />
 
@@ -41,9 +41,8 @@
 	<body
 		data-layout="body">
 		{% include 'site/menu.njk' %}
-		{% include 'icons/logo.svg' %}
-		{% include 'site/banner.njk' %}
 		{% include 'site/nav.njk' %}
+		{% include 'site/banner.njk' %}
 
 		<main data-layout="main">
 			{% include 'site/page.njk' %}

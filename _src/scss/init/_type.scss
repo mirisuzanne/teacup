@@ -1,0 +1,19 @@
+@use "../config";
+
+@include config.import-webfonts;
+
+html {
+  @include config.font-family('body');
+  --font-large: calc(1rem + 0.5vw);
+  --font-small: 0.75rem;
+  --font-smaller: 0.75em;
+  --line-ratio: 1.4;
+  --rhythm: 1.4rem;
+
+  font-size: calc(1em + 0.6vw);
+  letter-spacing: 0.05em;
+}
+
+[data-hidden] {
+  @include config.is-hidden;
+}

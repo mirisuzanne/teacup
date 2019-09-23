@@ -1,0 +1,18 @@
+.logo {
+  fill: transparent;
+  margin: 0 auto;
+  stroke: var(--text);
+  stroke-width: 3;
+  --alt: var(--ccs-prime);
+
+  .e,
+  .bang {
+    stroke: var(--alt);
+  }
+
+  a:hover &,
+  a:focus &,
+  a:active & {
+    --alt: var(--ccs-accent--fg1);
+  }
+}

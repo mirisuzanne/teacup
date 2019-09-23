@@ -1,6 +1,6 @@
 ---
 layout: base
-banner: Teacup Gorilla
-sub: Dark indie-rock soundscapes & evocative poetry
+banner: Dark Indie-Rock
+sub: soundscapes & stories
 calendar: gigs
 ---

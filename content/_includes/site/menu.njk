@@ -1,53 +1,6 @@
 <menu
   type="toolbar"
-  role="complementary"
-  data-ccs="menu"
-  hidden>
-  <details>
-    <summary class="menu-item">colors</summary>
-    <div data-dropdown="pad">
-      <div class="color-btns">
-        <button
-          data-ccs="invert"
-          data-btn="small"
-          type="button">
-          invert
-        </button>
-        <button
-          data-ccs="unset"
-          data-btn="small"
-          type="button"
-          hidden>
-          reset
-        </button>
-      </div>
-
-      <label data-field for="theme-select" data-ccs="theme-select">
-        <span data-label>theme:</span>
-        <select name="theme-select" id="theme-select">
-          {% for theme in site.themes %}
-            <option value="{{ theme }}" {{ 'selected' if loop.first }}>
-              {{ theme }}
-            </option>
-          {% endfor %}
-        </select>
-      </label>
-      <label data-field for="hue-select" data-ccs="hue-select">
-        <span data-label>hue:</span>
-        <input id="hue-select" type="range" min="0" max="360" value="0">
-      </label>
-      <label data-field for="sat-select" data-ccs="saturation-select">
-        <span data-label>saturation:</span>
-        <input id="sat-select" type="range" min="0" max="100" value="85">
-      </label>
-      <label data-field for="light-select" data-ccs="lightness-select">
-        <span data-label>lightness:</span>
-        <input id="light-select" type="range" min="25" max="75" value="50">
-      </label>
-      <label data-field for="contrast-select" data-ccs="contrast-select">
-        <span data-label>contrast:</span>
-        <input id="contrast-select" type="range" min="25" max="150" value="42">
-      </label>
-    </div>
-  </details>
+  role="complementary">
+  {% include "site/ccs.njk" %}
+  {% include "site/search.njk" %}
 </menu>

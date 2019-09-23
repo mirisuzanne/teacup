@@ -1,0 +1,19 @@
+.nav-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: calc(var(--double-spacer) * 2);
+}
+
+
+[data-navlist='site'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  margin: var(--shim);
+  white-space: nowrap;
+}

@@ -10,7 +10,8 @@
     "music": "/",
     "videos": "/videos/",
     "news": "/blog/",
-    "press & bio": "/adjectives/"
+    "press & bio": "/adjectives/",
+    "contact": "/contact/"
   },
   "og": {
     "locale": "en_US",
@@ -18,10 +19,10 @@
     "img": "video-meta.jpg"
   },
   "themes": [
-    "complement",
-    "contrast",
-    "adjacent",
     "triad",
+    "contrast",
+    "complement",
+    "adjacent",
     "monochrome"
   ],
   "feed": "feed.xml",

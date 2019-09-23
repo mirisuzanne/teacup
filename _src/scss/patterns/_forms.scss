@@ -1,0 +1,86 @@
+@use '../config';
+
+[data-field] {
+  display: block;
+}
+
+[data-label] {
+  @include config.font-family('alt');
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+// ranges
+// ------
+
+[type='range'] {
+  appearance: none;
+  background: transparent;
+  height: var(--gutter);
+  padding: 0;
+
+  @include config.range-track {
+    appearance: none;
+    height: var(--shim);
+    background: var(--callout);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border);
+    cursor: pointer;
+  }
+
+  @include config.range-thumb {
+    appearance: none;
+    border: 2px solid var(--border);
+    height: var(--gutter);
+    width: var(--shim);
+    border-radius: var(--border-radius);
+    background: var(--action);
+    cursor: pointer;
+  }
+}
+
+
+$rainbow: ();
+@for $hue from 1 through 36 {
+  $rainbow: append($rainbow, hsl($hue * 10, 80%, 40%), comma);
+}
+
+[id='hue-select'] {
+  @include config.range-track {
+    background: linear-gradient(to right, $rainbow);
+  }
+}
+
+[id='light-select'] {
+  @include config.range-track {
+    background: linear-gradient(to right, hsl(0, 0%, 25%), silver);
+  }
+}
+
+[id='sat-select'] {
+  // 0.1% so that units aren't removed in minification
+  @include config.range-track {
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--ccs-h--prime, 0), 0.1%, var(--ccs-l, 50%)),
+      hsl(var(--ccs-h--prime, 0), 100%, var(--ccs-l, 50%))
+    );
+  }
+}
+
+[id='contrast-select'] {
+  @include config.range-track {
+    background: linear-gradient(to right, gray, white),
+      linear-gradient(to right, gray, black);
+    background-size: 100% 50%, 100% 100%;
+    background-position: top left, bottom left;
+    background-repeat: no-repeat;
+  }
+}

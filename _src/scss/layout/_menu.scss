@@ -1,0 +1,26 @@
+@use '../config';
+
+menu {
+  @include config.font-family('alt');
+  background: var(--callout--fade);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  margin: 0 0 var(--gutter);
+}
+
+[data-form='search'] {
+  position: relative;
+}
+
+.color-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.color-fields {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+}

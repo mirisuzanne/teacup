@@ -5,7 +5,7 @@ This site is built using:
 - HTML, of course
 - CSS w/ a load of Grids & Variables
 - Eleventy JS w/ Markdown & Nunjucks
-- Sass w/ OddBird's Accoutrement & Herman
+- Sass w/ OddBird's Accoutrement
 - A lot of ideas from a lot of cool people
 
 ## Develop:
@@ -26,7 +26,7 @@ gulp
 The site will be compiled into `_site/`
 for netlify deployment,
 and the served site will be available at
-`localhost:8080` or e.g. `mia.hexxie.com:8080`.
+`localhost:8080`.
 
 You can also run individual commands:
 

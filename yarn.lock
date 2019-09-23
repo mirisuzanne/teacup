@@ -1325,10 +1325,10 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-cascading-color-systems@^0.1.0-beta.2:
-  version "0.1.0-beta.2"
-  resolved "https://registry.yarnpkg.com/cascading-color-systems/-/cascading-color-systems-0.1.0-beta.2.tgz#4dd8505f8356cd11f23c4a06f139361d030c3fdf"
-  integrity sha512-+uZNwnlzIR0g9R0FTtKa6ZVejb1NQXyyuiM7AxzAf+Phdub1KoiRY01fqpSZf6XXthvACxtRaJleqtagexM78Q==
+cascading-color-systems@^0.1.0-beta.3:
+  version "0.1.0-beta.3"
+  resolved "https://registry.yarnpkg.com/cascading-color-systems/-/cascading-color-systems-0.1.0-beta.3.tgz#ce4ef512b0fde8310928460ceb0fb7cdcc798680"
+  integrity sha512-tqBajEEXQmOn+4p+XX63gps8AXFiJq33KUhBC9KXdp7hdciQhFQUjF4u7jKRfQi1nWOLW7BLPgTWCuWlV7lqHQ==
 
 caseless@~0.12.0:
   version "0.12.0"
