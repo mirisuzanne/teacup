@@ -1,16 +1,20 @@
 @use '../config';
 
 menu {
-  @include config.font-family('alt');
-  background: var(--callout--fade);
-  display: flex;
+  --field-margin: 0;
+  align-items: center;
+  background: var(--overlay);
+  display: grid;
+  grid-template-columns: [color-start] auto [color-end search-start] auto [search-end];
   justify-content: space-between;
-  padding: 0 var(--gutter);
-  margin: 0 0 var(--gutter);
+  padding: var(--half-shim) var(--gutter);
+  margin: 0 0 var(--double-gutter);
 }
 
-[data-form='search'] {
-  position: relative;
+// colors
+[data-ccs='menu'] {
+  @include config.font-family('alt');
+  grid-column: color;
 }
 
 .color-btns {
@@ -24,3 +28,48 @@ menu {
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
 }
+
+$rainbow: ();
+@for $hue from 1 through 36 {
+  $rainbow: append($rainbow, hsl($hue * 10, 80%, 40%), comma);
+}
+
+[id='hue-select'] {
+  @include config.range-track {
+    background: linear-gradient(to right, $rainbow);
+  }
+}
+
+[id='light-select'] {
+  @include config.range-track {
+    background: linear-gradient(to right, hsl(0, 0%, 25%), silver);
+  }
+}
+
+[id='sat-select'] {
+  // 0.1% so that units aren't removed in minification
+  @include config.range-track {
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--ccs-h--prime, 0), 0.1%, var(--ccs-l, 50%)),
+      hsl(var(--ccs-h--prime, 0), 100%, var(--ccs-l, 50%))
+    );
+  }
+}
+
+[id='contrast-select'] {
+  @include config.range-track {
+    background: linear-gradient(to right, gray, white),
+      linear-gradient(to right, gray, black);
+    background-size: 100% 50%, 100% 100%;
+    background-position: top left, bottom left;
+    background-repeat: no-repeat;
+  }
+}
+
+// search
+[data-form='search'] {
+  grid-column: search;
+  position: relative;
+}
+

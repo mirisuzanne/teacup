@@ -9,36 +9,17 @@
     Copyright © {% getDate 'year' %}
   {% endset %}
 
-  <div class="section-header">
-    <h2 class="section-title">
-      {{ title | typogr | safe }}
-    </h2>
-  </div>
+  <p data-footer="copyright">
+    {{ title | typogr | safe }}
+    <a href="mailto:{{ site.email }}">{{ site.author }}</a>
+    <br>
+    ❤ Sondra, Daniel, Miriam, Josie
+  </p>
 
-  <div data-footer="content">
-    {% if page.url | url != '/who/' %}
-      <section data-footer="bio">
-        {% call content.media(
-          src='icons/logo.svg',
-          embed=true
-        ) %}
-          <h3>
-            <a href="mailto:{{ site.email }}">{{ site.author }}</a>
-          </h3>
-
-          {# {% set who = collections.all | getPage('/who/') | first %}
-          {{ who.data.summary | md | safe }} #}
-        {% endcall %}
-      </section>
-    {% endif %}
-
-    {% if page.url | url != '/contact/' %}
-      <section data-footer="contact">
-        {{ contact.form() }}
-      </section>
-    {% endif %}
-  </div>
-
-  <div data-layout="flag"></div>
+  {% if not hide_contact %}
+    <div data-footer="content">
+      {{ contact.form() }}
+    </div>
+  {% endif %}
 </footer>
 

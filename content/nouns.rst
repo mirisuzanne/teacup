@@ -1,6 +1,5 @@
 public: yes
 hide_title: yes
-location: store
 
 
 Store

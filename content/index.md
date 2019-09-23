@@ -1,6 +1,6 @@
 ---
 layout: base
 banner: Dark Indie-Rock
-sub: soundscapes & stories
-calendar: gigs
+sub: soundscapes & poetry
+calendar: all
 ---

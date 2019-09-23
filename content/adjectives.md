@@ -1,7 +1,6 @@
 ---
 layout: base
 title: Press & Bio
-location: 'press & bio'
 ---
 
 **Teacup Gorilla** inhabits the venues of Denver, CO

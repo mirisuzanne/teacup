@@ -1,15 +1,15 @@
 a {
   &:link,
   &:visited {
-    color: var(--action);
-    text-decoration-color: var(--action--line);
+    color: var(--link, var(--action));
+    text-decoration-color: var(--action-line);
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: var(--action--focus);
-    text-decoration-color: var(--action);
+    color: var(--link--focus, var(--link, var(--action--focus)));
+    text-decoration-color: var(--action-line--focus, var(--action-line, var(--action)));
   }
 
   &[href*='://'] {

@@ -16,51 +16,24 @@
   items,
   page
 ) %}
-  {% set at_name %}Miriam <span data-above="medium">Suzanne</span>{% endset %}
-  <ul data-navlist="site">
+  <ol data-navlist="site">
     {% for name, url in items %}
-      {% set name = at_name if (name == '@name') else name %}
-      <li class="nav-item">{{ nav_link(name, url, page) }}</li>
+      <li
+        class="nav-item"
+        {{ utility.attr_if('data-active', (page.url == url)) }}>
+        {{ nav_link(name, url) }}
+      </li>
     {% endfor %}
-  </ul>
-{% endmacro %}
-
-
-{% macro tag_nav(
-  collections,
-  page
-) %}
-  {% for tag in collections | getTags(null) %}
-    {% set current = page | hasTag(tag) if page.data else none %}
-    {% set url = tag | tagLink(collections) %}
-    {% if (loop.index < 7) or current or (page.url == url) %}
-      {{ nav_link(
-        name=tag | displayName,
-        url=url,
-        page=page,
-        current=current
-      ) }}
-    {% endif %}
-  {% endfor %}
-
-  {{ nav_link(
-    name='tags',
-    url='/tags/',
-    page=page
-  ) }}
+  </ol>
 {% endmacro %}
 
 
 {% macro nav_link(
   name,
-  url,
-  page,
-  current=none
+  url
 ) %}
   {% set attrs = {
     'data-nav': name | slug,
-    'data-current': current,
-    'data-active': (page.url == url),
     'rel': ('home' if url == '/' else none)
   } %}
 

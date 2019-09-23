@@ -15,7 +15,7 @@
   grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   justify-content: space-evenly;
   margin: 0 var(--double-gutter);
-  padding: 0 0 var(--double-gutter);
+  padding: var(--half-shim) 0 var(--double-gutter);
 }
 
 // Groups

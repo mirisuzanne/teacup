@@ -1,7 +1,6 @@
 public: yes
 hide_title: yes
 signup_footer: false
-location: signup
 mailchimp: |
   Follow along, contribute ideas, collaborate with us,
   challenging us, and hang out at shows!
