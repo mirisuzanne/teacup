@@ -34,13 +34,13 @@
   &::after {
     border-top: var(--nav-line-width, var(--quarter-shim)) solid var(--nav-line-color, var(--border));
     content: '';
-    flex: var(--flex, 1);
+    flex: var(--flex--active, var(--flex, 1));
     height: 0;
   }
 
   @for $i from 1 through 5 {
     &:nth-child(#{$i}n) {
-      --flex: #{random(10) / 10};
+      --flex: #{random(9) / 10};
 
       @if ($i != 1) {
         --space: calc(var(--half-shim) * #{random(10)});
@@ -52,6 +52,7 @@
     --link: var(--text);
     --nav-line-color: var(--text-light);
     --nav-line-width: var(--half-shim);
+    --flex--active: 1;
     text-transform: uppercase;
   }
 }

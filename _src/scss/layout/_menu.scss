@@ -8,7 +8,7 @@ menu {
   grid-template-columns: [color-start] auto [color-end search-start] auto [search-end];
   justify-content: space-between;
   padding: var(--half-shim) var(--gutter);
-  margin: 0 0 var(--double-gutter);
+  margin: 0 0 var(--gutter);
 }
 
 // colors
