@@ -1,4 +1,17 @@
 html {
+  --border-default: var(--border-width) solid var(--border);
+  --grid-columns:
+    [full-start] minmax(var(--gutter), 4fr)
+    [wide-start] var(--wide-start, 4fr)
+    [main-start] minmax(auto, 32em) [main-end]
+    var(--wide-end, 0) [wide-end]
+    minmax(var(--gutter), 1fr) [full-end]
+  ;
   background-image: url('/assets/images/site/dust.png');
   background-attachment: fixed;
+
+  @media (min-width: 38em) {
+    --wide-start: minmax(0, var(--double-spacer));
+    --wide-end: minmax(0, var(--spacer));
+  }
 }

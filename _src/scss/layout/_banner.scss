@@ -1,0 +1,25 @@
+[data-layout='banner'] {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+
+  * {
+    grid-column: var(--banner-column, wide);
+  }
+
+  &::before {
+    align-self: center;
+    border-top: var(--shim) solid var(--border);
+    content: '';
+    grid-column: full-start / wide-start;
+    margin-right: var(--shim);
+  }
+}
+
+.banner-title {
+  font-size: calc(1.25em + 2vw);
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+}

@@ -7,19 +7,19 @@
   counter-reset: nav-item;
   display: grid;
   grid: 'logo' auto 'list' auto / 1fr;
-  grid-gap: var(--gutter);
   margin-bottom: var(--spacer);
 
   @media (min-width: 40em) {
     grid: 'logo list' auto / 1fr 1.5fr;
+    grid-gap: var(--gutter);
   }
 }
 
 .nav-logo {
   display: inline-block;
   justify-self: center;
-  max-width: calc(100% - var(--double-gutter));
-  width: calc(var(--spacer) * 4);
+  max-width: 14em;
+  width: calc(100% - var(--double-gutter));
 }
 
 .nav-item {
@@ -55,6 +55,10 @@
     --flex--active: 1;
     text-transform: uppercase;
   }
+}
+
+[data-navlist] {
+  margin: 0;
 }
 
 [data-nav] {

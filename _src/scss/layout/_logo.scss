@@ -1,18 +1,22 @@
 .logo {
+  --alt: var(--ccs-prime);
   fill: transparent;
   margin: 0 auto;
   stroke: var(--text);
-  stroke-width: 3;
-  --alt: var(--ccs-prime);
+  stroke-width: var(--stroke, 4);
+  transition: stroke-width 150ms ease-in-out, transform 150ms ease-in-out;
 
   .e,
   .bang {
     stroke: var(--alt);
+    transition: stroke 150ms ease-in-out;
   }
 
   a:hover &,
   a:focus &,
   a:active & {
     --alt: var(--ccs-accent--fg1);
+    --stroke: 6;
+    transform: scale(1.1);
   }
 }

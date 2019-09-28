@@ -2,6 +2,7 @@
 layout: base
 title: Show Archive
 date: 2010-03-25
+permalink: /verbs/
 tags:
   - gigs
 events:
