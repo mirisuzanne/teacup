@@ -19,10 +19,12 @@ html {
 }
 
 blockquote {
+  @include config.font-family('alt');
   margin-left: 0;
 
-  > *:first-of-type {
+  > *:first-child {
     text-indent: -1em;
+    margin-top: 0;
 
     &::before {
       content: ' “ ';
@@ -31,9 +33,20 @@ blockquote {
       font-weight: bold;
     }
   }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 cite {
-  @include config.font-family('alt');
+  @include config.font-family('caps');
   font-style: normal;
+}
+
+hr {
+  --type-column: wide / full;
+  --margin-block: var(--spacer);
+  border-top: var(--border-width)  dashed var(--border);
+  width: 100%;
 }

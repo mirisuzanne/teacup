@@ -1,5 +1,3 @@
-@use "../config";
-
 // Cards
 // =====
 
@@ -12,10 +10,18 @@
   align-items: start;
   display: grid;
   grid-gap: var(--gap);
-  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
   justify-content: space-evenly;
   margin: 0 var(--double-gutter);
   padding: var(--half-shim) 0 var(--double-gutter);
+
+  @media (min-width: 55em) {
+    --gap: var(--spacer) var(--double-gutter);
+  }
+
+  @media (min-width: 110em) {
+    --gap: var(--spacer);
+  }
 }
 
 // Groups
@@ -78,7 +84,6 @@
 }
 
 [data-meta="card"] {
-  @include config.font-family('alt');
   text-transform: lowercase;
 
   time {

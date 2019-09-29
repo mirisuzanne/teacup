@@ -1,3 +1,5 @@
+@use '../config';
+
 [data-layout='banner'],
 .section-header {
   display: grid;
@@ -26,5 +28,6 @@
 }
 
 .subtitle {
+  @include config.font-family('alt');
   margin: 0;
 }

@@ -4,7 +4,7 @@ date: 2007-07-07
 venue: Dirt Circle Dogs
 url: https://soundcloud.com/dirt-circle-dogs/sets/hit-single
 hero:
-  img: art/music/dcd.png
+  img: music/dcd.png
 calendar: music
 tags:
   - _calendar

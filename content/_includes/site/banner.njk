@@ -12,8 +12,8 @@
 
   {% if sub or go_to %}
     <p class="subtitle">
-      {{ sub | safe }}
-      {{ go_to | safe }}
+      {{ sub | typogr | safe }}
+      {{ go_to | typogr | safe }}
     </p>
   {% endif %}
 </header>

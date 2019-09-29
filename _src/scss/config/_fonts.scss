@@ -19,6 +19,24 @@ $body-font: (
 
 
 $alt-font: (
+  name: 'Susy',
+  normal: (
+    woff: 'susy/greenmudsusy-regular-webfont.woff',
+    ttf: 'susy/greenmudsusy-regular-webfont.ttf',
+  ),
+  bold: (
+    woff: 'susy/greenmudsusy-bold-webfont.woff',
+    ttf: 'susy/greenmudsusy-bold-webfont.ttf',
+  ),
+  stack: (
+    'Baskerville', 'Palatino', 'Cambria', 'Georgia', 'serif',
+  ),
+);
+
+@include tools.add-font('alt', $alt-font);
+
+
+$caps-font: (
   name: 'SusyCaps',
   normal: (
     woff: 'susy/greenmudsusy-smallcaps-webfont.woff',
@@ -33,4 +51,4 @@ $alt-font: (
   ),
 );
 
-@include tools.add-font('alt', $alt-font);
+@include tools.add-font('caps', $caps-font);

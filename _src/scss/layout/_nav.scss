@@ -65,7 +65,7 @@
   padding: 0 var(--shim);
 
   &::before {
-    @include config.font-family('alt');
+    @include config.font-family('caps');
     color: var(--nav-line-color, var(--border));
     content: '0' counter(nav-item, decimal) '. ';
     text-transform: lowercase;

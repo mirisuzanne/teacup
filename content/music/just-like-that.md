@@ -6,7 +6,7 @@ venue: IMDb
 url: https://www.imdb.com/title/tt7175232/?ref_=ttpl_pl_tt
 date: 2017-02-13
 hero:
-  img: art/music/just-like-that.jpg
+  img: music/just-like-that.jpg
 tags:
   - _calendar
   - media

@@ -2,6 +2,9 @@
 layout: base
 title: Press & Bio
 permalink: /adjectives/
+hero:
+  img: video-meta.jpg
+  alt: A fancy camera and boom mic blocking Dan's face
 press:
   - text: |
       Reminiscent of late ‘90s punk
@@ -37,48 +40,70 @@ press:
     venue: Colorado Music Buzz
     credit: Tim Wenger
     url: http://www.colomusicbuzz.com/eric-suzanne-drops-non-linear-novel-in-conjunction-with-teacup-gorilla/
+summary: |
+  **Teacup Gorilla** inhabits the venues of Denver, CO
+  with dark indie-rock soundscapes and evocative poetry --
+  sometimes complex, dissonant,
+  or introspective,
+  but always pushing towards moments of
+  unexpected harmony and celebration.
 ---
 
 {% import "content.macros.njk" as content %}
+
+------
 
 {{ content.quotes(press) }}
 
 ------
 
-**Teacup Gorilla** inhabits the venues of Denver, CO
-with dark indie-rock soundscapes and evocative poetry --
+Teacup Gorilla --
 often compared to early
-[Modest Mouse](http://modestmouse.com/),
-[Low](http://www.chairkickers.com/),
-or Velvet Underground.
-They released a debut EP
-([The Holes They Leave](http://teacupgorilla.bandcamp.com/album/the-holes-they-leave))
-in the summer of 2015 --
+Modest Mouse,
+Low,
+or Velvet Underground --
+formed to create and underscore
+the **Missa Populi** theater production in 2010,
+and released a debut EP --
+([The Holes They Leave][thtl]) --
+in the summer of 2015,
 along with the multimedia novel
 [Riding SideSaddle\*](http://ridingsidesaddle.com).
+They are currently working on a second EP
+based on the novel.
 
+[thtl]: /2015/07/09/holes-they-leave/
+
+In addition to playing festivals and venues
+in Denver and across the Midwest,
 Teacup Gorilla enjoys collaborating across media
-with performers, writers, dancers, and visual artists --
-including the
-[Clyfford Still Museum](https://clyffordstillmuseum.org/).
-Their 2016 collaboration
-with [Buntport Theater](http://buntport.com/archive/10myths.htm) --
-10 Myths on the Proper Application of Beauty Products --
-recieved a
-[True West Award](http://www.denvercenter.org/blog-posts/news-center/2016/12/18/2016-true-west-award-miriam-suzanne).
-In 2018,
-they worked with [Grapefruit Lab](http://grapefruitlab.com/)
-to create
-[JANE/EYRE](http://grapefruitlab.com/shows/janeeyre/):
-half-concert, half classic adaptation.
+with performers, writers, dancers, and visual artists
+including:
+
+- The [Clyfford Still Museum](https://clyffordstillmuseum.org/)
+- [Buntport Theater](http://buntport.com/archive/10myths.htm)
+  (winning a [True West Award][twest] in 2016 for [10 Myths...][10m])
+- [Grapefruit Lab][glab], formerly Vicious Trap
+  (creating [Missa Populi][missa] and [JANE/EYRE][jane])
+- Hoarded Stuff
+- Screw Tooth
+- Lost Walks
+  ([Wolf, Woman, Man][wwm])
+
+[twest]: http://www.denvercenter.org/blog-posts/news-center/2016/12/18/2016-true-west-award-miriam-suzanne
+[10m]: @@@
+[missa]: @@@
+[glab]: http://grapefruitlab.com/
+[jane]: http://grapefruitlab.com/shows/janeeyre/
+[wwm]: @@@
 
 Teacup Gorilla is
-*Daniel Eisenstat*
+**Daniel Eisenstat**
 (founder of [The Bakery](http://thebakerydenver.com/)),
-*Sondra Eby*,
-[Miriam Suzanne](http://miriamsuzanne.com/),
-and *Josselyn Cool*.
+**Sondra Eby**,
+[**Miriam Suzanne**](http://miriamsuzanne.com/),
+and **Josselyn Cool**.
 
 Former members include
-*Jen Korte* and
-*Daniel Rule*.
+**Jen Korte** and
+**Daniel Rule**.

@@ -13,7 +13,7 @@ menu {
 
 // colors
 [data-ccs='menu'] {
-  @include config.font-family('alt');
+  @include config.font-family('caps');
   grid-column: color;
 }
 

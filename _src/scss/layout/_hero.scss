@@ -1,4 +1,5 @@
 .hero {
+  --margin-end: var(--spacer);
   display: grid;
   grid:
     [img-start] auto [caption-start] auto [img-end caption-end]
@@ -6,7 +7,7 @@
 }
 
 .hero-content {
-  --type-column: img;
+  grid-area: img;
 }
 
 .hero-image {
@@ -16,7 +17,7 @@
 }
 
 .hero-caption {
-  --type-column: caption;
+  grid-area: caption;
   background: var(--callout);
   font-size: var(--font-small);
   font-style: italic;

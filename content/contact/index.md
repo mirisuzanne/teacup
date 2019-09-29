@@ -3,10 +3,17 @@ layout: base
 title: Contact
 banner: Contact Us
 hide_contact: true
+summary: |
+  Want to book a show,
+  collaborate,
+  or just chat?
+  Drop us a note!
 ---
 
 {% import "contact.macros.njk" as contact %}
 {{ contact.form() }}
+
+------
 
 ## Feeling Social…
 

@@ -6,7 +6,7 @@ venue: Dirt Circle Dogs
 url: https://soundcloud.com/dirt-circle-dogs/sets/kingdom-come
 type: album
 hero:
-  img: art/music/kingdom-come.png
+  img: music/kingdom-come.png
 calendar: music
 tags:
   - _calendar
