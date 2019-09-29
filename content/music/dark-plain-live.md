@@ -1,14 +1,15 @@
 ---
-title: Video -- A Dark Plain
+title: A Dark Plain
+type: video
 sub: live-filmed music video
 venue: Seventh Circle Sessions
 url: https://www.youtube.com/watch?v=pZutQD4GCi4
 date: 2019-04-14
 tags:
   - _calendar
-  - music
-  - teacup gorilla
+  - media
   - video
+  - news
 video:
   - iframe: https://www.youtube.com/embed/pZutQD4GCi4
     width: 560

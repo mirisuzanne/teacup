@@ -1,12 +1,11 @@
 ---
-title: Demo -- I'm Not Ready To Go Yet
+title: I'm Not Ready To Go Yet
+type: demo
 date: 2014-07-29
 tags:
   - _calendar
-  - art
-  - music
+  - demo
   - audio
-  - teacup gorilla
 track:
   - iframe: https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/159561832&amp;color=ff0000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false
     width: 100%

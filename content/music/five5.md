@@ -1,11 +1,10 @@
 ---
-title: Demo -- Five(5)
+title: Five(5)
+type: demo
 date: 2013-03-12
 tags:
   - _calendar
-  - teacup gorilla
-  - art
-  - music
+  - demo
   - audio
 track:
   - iframe: https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F36314485&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=false

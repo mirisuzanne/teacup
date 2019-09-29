@@ -15,7 +15,7 @@ const getPublic = collection => {
 const fromCollection = (collection, page) => {
   if (collection) {
     const pageURL = typeof page === 'string' ? page : page.url;
-    return collection.filter(page => page.url === pageURL);
+    return collection.filter(item => item.url === pageURL)[0];
   }
 };
 

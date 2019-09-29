@@ -1,13 +1,13 @@
 ---
-title: Video -- Last Bullet
+title: Last Bullet
+type: video
 sub: live-filmed music video
 venue: Seventh Circle Sessions
 url: https://www.youtube.com/watch?v=tF2IoI9fHzs
 date: 2019-04-20
 tags:
   - _calendar
-  - music
-  - teacup gorilla
+  - media
   - video
 video:
   - iframe: https://www.youtube.com/embed/tF2IoI9fHzs

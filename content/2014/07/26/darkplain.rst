@@ -1,7 +1,8 @@
 public: yes
 
 
-A Dark Plane [Demo]
+A Dark Plane
+type: demo
 ===================
 
 Here it is!

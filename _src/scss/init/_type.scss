@@ -17,3 +17,23 @@ html {
 [data-hidden] {
   @include config.is-hidden;
 }
+
+blockquote {
+  margin-left: 0;
+
+  > *:first-of-type {
+    text-indent: -1em;
+
+    &::before {
+      content: ' “ ';
+      color: var(--border);
+      font-size: var(--font-large);
+      font-weight: bold;
+    }
+  }
+}
+
+cite {
+  @include config.font-family('alt');
+  font-style: normal;
+}

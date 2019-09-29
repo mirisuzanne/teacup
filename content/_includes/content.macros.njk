@@ -17,11 +17,13 @@
 #}
 {% macro quote(
   data
-) -%}
+) %}
+
 > {{ data.text | trim }}
 >
 > ---<cite>{{ cite(data) }}</cite>
-{%- endmacro %}
+
+{% endmacro %}
 
 
 {% macro cite(

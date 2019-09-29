@@ -1,7 +1,8 @@
 public: yes
 
 
-I'm Not Ready To Go Yet [Demo]
+I'm Not Ready To Go Yet
+type: demo
 ==============================
 
 Another demo!

@@ -6,13 +6,13 @@
   "email": "band@teacupgorilla.com",
   "images": "/assets/images/",
   "icon": "icons/logo.svg",
-  "nav": {
-    "music": "/",
-    "videos": "/videos/",
-    "news": "/blog/",
-    "press & bio": "/adjectives/",
-    "contact": "/contact/"
-  },
+  "nav": [
+    "/",
+    "/videos/",
+    "/blog/",
+    "/adjectives/",
+    "/contact/"
+  ],
   "og": {
     "locale": "en_US",
     "type": "website",

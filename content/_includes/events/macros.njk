@@ -7,12 +7,14 @@
   collections,
   page
 ) %}
-  {% set title = 'episodes' %}
+  {% set title = 'events' %}
   {% set org_title = 'current orgs' %}
-  {% set events = collections.all | getPage(page) | getEvents %}
+  {% set page = collections.all | getPage(page) %}
+  {% set events = page | getEvents %}
   {% set all_orgs = (events_group == 'all_orgs') %}
 
   {% if events_group == 'all' %}
+    {% set title = 'things' %}
     {% set events = collections.all | getEvents %}
   {% elif all_orgs %}
     {% set org_title = 'org history' %}
@@ -20,9 +22,7 @@
     {% set events = none %}
   {% elif events_group %}
     {% set tag_name = events_group | displayName %}
-    {% set title %}
-      {{ tag_name }}
-    {% endset %}
+    {% set title = tag_name %}
     {% set org_title %}
       '{{ tag_name }}' orgs
     {% endset %}
@@ -102,7 +102,7 @@
   all,
   self
 ) %}
-  {% set title = [events | countEvents, title] | join(' ') %}
+  {% set title = ['all the', title] | join(' ') %}
   {% if events | length %}
     {{ cards.section(
       title,
@@ -190,31 +190,32 @@
   {%- set is_show = not not item.event.start -%}
   {%- set page_title = item.page.renderData.title or item.page.data.title -%}
 
-  {% if item.page.data.type %}
-    [{{ item.page.data.type }}]
-  {% endif %}
-
   {% if is_show %}
-    {%- set has_page = not (item.page.fileSlug == 'verbs') -%}
     {%- set page_url = item.page.data.url or item.page.data.venue_url or item.page.url -%}
-    {%- set event_url = item.event.url or item.event.venue_url -%}
-    {%- set url = page_url if has_page and not is_self else event_url -%}
-    {%- set page_title = page_title if has_page else none -%}
+    {%- set url = page_url if not is_self else item.event.url -%}
     {%- set show_title = item.event.title or page_title -%}
 
-    {% if show_title %}
-      {{ utility.link_if(show_title | mdInline, url) }}
-    {% endif %}
+    {{ utility.link_if(show_title | mdInline, url) }}
     @
-    {{ utility.link_if(
-      item.event.venue or '[redacted]' | mdInline,
-      url if not show_title
-    ) }}
+    <span>
+      {{ item.event.venue or '[redacted]' | mdInline }}
+    </span>
   {% else %}
+    {% if item.page.data.type %}
+      [{{ item.page.data.type }}]
+    {% endif %}
+
     {{ utility.link_if(
       page_title | mdInline,
       item.page.url
     ) }}
+
+    {% if item.page.data.venue %}
+      @
+      <span>
+        {{ item.page.data.venue | mdInline }}
+      </span>
+    {% endif %}
   {% endif %}
 {% endmacro %}
 

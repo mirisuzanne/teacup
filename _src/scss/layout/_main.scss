@@ -4,7 +4,7 @@
   grid-row-gap: var(--gutter);
   margin: var(--spacer) 0 var(--double-spacer);
 
-  * {
+  > * {
     grid-column: var(--type-column, main);
 
     @supports (display: grid) {

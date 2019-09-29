@@ -8,7 +8,7 @@
 	{%- set desc = desc | mdInline | striptags | truncate | replace('&nbsp;', ' ') | replace('&amp;', '&') if desc else desc -%}
 	{%- set meta_desc = description or desc or site.description -%}
 	{%- set full_title = renderData.banner or banner or meta_title -%}
-	{%- set full_title = show.tag_title(collections) if (full_title == 'show_tags') else full_title | mdInline(false) -%}
+	{%- set full_title = full_title | mdInline(false) -%}
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport"

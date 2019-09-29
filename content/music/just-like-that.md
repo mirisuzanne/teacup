@@ -1,5 +1,6 @@
 ---
-title: Video -- Just Like That
+title: Just Like That
+type: video
 sub: official music video by [Gio Toninelo](https://www.rockethousepictures.com/)
 venue: IMDb
 url: https://www.imdb.com/title/tt7175232/?ref_=ttpl_pl_tt
@@ -8,8 +9,7 @@ hero:
   img: art/music/just-like-that.jpg
 tags:
   - _calendar
-  - music
-  - teacup gorilla
+  - media
   - video
 video:
   - iframe: https://player.vimeo.com/video/203945682

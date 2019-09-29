@@ -1,22 +1,21 @@
 ---
 layout: base
-title: Show Archive
+title: show
+banner: Show Archive
 date: 2010-03-25
 permalink: /verbs/
+index: gigs
 tags:
   - gigs
 events:
-  - url: https://www.facebook.com/events/2191187377812554/
-    title: PRF Denver
+  - title: PRF Denver
     image: shows/prf19.jpg
     venue: The Bakery
-    venue_url: https://thebakerydenver.com
     start: 2019-04-28
     adr: Denver, CO
     feature: true
 
-  - url: https://www.facebook.com/events/218314602434545/
-    venue: Lion’s Lair
+  - venue: Lion’s Lair
     image: shows/laurium.jpg
     start: 2019-01-26
     adr: Denver, CO
@@ -24,22 +23,19 @@ events:
       - name: Married a Dead Man
       - name: Laurium
 
-  - url: https://www.facebook.com/events/311460389444963/
-    venue: Ross-Cherry Creek Branch
+  - venue: Ross-Cherry Creek Branch
     title: Denver Library
     start: 2018-11-10
     adr: Denver, CO
 
   - title: Not the UMS
     venue: Remixed Gifts
-    venue_url: https://remixedgifts.com/
     start: 2018-07-28
     adr: Denver, CO
 
   - title: JANE/EYRE (stage adaptation)
     url: https://www.grapefruitlab.com/shows/janeeyre
     venue: The Bakery
-    venue_url: https://thebakerydenver.com
     image: shows/javeyre.jpg
     start: 2018-02-23
     adr: Denver, CO
@@ -50,7 +46,6 @@ events:
   - title: Wolf, Woman, Man (with Dancers)
     url: https://www.facebook.com/events/452068901855054/
     venue: The Bakery
-    venue_url: https://thebakerydenver.com
     image: shows/lost-walks.jpg
     start: 2018-02-10
     adr: Denver, CO
@@ -58,8 +53,7 @@ events:
       - name: Lost Walks
         url: https://www.facebook.com/LostWalks/
 
-  - url: https://www.facebook.com/events/136041710495512/
-    venue: Lion’s Lair
+  - venue: Lion’s Lair
     image: shows/lionlair.jpg
     start: 2018-01-12
     adr: Denver, CO
@@ -69,7 +63,6 @@ events:
 
   - title: Punk for Positive Change (AIDS Benefit)
     venue: Surfside 7
-    venue_url: https://www.facebook.com/surfside7/
     image: shows/plasma-canvas.jpg
     start: 2017-12-03
     adr: Fort Collins, CO
@@ -81,10 +74,8 @@ events:
       - name: Plasma Canvas
       - name: Sinister Pig
 
-  - url: https://www.facebook.com/events/311116622698462/
-    title: 'Dsm-73: Queer Rock Night'
+  - title: 'Dsm-73: Queer Rock Night'
     venue: Moon Room at Summit Music Hall
-    venue_url: https://www.thesummitmusichall.com/
     image: shows/queer-rock.jpg
     start: 2017-11-30
     adr: Denver, CO
@@ -92,8 +83,7 @@ events:
       - name: DJ Tocsin
       - name: Dutch
 
-  - url: https://www.facebook.com/events/125886928084249/
-    title: Bands With Benefits
+  - title: Bands With Benefits
     venue: Mutiny Information Cafe
     image: shows/mutiny-benefits.jpg
     start: 2017-11-19
@@ -103,7 +93,6 @@ events:
       - name: Hapless
 
   - venue: 7th Circle Music Collective
-    venue_url: https://www.facebook.com/SeventhCircleMusicCollective/
     image: shows/gone-full-heathen.jpg
     start: 2017-11-10
     adr: Denver, CO
@@ -113,9 +102,7 @@ events:
       - name: Married A Dead Man
         url: https://www.facebook.com/marriedadeadman/
 
-  - url: https://www.facebook.com/events/102819993760592/
-    venue: Lion’s Lair
-    venue_url: http://lionslairco.com/
+  - venue: Lion’s Lair
     image: shows/lionlair.jpg
     start: 2017-10-27
     adr: Denver, CO
@@ -134,7 +121,6 @@ events:
       - name: The Far Stairs
 
   - venue: Syntax Physic Opera
-    venue_url: http://www.physicopera.com/
     image: shows/syntax.jpg
     start: 2017-09-23
     adr: Denver, CO
@@ -142,8 +128,7 @@ events:
       - name: Electric LoveGods
         url: http://electriclovegods.com
 
-  - url: https://www.facebook.com/events/314256545672625/
-    venue: Globe Hall
+  - venue: Globe Hall
     image: shows/stereo-no-aware.jpg
     start: 2017-08-18
     adr: Denver, CO
@@ -158,7 +143,6 @@ events:
     url: https://www.facebook.com/events/113524225963434/
     image: shows/mayhem.jpg
     venue: Skylark Lounge
-    venue_url: http://skylarklounge.com
     start: 2017-08-10
     adr: Denver, CO
     with:
@@ -172,7 +156,6 @@ events:
     url: https://www.facebook.com/events/726275280887396/
     image: shows/antiums-17.jpg
     venue: 1010 Workshop
-    venue_url: https://glassspresents.bandcamp.com/merch/antiums-all-day-3-stage-wristband-1500-presale
     adr: Denver, CO
     start: 2017-07-28
 
@@ -180,7 +163,6 @@ events:
     url: https://www.facebook.com/events/289923761413214/
     image: shows/pride17.jpg
     venue: Larimer Lounge
-    venue_url: https://www.ticketfly.com/purchase/event/1489513
     start: 2017-06-18
     adr: Denver, CO
     with:
@@ -202,7 +184,6 @@ events:
     url: https://www.facebook.com/events/1845576042369221/
     image: shows/release17.jpg
     venue: Lost Lake
-    venue_url: http://www.lost-lake.com/event/1454260-teacup-gorilla-video-release-denver/
     start: 2017-04-27
     adr: Denver, CO
     with:
@@ -214,7 +195,6 @@ events:
   - url: http://www.lost-lake.com/event/1435150-electric-lovegods-denver/
     image: shows/elgods.jpg
     venue: Lost Lake
-    venue_url: http://www.lost-lake.com/
     start: 2017-03-05
     adr: Denver, CO
     with:
@@ -229,7 +209,6 @@ events:
     url: https://www.facebook.com/events/993283477481829/
     image: shows/assemblage.jpg
     venue: The Bakery
-    venue_url: https://thebakerydenver.com
     start: 2017-02-02
     adr: Denver, CO
     with:
@@ -240,7 +219,6 @@ events:
     url: https://www.facebook.com/events/566264573571495/
     image: shows/standingrock.jpg
     venue: Deer Pile
-    venue_url: https://www.facebook.com/deerpile/
     start: 2016-12-17
     adr: Denver, CO
     with:
@@ -252,7 +230,6 @@ events:
   - title: FACEMAN’s 100 Year Storm
     url: https://www.facebook.com/events/324104087965656/
     venue: The Oriental Theater
-    venue_url: http://www.theorientaltheater.com/event/260005/facemans-100-year-storm-
     adr: Denver, CO
     start: 2016-11-18
 
@@ -266,7 +243,6 @@ events:
         url: https://dramad.bandcamp.com/
 
   - venue: Globe Hall
-    venue_url: http://www.globehall.com/music-hall/
     start: 2016-10-08
     adr: Denver, CO
     with:
@@ -275,9 +251,7 @@ events:
       - name: The Maykit
         url: http://themaykit.com/
 
-  - url: https://www.facebook.com/events/1630270517264003/
-    venue: Syntax Physic Opera
-    venue_url: http://physicopera.com/
+  - venue: Syntax Physic Opera
     start: 2016-09-08
     image: shows/moths.jpg
     image_position: bottom
@@ -291,7 +265,6 @@ events:
   - title: Sunday BBQ Series
     url: https://www.facebook.com/events/1246370012082183/
     venue: Larimer Lounge
-    venue_url: http://www.larimerlounge.com/event_details.cfm?blogid=2412
     start: 2016-08-28
     image: shows/bbq.jpg
     adr: Denver, CO
@@ -308,7 +281,6 @@ events:
   - title: A Night of Grand Guignol
     url: https://www.eventbrite.com/e/a-night-of-grand-guignol-tickets-18803019337
     venue: The Bakery
-    venue_url: http://thebakerydenver.com
     start: 2016-08-18
     end: 2016-08-27
     image: shows/pandemic-gg.jpg
@@ -325,7 +297,6 @@ events:
     image: shows/ums-2016.jpg
 
   - venue: Lion’s Lair
-    venue_url: http://lionslairlounge.squarespace.com/
     start: 2016-07-22
     image: shows/lionlair.jpg
     adr: Denver, CO
@@ -338,7 +309,6 @@ events:
   - title: Beat Soft Pop Album Release
     url: http://lost-lake.com/event_details.cfm?blogid=968
     venue: Lost Lake Lounge
-    venue_url: http://lost-lake.com/
     start: 2016-06-30
     adr: Denver, CO
     with:
@@ -346,8 +316,6 @@ events:
         url: https://beatsoftpop.bandcamp.com/releases
 
   - title: Afternoon House Party
-    venue: 1005 W 14th Ave
-    venue_url: https://goo.gl/maps/3bY9HXN9cKF2
     start: 2016-06-04
     image: shows/house-party.jpg
     image_position: top
@@ -367,13 +335,11 @@ events:
     start: 2016-05-26
     image: shows/moonconf.jpg
     venue: Galvanize Boulder
-    venue_url: http://www.galvanize.com/campuses/boulder-west-pearl/
     adr: Boulder, CO
     with:
       - name: a conference full of functional programmers...
 
   - venue: Lion's Lair
-    venue_url: http://lionslairlounge.squarespace.com/
     start: 2016-05-07
     image: shows/bulb.jpg
     adr: Denver, CO
@@ -475,22 +441,7 @@ events:
     start: 2015-07-25
     image: shows/tg-hidive.jpg
 
-  - title: Species of the Stars
-    url: /2015/07/02/species/
-    venue: Live Stream Online!
-    venue_url: /2015/07/02/species/
-    start: 2015-07-10
-    adr: Denver, CO
-    image: shows/sots.jpg
-    with:
-      - name: Face Man
-        url: https://www.facebook.com/pages/Face-Man/121419593563
-      - name: Open to the Hound
-        url: http://www.opentothehound.com
-      - name: Carly Howard and the Youthnicorns
-        url: https://www.facebook.com/carly.howard
-
-  - title: The Holes They Leave [EP Release]
+  - title: EP Release Party
     url: http://www.hi-dive.com/event/864133-teacup-gorilla-denver/
     venue: Hi Dive
     venue_url: http://www.hi-dive.com/
@@ -530,7 +481,6 @@ events:
         url: https://www.facebook.com/walkbysea
 
   - venue: Merchant's Mile High Saloon
-    venue_url: https://www.facebook.com/pages/Merchants-Mile-High-Saloon/427886443940504
     start: 2015-04-17
     image: nouns/150402-sidesaddle/affair-12.jpg
     adr: Denver, CO
@@ -545,7 +495,6 @@ events:
   - title: Riding SideSaddle* [Novel Affair]
     url: http://ridingsidesaddle.net/
     venue: Syntax Physic Opera
-    venue_url: http://physicopera.com/
     start: 2015-04-02
     image: nouns/150402-sidesaddle/affair-18.jpg
     adr: Denver, CO
@@ -558,7 +507,6 @@ events:
   - title: Gorilla Hound Party
     url: https://www.facebook.com/events/978753592154777/
     venue: The Bakery
-    venue_url: http://www.thebakerydenver.com/
     start: 2015-01-24
     image: shows/OttH_TCG.jpg
     adr: Denver, CO
@@ -694,7 +642,6 @@ events:
   - title: Bouldering Poets
     url: http://boulderingpoets.wordpress.com/2013/02/
     venue: 303 Vodka
-    venue_url: http://303vodka.com/
     start: 2013-03-22
     adr: Boulder, CO
     with:
@@ -724,7 +671,6 @@ events:
 
   - title: Fundraiser
     venue: The Packing House
-    venue_url: http://www.controlgroupproductions.org/
     start: 2010-06-26
     adr: Denver, CO
 

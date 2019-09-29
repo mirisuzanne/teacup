@@ -1,7 +1,8 @@
 public: yes
 
 
-Pig Sez [Demo]
+Pig Sez
+type: demo
 ==============
 
 The last demo of new material (for now).

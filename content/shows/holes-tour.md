@@ -1,9 +1,9 @@
 ---
-layout: base
-title: Tour -- The Holes They Leave
+title: THTL Midwest Tour
+date: 2015-08-11
 tags:
   - tour
-  - gig
+  - gigs
 events:
   - adr: Iowa City, IA
     venue: Gabe's Iowa City

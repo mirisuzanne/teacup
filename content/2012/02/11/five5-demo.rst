@@ -1,5 +1,6 @@
 public: yes
-tags: [demo]
+tags:
+type: demo
 
 
 Five[5] Demo

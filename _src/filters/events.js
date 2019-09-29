@@ -72,6 +72,22 @@ const fromYAML = page => {
   return events;
 };
 
+const fromPage = page => {
+  let events = [];
+
+  if (page) {
+    if (hasEvents(page)) {
+      Array.prototype.push.apply(events, fromYAML(page));
+    }
+
+    if (isEvent(page) && pages.isPublic(page)) {
+      events.push(buildEvent(page));
+    }
+  }
+
+  return events;
+}
+
 const fromCollection = collection => {
   let events = [];
 
@@ -112,8 +128,14 @@ const byGroup = events => {
   return sorted.reverse();
 };
 
-const get = (collection, only, group = true) => {
-  let events = fromCollection(collection);
+const get = (collectionOrPage, only, group = true) => {
+  let events = [];
+
+  if (Array.isArray(collectionOrPage)) {
+    events = fromCollection(collectionOrPage);
+  } else {
+    events = fromPage(collectionOrPage);
+  }
 
   if (only && events) {
     events = events.filter(event => event.tags.includes(only));

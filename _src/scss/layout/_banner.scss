@@ -1,4 +1,5 @@
-[data-layout='banner'] {
+[data-layout='banner'],
+.section-header {
   display: grid;
   grid-template-columns: var(--grid-columns);
 
@@ -8,11 +9,15 @@
 
   &::before {
     align-self: center;
-    border-top: var(--shim) solid var(--border);
+    border-top: var(--section-border, var(--border-width)) solid var(--border);
     content: '';
     grid-column: full-start / wide-start;
     margin-right: var(--shim);
   }
+}
+
+[data-layout='banner'] {
+  --section-border: var(--shim);
 }
 
 .banner-title {
