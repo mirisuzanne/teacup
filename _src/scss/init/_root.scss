@@ -1,10 +1,11 @@
 html {
   --border-default: var(--border-width) solid var(--border);
+  --main: minmax(auto, 32em);
   --grid-columns:
     [full-start] var(--gutter)
     [content-start] minmax(0, 4fr)
     [wide-start] var(--wide-start, 4fr)
-    [main-start] minmax(auto, 32em) [main-end]
+    [main-start] var(--main, auto) [main-end]
     var(--wide-end, 0) [wide-end]
     minmax(0, 1fr) [content-end]
     var(--gutter) [full-end]
@@ -13,7 +14,7 @@ html {
   background-attachment: fixed;
 
   @media (min-width: 38em) {
-    --wide-start: minmax(0, 14em);
+    --wide-start: minmax(0, 10em);
     --wide-end: minmax(0, var(--spacer));
   }
 }

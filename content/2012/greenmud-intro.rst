@@ -1,4 +1,4 @@
-public: yes
+date: 2012-02-27
 tags: [greenmud, soundtrack, novel]
 
 

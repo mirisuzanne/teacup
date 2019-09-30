@@ -34,7 +34,7 @@
   }
 
   @media (min-width: 40em) {
-    --type-column: wide / main-start;
+    --type-column: content / main-start;
     color: var(--text-light);
     margin-right: var(--gutter);
     text-align: right;

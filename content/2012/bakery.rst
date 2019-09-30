@@ -1,4 +1,4 @@
-public: yes
+date: 2012-11-19
 tags: [bakery, warehouse, venue]
 
 

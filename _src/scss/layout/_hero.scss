@@ -1,5 +1,4 @@
 .hero {
-  --margin-end: var(--spacer);
   display: grid;
   grid:
     [img-start] auto [caption-start] auto [img-end caption-end]
