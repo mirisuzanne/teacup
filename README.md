@@ -46,12 +46,6 @@ gulp sass
 # lint sass
 gulp sasslint
 
-# format sass
-gulp prettier
-
-# compile sass docs
-gulp sassdoc
-
 # watch sass files (lint & compile)
 gulp watch
 

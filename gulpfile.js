@@ -1,26 +1,23 @@
-/* eslint-env node */
-
 'use strict';
 
 const Fiber = require('fibers');
 const autoprefixer = require('gulp-autoprefixer');
-const babel = require('gulp-babel');
 const beeper = require('beeper');
 const chalk = require('chalk');
 const cleanCSS = require('gulp-clean-css');
-const concat = require('gulp-concat');
 const del = require('del');
-const eslint = require('gulp-eslint');
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const log = require('fancy-log');
-const prettier = require('gulp-prettier-plugin');
+const rollup = require('rollup');
+const rollupBabel = require('rollup-plugin-babel');
+const rollupResolve = require('rollup-plugin-node-resolve');
+const rollupCommonjs = require('rollup-plugin-commonjs');
 const sass = require('gulp-sass');
 const sassdoc = require('sassdoc');
 const sasslint = require('gulp-stylelint');
 const sourcemaps = require('gulp-sourcemaps');
 const { spawn } = require('child_process');
-const terser = require('gulp-terser');
 
 sass.compiler = require('sass');
 
@@ -107,12 +104,32 @@ const sassTask = opts => {
 };
 
 gulp.task('js', () => {
-  return gulp
-    .src(paths.JS)
-    .pipe(terser())
-    .pipe(babel())
-    .pipe(concat('scripts.js'))
-    .pipe(gulp.dest(paths.JS_DEST_DIR));
+  return rollup
+    .rollup({
+      input: paths.JS_SRC_DIR + 'index.js',
+      plugins: [
+        rollupResolve(),
+        rollupCommonjs(),
+        rollupBabel({
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                modules: false,
+                corejs: '3',
+                useBuiltIns: 'usage'
+              },
+            ],
+          ],
+        }),
+      ],
+    })
+    .then(bundle => {
+      return bundle.write({
+        file: paths.JS_DEST_DIR + 'scripts.js',
+        format: 'iife',
+      });
+    });
 });
 
 gulp.task('sass', () => {
@@ -164,20 +181,6 @@ const sasslintTask = (src, failOnError, shouldLog) => {
 gulp.task('sasslint', () => sasslintTask(paths.SASS, true));
 
 gulp.task('sasslint-nofail', () => sasslintTask(paths.SASS));
-
-const prettierTask = (src, shouldLog) => {
-  if (shouldLog) {
-    const cmd = `prettier ${src}`;
-    log('Running', `'${chalk.cyan(cmd)}'...`);
-  }
-  return gulp
-    .src(src, { base: './' })
-    .pipe(prettier({ singleQuote: true, trailingComma: 'all' }))
-    .pipe(gulp.dest('./'))
-    .on('error', onError);
-};
-
-gulp.task('prettier', () => prettierTask(paths.SASS));
 
 gulp.task(
   'sassdoc',

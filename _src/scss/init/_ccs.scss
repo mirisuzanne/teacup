@@ -1,4 +1,4 @@
-@use "../../node_modules/cascading-color-systems/sass/ccs" with (
+@use '../../../node_modules/cascading-color-systems/sass/ccs' with (
   $prime-hue: 0,
   $saturation: 70%,
   $contrast: 48%,
@@ -34,7 +34,7 @@
   --callout--fade: var(--ccs-neutral--bg5-fade);
   --overlay: hsla(
     var(--ccs-h--neutral),
-    var(--ccs-s--contrast-bg),
+    var(--ccs-s--bg-contrast),
     var(--ccs-l--bg5),
     0.5
   );

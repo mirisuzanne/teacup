@@ -1,4 +1,4 @@
-@use 'config';
+@use '../config';
 
 img {
   filter: brightness(var(--img-bright, 100%));
