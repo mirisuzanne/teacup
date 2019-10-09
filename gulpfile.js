@@ -109,19 +109,21 @@ gulp.task('js', () => {
       input: paths.JS_SRC_DIR + 'index.js',
       plugins: [
         rollupResolve(),
-        rollupCommonjs(),
         rollupBabel({
           presets: [
             [
               '@babel/preset-env',
               {
+                targets: 'defaults',
                 modules: false,
                 corejs: '3',
-                useBuiltIns: 'usage'
+                useBuiltIns: 'usage',
               },
             ],
           ],
+          exclude: [/\/core-js\//],
         }),
+        rollupCommonjs(),
       ],
     })
     .then(bundle => {
