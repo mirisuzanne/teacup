@@ -19,9 +19,9 @@
     "img": "video-meta.jpg"
   },
   "themes": [
-    "triad",
-    "contrast",
     "complement",
+    "contrast",
+    "triad",
     "adjacent",
     "monochrome"
   ],

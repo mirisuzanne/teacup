@@ -3,7 +3,7 @@
   $saturation: 70%,
   $contrast: 48%,
   $steps: 6,
-  $fade-background: 15%,
+  $fade-background: 20%,
   $fades: 0.75,
   $build: true,
 );
@@ -23,7 +23,7 @@
     0 var(--ccs--fg-full);
 
   --feature-gradient: linear-gradient(
-    to bottom right,
+    to top right,
     var(--ccs-prime--bg1),
     var(--ccs-accent--bg2)
   );
