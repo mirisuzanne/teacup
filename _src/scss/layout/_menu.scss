@@ -34,19 +34,19 @@ $rainbow: ();
   $rainbow: append($rainbow, hsl($hue * 10, 80%, 40%), comma);
 }
 
-[id='hue-select'] {
+[data-ccs-input='hue'] {
   @include config.range-track {
     background: linear-gradient(to right, $rainbow);
   }
 }
 
-[id='light-select'] {
+[data-ccs-input='lightness'] {
   @include config.range-track {
     background: linear-gradient(to right, hsl(0, 0%, 25%), silver);
   }
 }
 
-[id='sat-select'] {
+[data-ccs-input='saturation'] {
   // 0.1% so that units aren't removed in minification
   @include config.range-track {
     background-image: linear-gradient(
@@ -57,7 +57,7 @@ $rainbow: ();
   }
 }
 
-[id='contrast-select'] {
+[data-ccs-input='contrast'] {
   @include config.range-track {
     background: linear-gradient(to right, gray, white),
       linear-gradient(to right, gray, black);

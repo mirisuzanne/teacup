@@ -952,15 +952,15 @@
     // elements
     var root = document.querySelector('[data-ccs="root"]');
     var themeMenu = document.querySelector('[data-ccs="menu"]');
-    var modeToggle = document.querySelector('[data-ccs="invert"]');
-    var unsetBtn = document.querySelector('[data-ccs="unset"]'); // elements
+    var modeToggle = document.querySelector('[data-ccs-input="mode"]');
+    var unsetBtn = document.querySelector('[data-ccs-input="unset"]'); // elements
 
     var selectElements = {
-      theme: document.querySelector('[data-ccs="theme-select"] select'),
-      hue: document.querySelector('[data-ccs="hue-select"] input'),
-      sat: document.querySelector('[data-ccs="saturation-select"] input'),
-      light: document.querySelector('[data-ccs="lightness-select"] input'),
-      contrast: document.querySelector('[data-ccs="contrast-select"] input')
+      theme: document.querySelector('[data-ccs-input="theme"]'),
+      hue: document.querySelector('[data-ccs-input="hue"]'),
+      sat: document.querySelector('[data-ccs-input="saturation"]'),
+      light: document.querySelector('[data-ccs-input="lightness"]'),
+      contrast: document.querySelector('[data-ccs-input="contrast"]')
     }; // attributes
 
     var attrs = {
