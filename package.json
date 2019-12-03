@@ -14,42 +14,69 @@
   "engines": {
     "node": "10.16.3"
   },
+  "scripts": {
+    "js": "rollup -c",
+    "sass": "run-s sass:compile sass:postcss",
+    "sass:compile": "run-p sass:app",
+    "sass:app": "sass src/scss/screen.scss _built/css/screen.css",
+    "sass:postcss": "postcss _built/css/screen.css --use autoprefixer --replace --map",
+    "prettier:js": "prettier --write \"**/*.js\"",
+    "prettier:other": "prettier --write \"**/*.{json,yml}\"",
+    "eslint": "eslint \"*.js\" \"**/*.js\" --fix",
+    "lint": "run-p lint:* prettier:other",
+    "lint:js": "run-s prettier:js eslint",
+    "lint:sass": "stylelint \"**/*.scss\" --fix",
+    "eleventy": "eleventy",
+    "eleventy:serve": "eleventy --serve",
+    "watch:sass:compile": "chokidar \"src/scss/**/*.scss\" -c \"yarn run-p sass\"",
+    "watch:sass:lint": "chokidar \"**/.stylelintrc.yml\" -c \"yarn lint:sass\"",
+    "watch:sass": "run-p watch:sass:*",
+    "watch:js:compile": "rollup -c --watch",
+    "watch:js:lint": "chokidar \"**/.eslintrc.yml\" -c \"yarn lint:js\"",
+    "watch:js": "run-p watch:js:*",
+    "site:clean": "rm -rf ./_site/",
+    "assets:clean": "rm -rf ./_built/",
+    "serve": "npm-run-all build:assets build:site -p eleventy:serve watch:js watch:sass",
+    "build:site": "run-s site:clean",
+    "build:assets": "npm-run-all assets:clean -p js sass",
+    "build": "run-s build:assets build:site eleventy"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy": "^0.9.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "accoutrement": "^2.1.2",
-    "beeper": "^2.0.0",
     "cascading-color-systems": "^0.1.0-beta.7",
-    "chalk": "^2.4.2",
-    "core-js": "^3.2.1",
+    "chokidar-cli": "^2.0.0",
+    "core-js": "^3.3.2",
     "cssremedy": "^0.1.0-beta.2",
-    "del": "^4.1.1",
-    "fancy-log": "^1.3.3",
-    "fibers": "^4.0.1",
-    "gulp": "4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-imagemin": "^6.1.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-stylelint": "^9.0.0",
-    "husky": "^2.3.0",
-    "lint-staged": "^8.1.7",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-simple-import-sort": "^4.0.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "lunr": "^2.3.8",
     "markdown-it": "^8.4.2",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-mark": "^2.0.0",
-    "rollup": "^1.23.1",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3",
+    "prettier": "^1.18.2",
+    "rollup": "^1.25.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "sass": "^1.23.0",
-    "sassdoc": "^2.7.0",
-    "sassdoc-theme-herman": "^3.0.2",
-    "stylelint": "^10.0.1",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-scss": "^3.8.0"
+    "stylelint": "^11.1.1",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.11.1",
+    "typogr": "^0.6.8"
   },
   "husky": {
     "hooks": {
@@ -57,8 +84,17 @@
     }
   },
   "lint-staged": {
-    "static/sass/**/*.scss": [
-      "stylelint",
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.{json,yml}": [
+      "prettier --write",
       "git add"
     ]
   }

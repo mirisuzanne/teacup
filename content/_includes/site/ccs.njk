@@ -1,7 +1,7 @@
 <details data-ccs="menu" hidden>
   <summary class="menu-item">colors</summary>
   <div data-dropdown="pad">
-    <div class="color-btns">
+    <div data-ccs="buttons">
       <button
         data-ccs-input="mode"
         data-btn="small"
@@ -20,7 +20,7 @@
     <label for="theme" data-ccs-field="theme">
       <span data-label>theme:</span>
       <select name="theme" id="theme" data-ccs-input="theme">
-        {% for theme in site.themes %}
+        {% for theme in ccs.themes %}
           <option value="{{ theme }}" {{ 'selected' if loop.first }}>
             {{ theme }}
           </option>
@@ -29,19 +29,43 @@
     </label>
     <label for="hue" data-ccs-field="hue">
       <span data-label>hue:</span>
-      <input id="hue" type="range" min="0" max="360" value="0" data-ccs-input="hue">
+      <input
+        id="hue"
+        type="range"
+        min="0"
+        max="360"
+        value="{{ ccs.hue }}"
+        data-ccs-input="hue">
     </label>
-    <label for="sat" data-ccs-field="saturation">
+    <label for="saturation" data-ccs-field="saturation">
       <span data-label>saturation:</span>
-      <input id="sat" type="range" min="0" max="100" value="85" data-ccs-input="saturation">
+      <input
+        id="saturation"
+        type="range"
+        min="0"
+        max="100"
+        value="{{ ccs.saturation }}"
+        data-ccs-input="saturation">
     </label>
-    <label for="light" data-ccs-field="lightness">
+    <label for="lightness" data-ccs-field="lightness">
       <span data-label>lightness:</span>
-      <input id="light" type="range" min="25" max="75" value="50" data-ccs-input="lightness">
+      <input
+        id="lightness"
+        type="range"
+        min="25"
+        max="75"
+        value="{{ ccs.lightness }}"
+        data-ccs-input="lightness">
     </label>
     <label for="contrast" data-ccs-field="contrast">
       <span data-label>contrast:</span>
-      <input id="contrast" type="range" min="25" max="150" value="42" data-ccs-input="contrast">
+      <input
+        id="contrast"
+        type="range"
+        min="25"
+        max="150"
+        value="{{ ccs.contrast }}"
+        data-ccs-input="contrast">
     </label>
   </div>
 </details>
