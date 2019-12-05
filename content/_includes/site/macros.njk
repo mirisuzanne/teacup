@@ -6,9 +6,11 @@
   page,
   all
 ) %}
+  {% set page = all | getPage(page) | first or page %}
+
   <ol data-navlist="site">
     {% for url in items %}
-      {% set target = all | getPage(url) %}
+      {% set target = all | getPage(url) | first %}
       {% set name = target.data.title or target.fileSlug or url %}
       <li
         class="nav-item"

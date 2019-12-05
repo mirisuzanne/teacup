@@ -6,6 +6,5 @@
     {% include 'icons/logo.svg' %}
   </a>
 
-  {% set page = collections.all | getPage(page) or page %}
   {{ show.site_nav(site.nav, page, collections.all) }}
 </nav>

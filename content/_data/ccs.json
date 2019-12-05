@@ -1,0 +1,7 @@
+{
+  "hue": 0,
+  "saturation": 80,
+  "lightness": 50,
+  "contrast": 48,
+  "themes": ["complement", "contrast", "triad", "adjacent", "monochrome"]
+}

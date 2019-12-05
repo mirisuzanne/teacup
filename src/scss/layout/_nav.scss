@@ -1,0 +1,74 @@
+@use '../config';
+
+[data-layout='nav'] {
+  --link--focus: var(--text);
+  --action-line: transparent;
+  align-items: center;
+  counter-reset: nav-item;
+  display: grid;
+  grid: 'logo' auto 'list' auto / 1fr;
+  margin-bottom: var(--spacer);
+
+  @media (min-width: 40em) {
+    grid: 'logo list' auto / 1fr 1.5fr;
+    grid-gap: var(--gutter);
+  }
+}
+
+.nav-logo {
+  display: inline-block;
+  justify-self: center;
+  max-width: 14em;
+  width: calc(100% - var(--double-gutter));
+}
+
+.nav-item {
+  align-items: center;
+  counter-increment: nav-item;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space, 0);
+  padding-left: var(--gutter);
+  white-space: nowrap;
+
+  &::after {
+    border-top: var(--nav-line-width, var(--quarter-shim)) solid
+      var(--nav-line-color, var(--border));
+    content: '';
+    flex: var(--flex--active, var(--flex, 1));
+    height: 0;
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}n) {
+      --flex: #{random(9) / 10};
+
+      @if ($i != 1) {
+        --space: calc(var(--half-shim) * #{random(10)});
+      }
+    }
+  }
+
+  &[data-active] {
+    --link: var(--text);
+    --nav-line-color: var(--text-light);
+    --nav-line-width: var(--half-shim);
+    --flex--active: 1;
+    text-transform: uppercase;
+  }
+}
+
+[data-navlist] {
+  margin: 0;
+}
+
+[data-nav] {
+  padding: 0 var(--shim);
+
+  &::before {
+    @include config.font-family('caps');
+    color: var(--nav-line-color, var(--border));
+    content: '0' counter(nav-item, decimal) '. ';
+    text-transform: lowercase;
+  }
+}
