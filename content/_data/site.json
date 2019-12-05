@@ -6,7 +6,7 @@
   "email": "band@teacupgorilla.com",
   "images": "/assets/images/",
   "icon": "icons/logo.svg",
-  "nav": ["/", "/videos/", "/blog/", "/adjectives/", "/contact/"],
+  "nav": ["/", "/videos/", "/adjectives/", "/contact/"],
   "og": {
     "locale": "en_US",
     "type": "website",

@@ -1,23 +1,24 @@
 ---
 title: Species of the Stars
 sub: concert & live stream
-type: video
 date: 2015-07-10
-calendar: gigs
-events:
-  - title:
-    url: /2015/07/02/species/
-    venue: The Bakery
-    start: 2015-07-10
-    adr: Denver, CO
-    image: shows/sots.jpg
-    with:
-      - name: Face Man
-        url: https://www.facebook.com/pages/Face-Man/121419593563
-      - name: Open to the Hound
-        url: http://www.opentothehound.com
-      - name: Carly Howard and the Youthnicorns
-        url: https://www.facebook.com/carly.howard
+venue: The Bakery
+url: /2015/07/02/species/
+adr: Denver, CO
+hero:
+  img: old/shows/sots.jpg
+tags:
+  - _calendar
+  - gigs
+  - video
+  - media
+with:
+  - name: Face Man
+    url: https://www.facebook.com/pages/Face-Man/121419593563
+  - name: Open to the Hound
+    url: http://www.opentothehound.com
+  - name: Carly Howard and the Youthnicorns
+    url: https://www.facebook.com/carly.howard
 video:
   - iframe: https://www.youtube.com/embed/iD1AUleBlLg
     width: 560

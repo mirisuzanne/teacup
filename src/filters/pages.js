@@ -26,6 +26,21 @@ const seriesNav = (page, collection) => {
   return null;
 };
 
+const getVideos = (collection, count) =>
+  collection
+    .filter((page) => page.data.video)
+    .sort((a, b) => b.date > a.date)
+    .sort((a, b) => b.data.feature && !a.data.feature)
+    .map((page) => {
+      const videos = page.data.video;
+      if (page.data.feature && !videos[0].span) {
+        videos[0].span = 'full';
+      }
+      return videos;
+    })
+    .reduce((all, one) => [...all, ...one], [])
+    .slice(0, count);
+
 const titleSort = (collection) =>
   collection.sort((a, b) => a.data.title - b.data.title);
 
@@ -35,4 +50,5 @@ module.exports = {
   fromCollection,
   seriesNav,
   titleSort,
+  getVideos,
 };

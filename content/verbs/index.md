@@ -3,28 +3,40 @@ layout: base
 title: show
 banner: Show Archive
 date: 2010-03-25
-permalink: /verbs/
 index: gigs
+hero:
+  img: shows/2019/prf.jpg
 tags:
   - gigs
 events:
-  - title: PRF Denver
-    image: shows/prf19.jpg
+  - title: Music & Poetry Showcase
+    image: shows/2019/joel.jpg
+    venue: The Bakery
+    url: https://www.facebook.com/events/2145592542411364/
+    start: 2019-12-14
+    adr: Denver, CO
+    with:
+      - name: Joel Zigman
+      - name: Birdhouse View
+      - name: Hayden Dansky
+      - name: ENJI
+    feature: true
+
+  - title: PRF BBQ Denver
+    image: shows/2019/prf.jpg
     venue: The Bakery
     start: 2019-04-28
     adr: Denver, CO
-    feature: true
 
   - venue: Lion’s Lair
-    image: shows/laurium.jpg
+    image: old/shows/laurium.jpg
     start: 2019-01-26
     adr: Denver, CO
     with:
       - name: Married a Dead Man
       - name: Laurium
 
-  - venue: Ross-Cherry Creek Branch
-    title: Denver Library
+  - venue: Ross-Cherry Creek Library
     start: 2018-11-10
     adr: Denver, CO
 
@@ -33,20 +45,10 @@ events:
     start: 2018-07-28
     adr: Denver, CO
 
-  - title: JANE/EYRE (stage adaptation)
-    url: https://www.grapefruitlab.com/shows/janeeyre
-    venue: The Bakery
-    image: shows/javeyre.jpg
-    start: 2018-02-23
-    adr: Denver, CO
-    with:
-      - name: Grapefruit Lab
-        url: https://www.facebook.com/grapefruitlab/
-
   - title: Wolf, Woman, Man (with Dancers)
     url: https://www.facebook.com/events/452068901855054/
     venue: The Bakery
-    image: shows/lost-walks.jpg
+    image: old/shows/lost-walks.jpg
     start: 2018-02-10
     adr: Denver, CO
     with:
@@ -54,7 +56,7 @@ events:
         url: https://www.facebook.com/LostWalks/
 
   - venue: Lion’s Lair
-    image: shows/lionlair.jpg
+    image: old/shows/lionlair.jpg
     start: 2018-01-12
     adr: Denver, CO
     with:
@@ -63,7 +65,7 @@ events:
 
   - title: Punk for Positive Change (AIDS Benefit)
     venue: Surfside 7
-    image: shows/plasma-canvas.jpg
+    image: old/shows/plasma-canvas.jpg
     start: 2017-12-03
     adr: Fort Collins, CO
     with:
@@ -76,7 +78,7 @@ events:
 
   - title: 'Dsm-73: Queer Rock Night'
     venue: Moon Room at Summit Music Hall
-    image: shows/queer-rock.jpg
+    image: old/shows/queer-rock.jpg
     start: 2017-11-30
     adr: Denver, CO
     with:
@@ -85,7 +87,7 @@ events:
 
   - title: Bands With Benefits
     venue: Mutiny Information Cafe
-    image: shows/mutiny-benefits.jpg
+    image: old/shows/mutiny-benefits.jpg
     start: 2017-11-19
     adr: Denver, CO
     with:
@@ -93,7 +95,7 @@ events:
       - name: Hapless
 
   - venue: 7th Circle Music Collective
-    image: shows/gone-full-heathen.jpg
+    image: old/shows/gone-full-heathen.jpg
     start: 2017-11-10
     adr: Denver, CO
     with:
@@ -103,7 +105,7 @@ events:
         url: https://www.facebook.com/marriedadeadman/
 
   - venue: Lion’s Lair
-    image: shows/lionlair.jpg
+    image: old/shows/lionlair.jpg
     start: 2017-10-27
     adr: Denver, CO
     with:
@@ -113,7 +115,7 @@ events:
   - title: Weird Wednesday!
     url: http://www.3kingstavern.com/event/290158
     venue: 3 Kings Tavern
-    image: shows/3kings.jpg
+    image: old/shows/3kings.jpg
     start: 2017-10-04
     adr: Denver, CO
     with:
@@ -121,7 +123,7 @@ events:
       - name: The Far Stairs
 
   - venue: Syntax Physic Opera
-    image: shows/syntax.jpg
+    image: old/shows/syntax.jpg
     start: 2017-09-23
     adr: Denver, CO
     with:
@@ -129,7 +131,7 @@ events:
         url: http://electriclovegods.com
 
   - venue: Globe Hall
-    image: shows/stereo-no-aware.jpg
+    image: old/shows/stereo-no-aware.jpg
     start: 2017-08-18
     adr: Denver, CO
     with:
@@ -141,7 +143,7 @@ events:
 
   - title: Claudzilla Curated Musical Mayhem
     url: https://www.facebook.com/events/113524225963434/
-    image: shows/mayhem.jpg
+    image: old/shows/mayhem.jpg
     venue: Skylark Lounge
     start: 2017-08-10
     adr: Denver, CO
@@ -154,14 +156,14 @@ events:
 
   - title: Anti-UMS Fest
     url: https://www.facebook.com/events/726275280887396/
-    image: shows/antiums-17.jpg
+    image: old/shows/antiums-17.jpg
     venue: 1010 Workshop
     adr: Denver, CO
     start: 2017-07-28
 
   - title: Queer in the Headlights, Pride Party
     url: https://www.facebook.com/events/289923761413214/
-    image: shows/pride17.jpg
+    image: old/shows/pride17.jpg
     venue: Larimer Lounge
     start: 2017-06-18
     adr: Denver, CO
@@ -180,20 +182,8 @@ events:
         url: https://www.facebook.com/spaceintimedenver/
       - name: Lisa Matthews
 
-  - title: Just Like That Video Release
-    url: https://www.facebook.com/events/1845576042369221/
-    image: shows/release17.jpg
-    venue: Lost Lake
-    start: 2017-04-27
-    adr: Denver, CO
-    with:
-      - name: The Raven & The Writing Desk
-        url: https://www.facebook.com/RavenAndTheWritingDesk/
-      - name: The Assemblage
-        url: https://www.facebook.com/assemblagemusic/
-
   - url: http://www.lost-lake.com/event/1435150-electric-lovegods-denver/
-    image: shows/elgods.jpg
+    image: old/shows/elgods.jpg
     venue: Lost Lake
     start: 2017-03-05
     adr: Denver, CO
@@ -207,7 +197,7 @@ events:
 
   - title: ACLU Benefit
     url: https://www.facebook.com/events/993283477481829/
-    image: shows/assemblage.jpg
+    image: old/shows/assemblage.jpg
     venue: The Bakery
     start: 2017-02-02
     adr: Denver, CO
@@ -217,7 +207,7 @@ events:
 
   - title: Empowerment Benefit Show
     url: https://www.facebook.com/events/566264573571495/
-    image: shows/standingrock.jpg
+    image: old/shows/standingrock.jpg
     venue: Deer Pile
     start: 2016-12-17
     adr: Denver, CO
@@ -253,7 +243,7 @@ events:
 
   - venue: Syntax Physic Opera
     start: 2016-09-08
-    image: shows/moths.jpg
+    image: old/shows/moths.jpg
     image_position: bottom
     adr: Denver, CO
     with:
@@ -266,7 +256,7 @@ events:
     url: https://www.facebook.com/events/1246370012082183/
     venue: Larimer Lounge
     start: 2016-08-28
-    image: shows/bbq.jpg
+    image: old/shows/bbq.jpg
     adr: Denver, CO
     with:
       - name: Zero Found
@@ -278,27 +268,9 @@ events:
       - name: The Tens
         url: https://www.facebook.com/theroaringtens/
 
-  - title: A Night of Grand Guignol
-    url: https://www.eventbrite.com/e/a-night-of-grand-guignol-tickets-18803019337
-    venue: The Bakery
-    start: 2016-08-18
-    end: 2016-08-27
-    image: shows/pandemic-gg.jpg
-    adr: Denver, CO
-    with:
-      - name: Pandemic Collective
-        url: http://www.pandemiccollective.org/2015---2016-season.html
-
-  - title: The UMS
-    url: http://theums.com/artists/teacupgorilla/
-    venue: Illegal Pete’s
-    start: 2016-07-28
-    adr: Denver, CO
-    image: shows/ums-2016.jpg
-
   - venue: Lion’s Lair
     start: 2016-07-22
-    image: shows/lionlair.jpg
+    image: old/shows/lionlair.jpg
     adr: Denver, CO
     with:
       - name: ...And The Black Feathers
@@ -317,7 +289,7 @@ events:
 
   - title: Afternoon House Party
     start: 2016-06-04
-    image: shows/house-party.jpg
+    image: old/shows/house-party.jpg
     image_position: top
     adr: Denver, CO
     with:
@@ -333,7 +305,7 @@ events:
   - title: MoonConf
     url: http://moonconf.org/
     start: 2016-05-26
-    image: shows/moonconf.jpg
+    image: old/shows/moonconf.jpg
     venue: Galvanize Boulder
     adr: Boulder, CO
     with:
@@ -341,7 +313,7 @@ events:
 
   - venue: Lion's Lair
     start: 2016-05-07
-    image: shows/bulb.jpg
+    image: old/shows/bulb.jpg
     adr: Denver, CO
     with:
       - name: Before The Bulb
@@ -351,7 +323,7 @@ events:
 
   - venue: The Squire Lounge
     start: 2016-04-22
-    image: shows/squire.jpg
+    image: old/shows/squire.jpg
     image_position: top
     adr: Denver, CO
     with:
@@ -360,20 +332,10 @@ events:
       - name: Naked on a Mountain
         url: https://www.facebook.com/NOAM4U/
 
-  - title: 10 Myths on the Proper Application of Beauty Products
-    venue: Buntport Theater
-    url: https://buntport.com/2016/03/10-myths-proper-application-beauty-products/
-    start: 2016-03-04
-    image: shows/10-myths.png
-    adr: Denver, CO
-    with:
-      - name: Buntport Theater
-        url: https://buntport.com/
-
   - venue: 7th Circle Music Collective
     url: https://www.facebook.com/events/194231020939688/
     start: 2016-02-28
-    image: shows/almost-young.jpg
+    image: old/shows/almost-young.jpg
     adr: Denver, CO
     with:
       - name: Island on the Moon
@@ -388,7 +350,7 @@ events:
   - venue: 7th Circle Music Collective
     url: https://www.facebook.com/events/1661588870774671/
     start: 2016-02-10
-    image: shows/north-by-north.jpg
+    image: old/shows/north-by-north.jpg
     adr: Denver, CO
     with:
       - name: NORTH BY NORTH
@@ -399,7 +361,7 @@ events:
   - venue: Lion's Lair
     venue_url: http://www.lionslairlounge.squarespace.com/
     start: 2015-11-05
-    image: shows/deadwoods.jpg
+    image: old/shows/deadwoods.jpg
     adr: Denver, CO
     with:
       - name: The Dead Woods
@@ -407,60 +369,20 @@ events:
       - name: Rocket to Nowhere
         url: https://www.facebook.com/Rocket-to-Nowhere-366076513438547/
 
-  - title: ReTriplicate
-    url: https://www.facebook.com/events/1493955994252580/
-    venue: Buntport Theater
-    venue_url: http://www.buntport.com/
-    start: 2015-08-13
-    image: shows/clyffordstill.jpg
-    adr: Denver, CO
-    with:
-      - name: Clyfford Still Museum
-        url: https://clyffordstillmuseum.org/
-      - name: Buntport Theater
-        url: http://www.buntport.com/
-      - name: Hoarded Stuff
-        url: http://lauraannsamuelson.com/
-      - name: Screw Tooth
-        url: http://www.screwtooth.com/
-
   - venue: Lion's Lair
     venue_url: http://www.lionslairlounge.squarespace.com/
     start: 2015-09-10
     adr: Denver, CO
-    image: shows/jack-coax.jpg
+    image: old/shows/jack-coax.jpg
     with:
       - name: Jack And The Coax
         url: http://www.jackandthecoax.com/
-
-  - title: Underground Music Showcase
-    url: http://theums.com/
-    venue: Historians Ale House
-    venue_url: http://historiansalehouse.com/
-    adr: Denver, CO
-    start: 2015-07-25
-    image: shows/tg-hidive.jpg
-
-  - title: EP Release Party
-    url: http://www.hi-dive.com/event/864133-teacup-gorilla-denver/
-    venue: Hi Dive
-    venue_url: http://www.hi-dive.com/
-    start: 2015-07-09
-    adr: Denver, CO
-    image: shows/blc.jpg
-    with:
-      - name: Bad Luck City
-        url: https://www.facebook.com/badluckcity
-      - name: Coastal Wives
-        url: https://www.facebook.com/Coastalwives
-      - name: Jen Korte
-        url: http://jkandtheloss.com
 
   - title: Departure Tour
     venue: Tennyson's Tap
     url: https://www.facebook.com/events/454599778045587/
     start: 2015-06-18
-    image: shows/troy-petty.jpg
+    image: old/shows/troy-petty.jpg
     adr: Denver, CO
     with:
       - name: Troy Petty
@@ -472,7 +394,7 @@ events:
     url: https://www.facebook.com/events/1438931603085393/
     venue_url: https://www.facebook.com/GypsyHouse
     start: 2015-05-11
-    image: shows/walkbysea.jpg
+    image: old/shows/walkbysea.jpg
     adr: Denver, CO
     with:
       - name: Brennan Mackey (King Cardinal)
@@ -492,23 +414,11 @@ events:
       - name: Open to the Hound
         url: http://www.opentothehound.com
 
-  - title: Riding SideSaddle* [Novel Affair]
-    url: http://ridingsidesaddle.net/
-    venue: Syntax Physic Opera
-    start: 2015-04-02
-    image: nouns/150402-sidesaddle/affair-18.jpg
-    adr: Denver, CO
-    with:
-      - name: Jen Korte
-        url: http://jkandtheloss.com
-      - name: Open to the Hound
-        url: http://www.opentothehound.com
-
   - title: Gorilla Hound Party
     url: https://www.facebook.com/events/978753592154777/
     venue: The Bakery
     start: 2015-01-24
-    image: shows/OttH_TCG.jpg
+    image: old/shows/OttH_TCG.jpg
     adr: Denver, CO
     with:
       - name: Open to the Hound
@@ -598,6 +508,8 @@ events:
     with:
       - name: Marcia Douglas
       - name: Matt Cook
+      - name: Teacup Gorilla
+        url: http://teacupgorilla.com
 
   - venue: Toad Tavern
     start: 2013-10-24
@@ -661,25 +573,8 @@ events:
         url: http://ericsuzanne.com/
       - name: Kelly Dulaney
 
-  - title: Wedding
-    venue: Butterfly Pavilion
-    start: 2010-09-03
-    adr: Boulder, CO
-    with:
-      - name: Rachel Eisenstat
-        url: http://www.ravenjane.com/
-
   - title: Fundraiser
     venue: The Packing House
     start: 2010-06-26
     adr: Denver, CO
-
-  - title: Missa Populi
-    url: https://www.grapefruitlab.com/shows/2010/3/12/missa-populi
-    venue: The Packing House
-    adr: Denver, CO
-    start: 2010-03-25
-    with:
-      - name: Vicious Trap
-        url: http://vicioustrap.com/
 ---

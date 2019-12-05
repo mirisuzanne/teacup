@@ -35,9 +35,11 @@ const only = (list, start, end) => list.slice(start, end);
 
 const domain = (url) =>
   url
-    .replace('http://', '')
-    .replace('https://', '')
-    .split(/[/?#]/)[0];
+    ? url
+        .replace('http://', '')
+        .replace('https://', '')
+        .split(/[/?#]/)[0]
+    : null;
 
 module.exports = {
   groupBy,

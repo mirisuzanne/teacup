@@ -47,6 +47,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('getPublic', pages.getPublic);
   eleventyConfig.addFilter('seriesNav', pages.seriesNav);
   eleventyConfig.addFilter('titleSort', pages.titleSort);
+  eleventyConfig.addFilter('getVideos', pages.getVideos);
 
   eleventyConfig.addFilter('getEvents', events.get);
   eleventyConfig.addFilter('countEvents', events.count);

@@ -5,9 +5,9 @@ venue: Dirt Circle Dogs
 url: https://soundcloud.com/dirt-circle-dogs/sets/hit-single
 hero:
   img: music/dcd.png
-calendar: music
 tags:
   - _calendar
+  - music
   - audio
   - album
   - dirt circle dogs

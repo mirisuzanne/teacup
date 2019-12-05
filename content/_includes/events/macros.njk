@@ -17,7 +17,7 @@
     {% set events = collections.all | getEvents %}
     {% set filter = 'off' %}
   {% elif events_group and (events_group != 'self') %}
-    {% set tag_name = events_group | displayName %}
+    {% set tag_name = events_group | displayName or events_group %}
     {% set title %}
       '{{ tag_name }}'
     {% endset %}
@@ -112,13 +112,14 @@
   {%- set not_me = ('inspiration' in tags) -%}
   {%- set is_self = (item.page.url == self) -%}
   {%- set is_old = item.index -%}
+  {%- set is_boring = (item.page.url == '/verbs/') -%}
   {%- set hide_summary = (is_self or is_old) and not item.feature -%}
 
   {%- set summary = (item.page.data.summary or item.event.sub or item.page.data.sub) -%}
   {%- set summary = summary | md if (summary and not hide_summary) else none -%}
 
   {{ cards.event(
-    title=title(item, is_self),
+    title=title(item, is_self, is_boring),
     meta=meta(item, tags, all, not_me),
     summary=summary,
     feature=item.feature,
@@ -129,18 +130,19 @@
 
 {% macro title(
   item,
-  is_self=false
+  is_self=false,
+  is_boring=false
 ) %}
   {# Venue Link #}
   {%- set venue_name = item.event.venue or item.page.data.venue or none -%}
-  {%- set venue_url = item.event.url or item.page.data.url or item.page.url -%}
-  {%- set venue = utility.link_if(venue_name or venue_url | domain, venue_url) if is_self else venue_name -%}
+  {%- set venue_url = item.event.url or item.page.data.url -%}
+  {%- set venue = utility.link_if(venue_name or venue_url | domain, venue_url or item.page.url) if is_self else venue_name -%}
   {%- set venue = ['@', venue] | join('&nbsp;') if venue else none -%}
 
   {# Title Link #}
   {%- set title_name = item.event.title or item.page.data.title -%}
-  {%- set url = none if is_self else item.page.url -%}
-  {%- set url = (url or venue_url) if (not venue) else url -%}
+  {%- set url = none if (is_self or is_boring) else item.page.url -%}
+  {%- set url = (url or venue_url) if not (is_self and venue) else url -%}
   {%- set title = utility.link_if(title_name | mdInline, url) -%}
 
   {{ title | safe }}
