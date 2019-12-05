@@ -10,6 +10,6 @@ index: media
 {% import "content.macros.njk" as content %}
 
 {{ content.fig(
-  data=collections.video | getVideos(3)
+  data=collections.video | getVideos
 ) }}
 

@@ -46,12 +46,17 @@ img {
     border: var(--border-default);
   }
 
+  > *:nth-last-child(odd) {
+    grid-column: 1 / -1;
+  }
+
   img,
   svg {
     width: 100%;
   }
 
   [style] {
+    align-self: var(--align);
     grid-column: var(--span, initial);
     width: var(--width, 100%);
   }

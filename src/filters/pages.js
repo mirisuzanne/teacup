@@ -31,15 +31,12 @@ const getVideos = (collection, count) =>
     .filter((page) => page.data.video)
     .sort((a, b) => b.date > a.date)
     .sort((a, b) => b.data.feature && !a.data.feature)
-    .map((page) => {
-      const videos = page.data.video;
-      if (page.data.feature && !videos[0].span) {
-        videos[0].span = 'full';
-      }
-      return videos;
-    })
+    .map((page) => page.data.video)
     .reduce((all, one) => [...all, ...one], [])
     .slice(0, count);
+
+const mergeMedia = (mediaArray) =>
+  mediaArray.reduce((all, one) => [...all, ...one], []);
 
 const titleSort = (collection) =>
   collection.sort((a, b) => a.data.title - b.data.title);
@@ -51,4 +48,5 @@ module.exports = {
   seriesNav,
   titleSort,
   getVideos,
+  mergeMedia,
 };

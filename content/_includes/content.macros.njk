@@ -98,10 +98,13 @@
 #}
 {% macro fig(
   data=none,
-  caption=none
+  caption=none,
+  column=none
 ) -%}
 {%- set content = _fig_content(data) if data else caller() | mdInline -%}
-<figure data-pattern="figure">
+<figure
+  data-pattern="figure"
+  {% if column %}style="--type-column: {{ column }}"{% endif %}>
 <div data-figure="content">{#
 #}{{ content | safe }}{#
 #}</div>
@@ -159,7 +162,8 @@
 {%- if item.img -%}
 {%- set src = item.img if ('://' in item.img) else ('/assets/images/' + item.img) -%}
 {%- set width = ['--width:', item.width, ';'] | join if item.width else '' -%}
-{%- set style = (width + span) if (width or span) else none -%}{#
+{%- set align = ['--align:', item.align, ';'] | join if item.align else '' -%}
+{%- set style = [width, span, align] | join if (width or span or align) else none -%}{#
 #}<img src="{{ src }}" alt="{{ item.alt }}" {{ utility.attr_if('style', style) }}/>{#
 #}{%- elif item.iframe -%}
 {%- call ratio(item.width, item.height, span) -%}{#
