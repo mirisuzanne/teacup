@@ -15,6 +15,16 @@ summary {
     color: var(--action);
   }
 
+  [open] &::before {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+
   &::marker {
     font-size: var(--font-small);
   }

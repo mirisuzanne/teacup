@@ -1,5 +1,5 @@
 @use '../../../node_modules/cascading-color-systems' with (
-  $prime-hue: 0,
+  $hues: (prime: 0, accent: 180, neutral: 180),
   $saturation: 80%,
   $contrast: 48%,
   $steps: 6,
@@ -10,6 +10,10 @@
 );
 
 [data-ccs-colors] {
+  --ccs-mode--cascade: var(
+    --ccs-mode--html,
+    var(--ccs-mode--user, var(--ccs-mode--os, -1))
+  );
   --ccs-neutral--theme: var(--ccs-h--accent);
   --text-shadow-off: calc(1px * var(--mode));
   --text-shadow-off-invert: calc(-1px * var(--mode));
