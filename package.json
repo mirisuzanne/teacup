@@ -59,7 +59,7 @@
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "lunr": "^2.3.8",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-mark": "^2.0.0",
     "node-sass": "^4.12.0",
