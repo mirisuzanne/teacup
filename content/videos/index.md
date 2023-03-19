@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base.njk
 title: Videos
 hero:
   img: shows/2019/prf.jpg

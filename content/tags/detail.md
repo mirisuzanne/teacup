@@ -1,6 +1,6 @@
 ---
 title: tags eventually
-layout: base
+layout: base.njk
 # sub: '[see all tags](/tags/)'
 # pagination:
 #   data: collections

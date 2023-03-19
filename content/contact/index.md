@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base.njk
 title: Contact
 banner: Contact Us
 hide_contact: true

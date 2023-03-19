@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base.njk
 title: Music
 banner: Soundscapes & Poetry
 sub: dark indie-rock band -- “too moody for pride”

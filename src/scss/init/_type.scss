@@ -1,9 +1,10 @@
-@use "../config";
+@use '../config';
 
 @include config.import-webfonts;
 
 html {
   @include config.font-family('body');
+
   --font-large: calc(1rem + 0.5vw);
   --font-small: 0.75rem;
   --font-smaller: 0.75em;
@@ -20,6 +21,7 @@ html {
 
 blockquote {
   @include config.font-family('alt');
+
   margin-left: 0;
 
   > *:first-child {
@@ -41,12 +43,14 @@ blockquote {
 
 cite {
   @include config.font-family('caps');
+
   font-style: normal;
 }
 
 hr {
   --type-column: wide / full;
   --margin-block: var(--spacer);
+
   border-top: var(--border-width) dashed var(--border);
   width: 100%;
 }

@@ -19,20 +19,24 @@ img {
   }
 
   iframe {
-    @include config.position(0 0 0 0);
     @include config.square(100%);
+
+    position: absolute;
+    inset: 0;
   }
 }
 
 [data-pattern='figure'] {
   --type-column: wide;
   --margin-block: var(--gutter);
+
   background: var(--callout);
   margin: var(--double-gutter);
   padding: var(--gutter) var(--gutter) var(--shim);
 
   [data-meta='page'] + & {
     --type-column: unset;
+
     margin-top: 0;
   }
 }

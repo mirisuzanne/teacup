@@ -8,6 +8,7 @@
 
 [data-label] {
   @include config.font-family('alt');
+
   font-weight: bold;
 }
 
@@ -51,7 +52,6 @@ select {
 
 // ranges
 // ------
-
 [type='range'] {
   appearance: none;
   background: transparent;

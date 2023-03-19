@@ -64,6 +64,8 @@
   {% for segment in events %}
     {% if (segment.group == this_year) and not loop.first %}
       <hr data-divider>
+    {% elif (segment.group == 2019) %}
+      <p class="pandemic">Global Pandemic</p>
     {% endif %}
 
     {{ group(

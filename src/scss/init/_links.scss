@@ -15,10 +15,12 @@ a {
     --action-line: var(--ccs-accent);
     --line-weight: 0.25em;
     --line-offset: 0.125em;
+
     color: var(--link--focus, var(--link, var(--action--focus)));
   }
 
-  &[href*='://'] {
+  &[href*='://']
+  {
     &::after {
       content: ' ↗';
       font-size: 0.5em;

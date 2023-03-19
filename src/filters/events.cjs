@@ -1,8 +1,8 @@
 'use strict';
 
-const pages = require('./pages');
-const time = require('./time');
-const utils = require('./utils');
+const pages = require('./pages.cjs');
+const time = require('./time.cjs');
+const utils = require('./utils.cjs');
 
 const isPublic = (event) => event.draft !== true;
 const hasEvents = (page) => page.data.events;

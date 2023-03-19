@@ -1,8 +1,8 @@
 {
-  "url": "{{ pkg.homepage }}",
-  "title": "{{ pkg.title }}",
-  "description": "{{ pkg.description }}",
-  "author": "{{ pkg.title }}",
+  "url": "https://www.teacupgorilla.com",
+  "title": "Teacup Gorilla",
+  "description": "Cinematic indie-rock with evocative poetry",
+  "author": "Teacup Gorilla",
   "email": "band@teacupgorilla.com",
   "images": "/assets/images/",
   "icon": "icons/logo.svg",

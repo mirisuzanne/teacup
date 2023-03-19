@@ -1,5 +1,6 @@
 .logo {
   --alt: var(--ccs-prime);
+
   fill: transparent;
   margin: 0 auto;
   stroke: var(--text);
@@ -17,6 +18,7 @@
   a:active & {
     --alt: var(--ccs-accent--fg1);
     --stroke: 6;
+
     transform: scale(1.1);
   }
 }

@@ -1,8 +1,10 @@
 @use '../config';
+@use 'sass:math';
 
 [data-layout='nav'] {
   --link--focus: var(--text);
   --action-line: transparent;
+
   align-items: center;
   counter-reset: nav-item;
   display: grid;
@@ -41,10 +43,10 @@
 
   @for $i from 1 through 5 {
     &:nth-child(#{$i}n) {
-      --flex: #{random(9) / 10};
+      --flex: #{math.div(math.random(9), 10)};
 
       @if ($i != 1) {
-        --space: calc(var(--half-shim) * #{random(10)});
+        --space: calc(var(--half-shim) * #{math.random(10)});
       }
     }
   }
@@ -54,6 +56,7 @@
     --nav-line-color: var(--text-light);
     --nav-line-width: var(--half-shim);
     --flex--active: 1;
+
     text-transform: uppercase;
   }
 }
@@ -67,6 +70,7 @@
 
   &::before {
     @include config.font-family('caps');
+
     color: var(--nav-line-color, var(--border));
     content: '0' counter(nav-item, decimal) '. ';
     text-transform: lowercase;

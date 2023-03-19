@@ -1,6 +1,5 @@
 // Dropdown
 // ========
-
 details {
   position: relative;
 }
@@ -36,6 +35,7 @@ summary {
   --right: initial;
   --bottom: initial;
   --left: initial;
+
   background: var(--callout);
   bottom: var(--bottom);
   border: var(--border-width) solid var(--border);

@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base.njk
 title: Press & Bio
 permalink: /adjectives/
 hero:

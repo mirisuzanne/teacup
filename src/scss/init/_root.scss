@@ -5,6 +5,7 @@ html {
     [wide-start] var(--wide-start, 4fr) [main-start] var(--main, auto)
     [main-end] var(--wide-end, 0) [wide-end] minmax(0, 1fr) [content-end]
     var(--gutter) [full-end];
+
   background-image: url('/assets/images/site/dust.png');
   background-attachment: fixed;
 

@@ -1,4 +1,4 @@
-@use "../config";
+@use '../config';
 
 button {
   @include config.font-family('alt');
@@ -7,7 +7,7 @@ button {
     var(--ccs-h--prime),
     var(--ccs-s--bg1),
     var(--ccs-l--bg1),
-    0.25
+    25%
   );
   --btn-shadow: var(--text-shadow-off) var(--text-shadow-off);
 
@@ -51,7 +51,7 @@ button {
       var(--ccs-h--accent),
       var(--ccs-s--fg1),
       var(--ccs-l--fg1),
-      0.25
+      25%
     );
     --btn-shadow: var(--text-shadow-off-invert) var(--text-shadow-off-invert);
   }

@@ -1,7 +1,7 @@
 'use strict';
 
-const utils = require('./utils');
-const events = require('./events');
+const utils = require('./utils.cjs');
+const events = require('./events.cjs');
 
 const topCount = 6;
 const isPublic = (tag) => (tag ? tag !== 'all' && !tag.startsWith('_') : null);

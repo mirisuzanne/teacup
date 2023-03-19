@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: base.njk
 title: show
 banner: Show Archive
 date: 2010-03-25
@@ -20,7 +20,6 @@ events:
       - name: Birdhouse View
       - name: Hayden Dansky
       - name: ENJI
-    feature: true
 
   - title: PRF BBQ Denver
     image: shows/2019/prf.jpg

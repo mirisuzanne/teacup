@@ -1,12 +1,19 @@
 // Cards
-// =====
-
 [data-layout='card-groups'] {
   margin: var(--gutter) 0;
+
+  .pandemic {
+    border-block: thick dotted var(--ccs-prime--bg1);
+    margin: var(--gutter);
+    padding-block: var(--gutter);
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 [data-layout='cards'] {
   --gap: var(--double-gutter) var(--gutter);
+
   align-items: start;
   display: grid;
   grid-gap: var(--gap);
@@ -25,8 +32,6 @@
 }
 
 // Groups
-// ------
-
 [data-card-group] {
   display: grid;
   grid-template: 'grouper list' auto / auto minmax(0, 1fr);
@@ -49,8 +54,6 @@
 }
 
 // Items
-// -----
-
 [data-card='item'] {
   --feature: -0.006turn;
 
@@ -76,8 +79,6 @@
 }
 
 // Content
-// -------
-
 [data-card='title'] {
   line-height: var(--rhythm);
   margin: 0;

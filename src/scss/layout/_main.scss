@@ -1,4 +1,4 @@
-@use "../config";
+@use '../config';
 
 [data-main] {
   display: grid;
@@ -35,6 +35,7 @@
 
   @media (min-width: 40em) {
     --type-column: content / main-start;
+
     color: var(--text-light);
     margin-right: var(--gutter);
     text-align: right;

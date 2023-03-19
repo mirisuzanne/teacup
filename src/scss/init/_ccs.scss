@@ -1,12 +1,16 @@
 @use '../../../node_modules/cascading-color-systems' with (
-  $hues: (prime: 0, accent: 180, neutral: 180),
+  $hues: (
+    prime: 0,
+    accent: 180,
+    neutral: 180,
+  ),
   $saturation: 80%,
   $contrast: 48%,
   $steps: 6,
   $fade-background: 20%,
   $fades: 0.75,
   $neutral-saturation: 10%,
-  $build: true,
+  $build: true
 );
 
 [data-ccs-colors] {
@@ -19,12 +23,10 @@
   --text-shadow-off-invert: calc(-1px * var(--mode));
   --box-shadow-off: calc(var(--half-shim) * var(--mode));
   --box-shadow-off-invert: calc(var(--half-shim) * var(--mode) * -1);
-
   --box-shadow: var(--box-shadow-off) var(--box-shadow-off) 0
     var(--ccs--bg-full);
   --box-shadow-invert: var(--box-shadow-off-invert) var(--box-shadow-off-invert)
     0 var(--ccs--fg-full);
-
   --feature-gradient: linear-gradient(
     to top right,
     var(--ccs-prime--bg1),
@@ -39,16 +41,14 @@
     var(--ccs-h--neutral),
     var(--ccs-s--bg-contrast),
     var(--ccs-l--bg5),
-    0.5
+    50%
   );
   --text: var(--ccs-neutral--fg5);
   --text-light: var(--ccs-neutral--fg4-fade);
   --text-highlight: var(--ccs-accent--fg4);
   --border: var(--ccs-neutral);
-
   --action: var(--ccs-prime--fg2);
   --action--focus: var(--ccs-prime--fg3);
-
   --ccs-background: var(--bg);
   --ccs-color: var(--text);
 }

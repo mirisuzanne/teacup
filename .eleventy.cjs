@@ -2,12 +2,12 @@
 
 const hljs = require('@11ty/eleventy-plugin-syntaxhighlight');
 
-const utils = require('./src/filters/utils');
-const events = require('./src/filters/events');
-const pages = require('./src/filters/pages');
-const tags = require('./src/filters/tags');
-const time = require('./src/filters/time');
-const type = require('./src/filters/type');
+const utils = require('./src/filters/utils.cjs');
+const events = require('./src/filters/events.cjs');
+const pages = require('./src/filters/pages.cjs');
+const tags = require('./src/filters/tags.cjs');
+const time = require('./src/filters/time.cjs');
+const type = require('./src/filters/type.cjs');
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
