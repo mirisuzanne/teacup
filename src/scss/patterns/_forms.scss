@@ -1,5 +1,13 @@
 @use '../config';
 
+form {
+  --type-column: wide;
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
 [data-field],
 [data-label],
 [data-input] {

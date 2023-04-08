@@ -44,3 +44,27 @@
   </div>
 </form>
 {% endmacro %}
+
+{% macro signup(
+  title='Subscribe for updates',
+  submit='subscribe',
+  note=none
+) %}
+<form action="https://teacupgorilla.us1.list-manage.com/subscribe/post?u=c4ede61aa238c4cacbcacc51c&amp;id=d831d43185&amp;f_id=006edfe5f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
+  <h2>{{ title }}</h2>
+  {% if note %}
+    {{ note | md | safe }}
+  {% endif %}
+	<label for="mce-EMAIL"  data-field="mce-email">
+    <span data-label>Email Address:</span>
+	  <input data-input="text" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+  </label>
+  <div data-actions>
+    <button
+      data-btn="submit"
+      type="submit">
+      {{ submit }}
+    </button>
+  </div>
+</form>
+{% endmacro %}
