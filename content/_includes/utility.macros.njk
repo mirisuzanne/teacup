@@ -109,41 +109,40 @@
   start,
   end,
   format='long'
-) %}
-  {% set ranges = {
-    'same-y': {
-      'start': 'M',
-      'end': 'range'
-    },
-    'same-m': {
-      'start': 'md',
-      'end': 'd' if (format == 'md') else 'dy'
-    }
-  } %}
+) -%}
+{%- set ranges = {
+  'same-y': {
+    'start': 'M',
+    'end': 'range'
+  },
+  'same-m': {
+    'start': 'md',
+    'end': 'd' if (format == 'md') else 'dy'
+  }
+} -%}
 
-  {% set ongoing = (end == 'ongoing') or (end | groupName == 'ongoing') %}
+{%- set pub = pubdate or start -%}
+{%- set start = start or pubdate -%}
+{%- set ongoing = (end == 'ongoing') or (end | groupName == 'ongoing') -%}
 
-  <time
-    datetime="{{ pub | getDate('iso') }}"
-    {{ attr_if('pubdate', not not pubdate) }}>
+<time datetime="{{ pub | getDate('iso') }}" {{ attr_if('pubdate', not not pubdate) }}>
+  {%- if ongoing -%}
+    since {{ start | getDate('range') }}
+  {%- elif (start and end) and (start != end) -%}
+    {%- set start_m = start | getDate('month') -%}
+    {%- set start_y = start | getDate('year') -%}
+    {%- set end_m = end | getDate('month') -%}
+    {%- set end_y = end | getDate('year') -%}
 
-    {% if ongoing %}
-      since {{ start | getDate('range') }}
-    {% elif (start and end) and (start != end) %}
-      {% set start_m = start | getDate('month') %}
-      {% set start_y = start | getDate('year') %}
-      {% set end_m = end | getDate('month') %}
-      {% set end_y = end | getDate('year') %}
+    {%- set same = 'same-y' if (start_y == end_y) else none -%}
+    {%- set same = 'same-m' if same and (start_m == end_m) else same -%}
 
-      {% set same = 'same-y' if (start_y == end_y) else none %}
-      {% set same = 'same-m' if same and (start_m == end_m) else same %}
+    {{ start | getDate(ranges[same].start or 'range') }}
+    {{- '---' | typogr | safe -}}
+    {{ end | getDate(ranges[same].end or 'range') }}
 
-      {{ start | getDate(ranges[same].start or 'range') }}
-      {{- '---' | typogr | safe -}}
-      {{ end | getDate(ranges[same].end or 'range') }}
-
-    {% else %}
-      {{ start | getDate(format) }}
-    {% endif %}
-  </time>
-{% endmacro %}
+  {%- else -%}
+    {{ start | getDate(format) }}
+  {%- endif -%}
+</time>
+{%- endmacro %}

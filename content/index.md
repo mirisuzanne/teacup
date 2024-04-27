@@ -6,11 +6,11 @@ sub: dark indie-rock band -- “too moody for pride”
 type: album
 calendar: all
 signup_note:
-  New album coming soon,
-  with music from
-  [Strange Bird, Queer Bird](https://grapefruitlab.com/shows/queer-bird/),
-  our current show with **Grapefruit Lab**.
-  Signup for details, and pre-sales!
+  New EP coming soon,
+  at our live theatrical release
+  [Whiskey From Strangers](https://grapefruitlab.com/shows/whiskey-2024/),
+  produced with **Grapefruit Lab**.
+  Signup for details!
 ---
 
 {% import "content.macros.njk" as content %}
@@ -20,11 +20,15 @@ signup_note:
 {% set jlt = collections.all | getPage('/videos/just-like-that/') | first %}
 {% set media = [thtl.data.audio, jlt.data.video] | mergeMedia %}
 
-{{ content.fig(
+{{- content.fig(
   media,
   caption='Stream or buy on bandcamp, itunes, spotify, etc…'
-) }}
+) -}}
 
-{{ contact.signup(
+{% set whiskey = collections.all | getPage('/theater/whiskey/') | first %}
+
+{{- content.feature(whiskey) -}}
+
+{{- contact.signup(
   note=signup_note
-) }}
+) -}}

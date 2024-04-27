@@ -1,5 +1,4 @@
 ---
-feature: true
 title: Strange Bird, Queer Bird
 sub: A true pandemic love story…
 hero:

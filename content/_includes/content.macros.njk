@@ -174,4 +174,34 @@
 {%- endfor -%}
 {%- endmacro %}
 
+{%- macro feature(page) -%}
+{%- if page -%}
+<article data-media="page">
+{%- if page.data.hero -%}
+<a href="{{ page.url }}" class="media-image">
+<img
+  src="{{ page.data.site.images + page.data.hero.img }}"
+  alt="{{ page.data.hero.alt or '' }}"/>
+</a>
+{%- endif -%}
 
+<div class="media-text">
+  <header class="media-header">
+    <h2>
+    <a href="{{ page.url }}">{{ page.data.banner or page.data.title }}</a>
+    </h2>
+    {%- if page.data.sub -%}
+    <p class="media-subtitle">{{ page.data.sub | typogr | safe }}</p>
+    {%- endif -%}
+    {{- utility.datetime(
+      pubdate=page.date | log,
+      start=page.data.start | log,
+      end=page.data.end | log,
+      format='md'
+    ) | safe -}}
+  </header>
+  {{ page.data.summary | md | safe }}
+</div>
+</article>
+{%- endif -%}
+{%- endmacro -%}
