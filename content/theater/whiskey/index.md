@@ -27,6 +27,8 @@ summary: >
 
 _What does that mean? Could it be the hot springs in Ouray, or the waterfall at Casa Bonita? And why is there a kiddie pool on stage?_
 
+[Reserve Your Tickets](https://grapefruitlab.com/shows/whiskey-2024/)
+
 Live music and Denver lore weave together in this new hybrid performance
 with Grapefruit Lab. It's a love letter to our city --
 to friendships that last… and friendships that don’t.
@@ -36,3 +38,9 @@ The show is also an album release for our new EP with the same name.
 You'll hear all four songs from the album,
 along with brand new material written just for the live show.
 Music and story are based on the novel Riding SideSaddle*, by Miriam.
+
+[Reserve Your Tickets Now](https://grapefruitlab.com/shows/whiskey-2024/)!
+All seating is general admission,
+and pay-what-you-want.
+There will be different opening acts
+featured every night.
