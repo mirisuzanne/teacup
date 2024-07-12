@@ -3,7 +3,6 @@ feature: true
 title: The Holes They Leave
 sub: our debut album
 date: 2015-07-09
-venue: BandCamp
 url: https://teacupgorilla.bandcamp.com/album/the-holes-they-leave
 hero:
   img: music/thtl.jpg

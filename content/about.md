@@ -57,20 +57,20 @@ summary: |
 
 ------
 
-Teacup Gorilla --
-often compared to early
-Modest Mouse,
-Low,
+Often compared to early
+Modest Mouse, Low,
 or Velvet Underground --
-formed to create and underscore
+Teacup Gorilla formed to create and underscore
 the **Missa Populi** theater production in 2010,
 and released a debut EP --
 ([The Holes They Leave][thtl]) --
 in the summer of 2015,
 along with the multimedia novel
 [Riding SideSaddle\*](http://ridingsidesaddle.com).
-They are currently working on a second EP
-based on the novel.
+Their second EP --
+_Whiskey From Strangers_ --
+will be released
+on **August 20, 2024**.
 
 [thtl]: /2015/07/09/holes-they-leave/
 
@@ -82,28 +82,22 @@ including:
 
 - The [Clyfford Still Museum](https://clyffordstillmuseum.org/)
 - [Buntport Theater](http://buntport.com/archive/10myths.htm)
-  (winning a [True West Award][twest] in 2016 for [10 Myths...][10m])
-- [Grapefruit Lab][glab], formerly Vicious Trap
-  (creating [Missa Populi][missa] and [JANE/EYRE][jane])
+  (winning a [True West Award][twest] in 2016)
+- [Grapefruit Lab][glab]
 - Hoarded Stuff
 - Screw Tooth
 - Lost Walks
-  ([Wolf, Woman, Man][wwm])
 
 [twest]: http://www.denvercenter.org/blog-posts/news-center/2016/12/18/2016-true-west-award-miriam-suzanne
-[10m]: @@@
-[missa]: @@@
 [glab]: http://grapefruitlab.com/
 [jane]: http://grapefruitlab.com/shows/janeeyre/
-[wwm]: @@@
 
 Teacup Gorilla is
-**Daniel Eisenstat**
-(founder of [The Bakery](http://thebakerydenver.com/)),
-**Sondra Eby**,
-[**Miriam Suzanne**](http://miriamsuzanne.com/),
-and **Josselyn Cool**.
+**Daniel Eisenstat**,
+[**Sondra Eby**](https://sondraeby.com),
+and [**Miriam Suzanne**](http://miriamsuzanne.com/).
 
 Former members include
-**Jen Korte** and
-**Daniel Rule**.
+**Josselyn Cool**,
+**Jen Korte**,
+and **Daniel Rule**.

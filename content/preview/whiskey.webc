@@ -1,0 +1,279 @@
+---
+title: Whiskey From Strangers, Preview
+sub: Tracks from the upcoming album
+date: 2024-08-20
+hero:
+  img: music/whiskey-ep.jpg
+  alt: >
+    Album cover:
+    A pond with cattail reeds and mountains,
+    sketched in a single pencil line,
+    with an electrical diagram sun reflecting in the water -
+    small red arrows form rays pointing in at the sun
+summary: |
+  For our second album,
+  we revisit (and re-imagine)
+  some of our oldest material --
+  a unified piece
+  of storytelling and music in four movements.
+  This is a modern Denver mythology,
+  based on the Greek stories
+  of Hermaphroditus and Salmacis.
+
+  Coming **August 20, 2024**!
+---
+
+<figure>
+  <track-list>
+    <ol>
+      <li>
+        the <strong>foothills</strong>
+        <audio controls preload src="/assets/files/w1-the-foothills.wav"></audio>
+      </li>
+      <li>
+        the <strong>garden</strong>
+        <audio controls preload src="/assets/files/w2-the-garden.wav"></audio>
+      </li>
+      <li>
+        the <strong>kitchen</strong>
+        <audio controls preload src="/assets/files/w3-the-kitchen.wav"></audio>
+      </li>
+      <li>
+        the <strong>opera</strong>
+        <audio controls preload src="/assets/files/w4-the-opera.wav"></audio>
+      </li>
+    </ol>
+  </track-list>
+</figure>
+
+<p>
+  Words & music by Teacup Gorilla,
+  with contributions from Aaron Liechty & Jacob Curtis —
+  based on the novel
+  <a href="https://ridingsidesaddle.com">Riding SideSaddle*</a>
+  by Miriam Suzanne.
+  Cover art by Miriam Suzanne.
+  Recorded by Daniel Eisenstat.
+</p>
+
+<style webc:keep>
+track-list {
+  [aria-current] {
+    --filter: drop-shadow(0 0 3px currentColor);
+    color: var(--action);
+    font-style: italic;
+  }
+
+  audio {
+    filter: var(--filter);
+  }
+}
+</style>
+
+<script webc:keep>
+class TrackList extends HTMLElement {
+  static register(tagName) {
+    if ("customElements" in window) {
+      customElements.define(tagName || "track-list", TrackList);
+    }
+  }
+
+  static icons = {
+    play: '▶',
+    pause: '⏸',
+  };
+
+  static observedAttributes = [];
+
+  static #appendShadowTemplate = (node) => {
+    const template = document.createElement("template");
+    template.innerHTML = `
+      <menu part="menu">
+        <li><button part="play">
+          <btn-icon aria-hidden="true">${TrackList.icons.play}</btn-icon>
+          <btn-text>play</btn-text>
+        </button></li>
+        <li>
+          <button part="prev" disabled>
+            <btn-icon aria-hidden="true">←</btn-icon>
+            <btn-text>previous</btn-text>
+          </button>
+          <button part="next">
+            <btn-icon aria-hidden="true">→</btn-icon>
+            <btn-text>next</btn-text>
+          </button>
+        </li>
+      </menu>
+      <slot></slot>
+    `;
+    const shadowRoot = node.attachShadow({ mode: "open" });
+    shadowRoot.appendChild(template.content.cloneNode(true));
+  }
+
+  static #adoptShadowStyles = (node) => {
+    const shadowStyle = new CSSStyleSheet();
+    shadowStyle.replaceSync(`
+      * { box-sizing: border-box; }
+      li { display: inline; }
+    `);
+    node.shadowRoot.adoptedStyleSheets = [shadowStyle];
+  }
+
+  tracks;
+  playBtn;
+  playIcon;
+  playText;
+
+  constructor() {
+    super();
+    TrackList.#appendShadowTemplate(this);
+    TrackList.#adoptShadowStyles(this);
+  }
+
+  attributeChangedCallback() {
+  }
+
+  get currentTrack () {
+    return this.querySelector(':scope li[aria-current=true]');
+  }
+
+  set currentTrack (toTrack) {
+    const toTrackEl = typeof toTrack === 'number'
+      ? [...this.tracks].at(toTrack)
+      : toTrack;
+
+    this.tracks.forEach((track) => {
+      if (track === toTrackEl) {
+        track.setAttribute('aria-current', 'true');
+      } else {
+        track.removeAttribute('aria-current');
+        track.audio.pause();
+      }
+    });
+
+    this.#updateMenu();
+  }
+
+  get playState() { return !this.currentTrack.audio.paused; }
+
+  set playState(playNow) {
+    const currentAudio = this.currentTrack.audio;
+
+    if (playNow) {
+      if (currentAudio.paused) currentAudio.play();
+    } else {
+      if (!currentAudio.paused) currentAudio.pause();
+    }
+
+    this.#updateMenu();
+  }
+
+  get prevTrack() {
+    const track = this.currentTrack.previousElementSibling;
+    if (track) track.audio = track.querySelector(':scope audio');
+    return track;
+  }
+  get nextTrack() {
+    const track = this.currentTrack.nextElementSibling;
+    if (track) track.audio = track.querySelector(':scope audio');
+    return track;
+  }
+
+  #updateMenu = () => {
+    if (this.playState) {
+      this.playIcon.innerHTML = TrackList.icons.pause;
+      this.playText.innerText = "pause";
+    } else {
+      this.playIcon.innerHTML = TrackList.icons.play;
+      this.playText.innerText = "play";
+    }
+
+    this.prevBtn.disabled = !this.prevTrack;
+    this.nextBtn.disabled = !this.nextTrack;
+  }
+
+  toPrev = () => {
+    this.prevTrack.audio.currentTime = 0;
+
+    if (this.playState) {
+      this.playState = false;
+      this.prevTrack.audio.play();
+    } else {
+      this.currentTrack = this.prevTrack;
+    }
+  }
+
+  toNext = () => {
+    this.nextTrack.audio.currentTime = 0;
+
+    if (this.playState) {
+      this.playState = false;
+      this.nextTrack.audio.play();
+    } else {
+      this.currentTrack = this.nextTrack;
+    }
+  }
+
+  connectedCallback() {
+    this.playBtn = this.shadowRoot.querySelector('button[part=play]');
+    this.playIcon = this.playBtn.querySelector(':scope btn-icon');
+    this.playText = this.playBtn.querySelector(':scope btn-text');
+
+    this.prevBtn = this.shadowRoot.querySelector('button[part=prev]');
+    this.nextBtn = this.shadowRoot.querySelector('button[part=next]');
+
+    this.tracks = this.querySelectorAll(':scope li');
+
+    this.tracks.forEach((track) => {
+      track.audio = track.querySelector(':scope audio');
+
+      if (!track.audio) {
+        console.error('Track is missing audio');
+        return;
+      }
+
+      track.audio.addEventListener('play', (e) => {
+        if (this.currentTrack !== track) this.currentTrack = track;
+        if (!this.playState) {
+          this.playState = true;
+        } else {
+          this.#updateMenu();
+        }
+      });
+
+      track.audio.addEventListener('pause', (e) => {
+        if (this.currentTrack === track && this.playState) {
+          this.playState = false;
+        } else {
+          this.#updateMenu();
+        }
+      });
+
+      track.audio.addEventListener('ended', (e) => {
+        const upNext = this.nextTrack;
+
+        if (upNext) {
+          this.currentTrack = upNext;
+          this.playState = true;
+        } else {
+          this.playState = false;
+        }
+      });
+    });
+
+    this.currentTrack = this.currentTrack || 0;
+
+    this.playBtn.addEventListener('click', (e) => {
+      this.playState = !this.playState;
+    });
+
+    this.prevBtn.addEventListener('click', (e) => this.toPrev());
+    this.nextBtn.addEventListener('click', (e) => this.toNext());
+  }
+
+  disconnectedCallback() {
+  }
+}
+
+TrackList.register();
+</script>

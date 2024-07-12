@@ -1,6 +1,7 @@
 'use strict';
 
 const hljs = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginWebc = require('@11ty/eleventy-plugin-webc');
 
 const utils = require('./src/filters/utils.cjs');
 const events = require('./src/filters/events.cjs');
@@ -11,12 +12,14 @@ const type = require('./src/filters/type.cjs');
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addPlugin(pluginWebc);
   eleventyConfig.addPlugin(hljs);
 
   // pass-through
   eleventyConfig.addPassthroughCopy({ _built: 'assets' });
   eleventyConfig.addPassthroughCopy({ 'src/fonts': 'assets/fonts' });
   eleventyConfig.addPassthroughCopy({ 'src/images': 'assets/images' });
+  eleventyConfig.addPassthroughCopy({ 'src/files': 'assets/files' });
   eleventyConfig.addPassthroughCopy('content/**/*.txt');
   eleventyConfig.addPassthroughCopy('content/favicon.ico');
 

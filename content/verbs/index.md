@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: show
+title: gig
 banner: Show Archive
 date: 2010-03-25
 index: gigs
