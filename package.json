@@ -27,17 +27,15 @@
     "lint:js": "run-s prettier:js eslint",
     "eleventy": "eleventy --config=.eleventy.cjs",
     "eleventy:serve": "eleventy --config=.eleventy.cjs --serve",
-    "watch:sass:compile": "chokidar \"src/scss/**/*.scss\" -c \"yarn run-p sass\"",
+    "watch:sass:compile": "chokidar \"src/scss/**/*.scss\" -c \"npm run run-p sass\"",
     "watch:sass": "run-p watch:sass:*",
     "watch:js:compile": "rollup -c --watch",
-    "watch:js:lint": "chokidar \"**/.eslintrc.yml\" -c \"yarn lint:js\"",
+    "watch:js:lint": "chokidar \"**/.eslintrc.yml\" -c \"npm run lint:js\"",
     "watch:js": "run-p watch:js:*",
-    "site:clean": "rm -rf ./_site/",
     "assets:clean": "rm -rf ./_built/",
-    "serve": "npm-run-all build:assets build:site -p eleventy:serve watch:js watch:sass",
-    "build:site": "run-s site:clean",
+    "serve": "npm-run-all build:assets -p eleventy:serve watch:js watch:sass",
     "build:assets": "npm-run-all assets:clean -p js sass",
-    "build": "run-s build:assets build:site eleventy"
+    "build": "run-s build:assets eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.16",

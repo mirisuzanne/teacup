@@ -194,9 +194,9 @@
     <p class="media-subtitle">{{ page.data.sub | typogr | safe }}</p>
     {%- endif -%}
     {{- utility.datetime(
-      pubdate=page.date | log,
-      start=page.data.start | log,
-      end=page.data.end | log,
+      pubdate=page.date,
+      start=page.data.start,
+      end=page.data.end,
       format='md'
     ) | safe -}}
   </header>

@@ -13,8 +13,6 @@ This site is built using:
 
 ## Develop:
 
-Install node & [yarn](https://yarnpkg.com/en/docs/install#mac-stable):
-
 We recommend using [nvm](https://github.com/nvm-sh/nvm) for node version
 management. Once you have it installed, run `nvm install` (once per active
 shell) to use the correct version of node for OddLeventy development.
@@ -22,14 +20,14 @@ shell) to use the correct version of node for OddLeventy development.
 Install dependencies:
 
 ```
-yarn
+npm install
 ```
 
 Compile and run [Eleventy](http://www.11ty.io) server, with a watcher for file
 changes:
 
 ```
-yarn serve
+npm run serve
 ```
 
 The site will be compiled into `_site/` and available at http://localhost:8080.
@@ -38,28 +36,22 @@ You can also run individual commands:
 
 ```
 # build the static site for development
-yarn build
+npm run build
 
 # build the static site for production
-yarn prod
+npm run prod
 
 # format and lint all files
-yarn lint
+npm run lint
 
 # compile sass
-yarn sass
+npm run sass
 
 # compile js
-yarn js
-
-# format and lint sass
-yarn lint:sass
+npm run js
 
 # format and lint js
-yarn lint:js
-
-# compile sass docs
-yarn sassdoc
+npm run lint:js
 ```
 
 Sass Docs are compiled into the `_site/style/` folder, which is then available
@@ -69,9 +61,6 @@ at the URL: `/style/`.
 
 The site is auto-deployed on [Netlify](https://www.netlify.com/) from the
 `master` branch on GitHub. Deploys are automated on push to master.
-
-For testing production locally, run `yarn prod:serve` and access the site at
-http://localhost:8080.
 
 Use branches and PRs for changes, and Netlify will create staging previews for
 functional review before merge.
