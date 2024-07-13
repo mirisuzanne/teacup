@@ -35,7 +35,7 @@
     "assets:clean": "rm -rf ./_built/",
     "serve": "npm-run-all build:assets -p eleventy:serve watch:js watch:sass",
     "build:assets": "npm-run-all assets:clean -p js sass",
-    "build": "run-s build:assets eleventy"
+    "build": "npm-run-all build:assets eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.16",
