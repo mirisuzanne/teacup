@@ -93,7 +93,6 @@ module.exports = (eleventyConfig) => {
 
   // markdown
   eleventyConfig.setLibrary('md', type.mdown);
-  eleventyConfig.setQuietMode(true);
 
   // settings
   return {
