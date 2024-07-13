@@ -160,7 +160,7 @@
 {%- for item in data -%}
 {%- set span = ['--span:', item.span, ';'] | join if item.span else '' -%}
 {%- if item.img -%}
-{%- set src = item.img if ('://' in item.img) else ('/assets/images/' + item.img) -%}
+{%- set src = item.img if ('://' in item.img) else ('/images/' + item.img) -%}
 {%- set width = ['--width:', item.width, ';'] | join if item.width else '' -%}
 {%- set align = ['--align:', item.align, ';'] | join if item.align else '' -%}
 {%- set style = [width, span, align] | join if (width or span or align) else none -%}{#

@@ -12,7 +12,7 @@
     "url": "https://github.com/mirisuzanne/mia.git"
   },
   "engines": {
-    "node": "16.13.0"
+    "node": "18"
   },
   "type": "module",
   "scripts": {
@@ -25,11 +25,9 @@
     "eslint": "eslint \"*.js\" \"**/*.js\" --fix",
     "lint": "run-p lint:* prettier:other",
     "lint:js": "run-s prettier:js eslint",
-    "lint:sass": "stylelint \"**/*.scss\" --fix",
     "eleventy": "eleventy --config=.eleventy.cjs",
     "eleventy:serve": "eleventy --config=.eleventy.cjs --serve",
     "watch:sass:compile": "chokidar \"src/scss/**/*.scss\" -c \"yarn run-p sass\"",
-    "watch:sass:lint": "chokidar \"**/.stylelintrc.yml\" -c \"yarn lint:sass\"",
     "watch:sass": "run-p watch:sass:*",
     "watch:js:compile": "rollup -c --watch",
     "watch:js:lint": "chokidar \"**/.eslintrc.yml\" -c \"yarn lint:js\"",
@@ -42,7 +40,8 @@
     "build": "run-s build:assets build:site eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0-alpha.16",
+    "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@babel/core": "^7.20.12",
@@ -50,6 +49,7 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
     "accoutrement": "^4.0.4",
     "cascading-color-systems": "^0.1.0-beta.16",
     "chokidar-cli": "^3.0.0",
@@ -70,11 +70,6 @@
     "prettier": "^2.8.3",
     "rollup": "^3.10.1",
     "sass": "^1.57.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-recommended": "^11.0.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-prettier": "^2.0.0",
     "typogr": "^0.6.8"
   },
   "lint-staged": {
@@ -91,8 +86,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "dependencies": {
-    "@rollup/plugin-terser": "^0.4.0"
   }
 }

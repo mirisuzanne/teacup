@@ -6,7 +6,7 @@ sub: |
   [Riding SideSaddle*](/books/sidesaddle/)
   weaving myth with everyday ritual
 hero:
-  img: theater/10myths.jpg
+  img: theater/10myths/10myths.jpg
 venue: Buntport Theater
 url: http://buntport.com/archive/10myths.htm
 date: 2016-03-04
@@ -101,7 +101,7 @@ award:
     [True West Award](https://www.denvercenter.org/news-center/2016-true-west-award-miriam-suzanne/),
     2016
   fig:
-    - img: writing/sidesaddle/true-west-award.jpg
+    - img: theater/10myths/true-west-award.jpg
 actions:
   - name: read the script
     url: scripts/10myths/

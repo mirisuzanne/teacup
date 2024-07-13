@@ -4,7 +4,7 @@
   "description": "Cinematic indie-rock with evocative poetry",
   "author": "Teacup Gorilla",
   "email": "band@teacupgorilla.com",
-  "images": "/assets/images/",
+  "images": "/images/",
   "icon": "icons/logo.svg",
   "nav": ["/", "/videos/", "/adjectives/", "/contact/"],
   "og": {

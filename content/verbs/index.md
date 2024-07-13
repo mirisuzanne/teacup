@@ -28,7 +28,7 @@ events:
     adr: Denver, CO
 
   - venue: Lion’s Lair
-    image: old/shows/laurium.jpg
+    image: shows/old/laurium.jpg
     start: 2019-01-26
     adr: Denver, CO
     with:
@@ -47,7 +47,7 @@ events:
   - title: Wolf, Woman, Man (with Dancers)
     url: https://www.facebook.com/events/452068901855054/
     venue: The Bakery
-    image: old/shows/lost-walks.jpg
+    image: shows/old/lost-walks.jpg
     start: 2018-02-10
     adr: Denver, CO
     with:
@@ -55,7 +55,7 @@ events:
         url: https://www.facebook.com/LostWalks/
 
   - venue: Lion’s Lair
-    image: old/shows/lionlair.jpg
+    image: shows/old/lionlair.jpg
     start: 2018-01-12
     adr: Denver, CO
     with:
@@ -64,7 +64,7 @@ events:
 
   - title: Punk for Positive Change (AIDS Benefit)
     venue: Surfside 7
-    image: old/shows/plasma-canvas.jpg
+    image: shows/old/plasma-canvas.jpg
     start: 2017-12-03
     adr: Fort Collins, CO
     with:
@@ -77,7 +77,7 @@ events:
 
   - title: 'Dsm-73: Queer Rock Night'
     venue: Moon Room at Summit Music Hall
-    image: old/shows/queer-rock.jpg
+    image: shows/old/queer-rock.jpg
     start: 2017-11-30
     adr: Denver, CO
     with:
@@ -86,7 +86,7 @@ events:
 
   - title: Bands With Benefits
     venue: Mutiny Information Cafe
-    image: old/shows/mutiny-benefits.jpg
+    image: shows/old/mutiny-benefits.jpg
     start: 2017-11-19
     adr: Denver, CO
     with:
@@ -94,7 +94,7 @@ events:
       - name: Hapless
 
   - venue: 7th Circle Music Collective
-    image: old/shows/gone-full-heathen.jpg
+    image: shows/old/gone-full-heathen.jpg
     start: 2017-11-10
     adr: Denver, CO
     with:
@@ -104,7 +104,7 @@ events:
         url: https://www.facebook.com/marriedadeadman/
 
   - venue: Lion’s Lair
-    image: old/shows/lionlair.jpg
+    image: shows/old/lionlair.jpg
     start: 2017-10-27
     adr: Denver, CO
     with:
@@ -114,7 +114,7 @@ events:
   - title: Weird Wednesday!
     url: http://www.3kingstavern.com/event/290158
     venue: 3 Kings Tavern
-    image: old/shows/3kings.jpg
+    image: shows/old/3kings.jpg
     start: 2017-10-04
     adr: Denver, CO
     with:
@@ -122,7 +122,7 @@ events:
       - name: The Far Stairs
 
   - venue: Syntax Physic Opera
-    image: old/shows/syntax.jpg
+    image: shows/old/syntax.jpg
     start: 2017-09-23
     adr: Denver, CO
     with:
@@ -130,7 +130,7 @@ events:
         url: http://electriclovegods.com
 
   - venue: Globe Hall
-    image: old/shows/stereo-no-aware.jpg
+    image: shows/old/stereo-no-aware.jpg
     start: 2017-08-18
     adr: Denver, CO
     with:
@@ -142,7 +142,7 @@ events:
 
   - title: Claudzilla Curated Musical Mayhem
     url: https://www.facebook.com/events/113524225963434/
-    image: old/shows/mayhem.jpg
+    image: shows/old/mayhem.jpg
     venue: Skylark Lounge
     start: 2017-08-10
     adr: Denver, CO
@@ -155,14 +155,14 @@ events:
 
   - title: Anti-UMS Fest
     url: https://www.facebook.com/events/726275280887396/
-    image: old/shows/antiums-17.jpg
+    image: shows/old/antiums-17.jpg
     venue: 1010 Workshop
     adr: Denver, CO
     start: 2017-07-28
 
   - title: Queer in the Headlights, Pride Party
     url: https://www.facebook.com/events/289923761413214/
-    image: old/shows/pride17.jpg
+    image: shows/old/pride17.jpg
     venue: Larimer Lounge
     start: 2017-06-18
     adr: Denver, CO
@@ -182,7 +182,7 @@ events:
       - name: Lisa Matthews
 
   - url: http://www.lost-lake.com/event/1435150-electric-lovegods-denver/
-    image: old/shows/elgods.jpg
+    image: shows/old/elgods.jpg
     venue: Lost Lake
     start: 2017-03-05
     adr: Denver, CO
@@ -196,7 +196,7 @@ events:
 
   - title: ACLU Benefit
     url: https://www.facebook.com/events/993283477481829/
-    image: old/shows/assemblage.jpg
+    image: shows/old/assemblage.jpg
     venue: The Bakery
     start: 2017-02-02
     adr: Denver, CO
@@ -206,7 +206,7 @@ events:
 
   - title: Empowerment Benefit Show
     url: https://www.facebook.com/events/566264573571495/
-    image: old/shows/standingrock.jpg
+    image: shows/old/standingrock.jpg
     venue: Deer Pile
     start: 2016-12-17
     adr: Denver, CO
@@ -242,7 +242,7 @@ events:
 
   - venue: Syntax Physic Opera
     start: 2016-09-08
-    image: old/shows/moths.jpg
+    image: shows/old/moths.jpg
     image_position: bottom
     adr: Denver, CO
     with:
@@ -255,7 +255,7 @@ events:
     url: https://www.facebook.com/events/1246370012082183/
     venue: Larimer Lounge
     start: 2016-08-28
-    image: old/shows/bbq.jpg
+    image: shows/old/bbq.jpg
     adr: Denver, CO
     with:
       - name: Zero Found
@@ -269,7 +269,7 @@ events:
 
   - venue: Lion’s Lair
     start: 2016-07-22
-    image: old/shows/lionlair.jpg
+    image: shows/old/lionlair.jpg
     adr: Denver, CO
     with:
       - name: ...And The Black Feathers
@@ -288,7 +288,7 @@ events:
 
   - title: Afternoon House Party
     start: 2016-06-04
-    image: old/shows/house-party.jpg
+    image: shows/old/house-party.jpg
     image_position: top
     adr: Denver, CO
     with:
@@ -304,7 +304,7 @@ events:
   - title: MoonConf
     url: http://moonconf.org/
     start: 2016-05-26
-    image: old/shows/moonconf.jpg
+    image: shows/old/moonconf.jpg
     venue: Galvanize Boulder
     adr: Boulder, CO
     with:
@@ -312,7 +312,7 @@ events:
 
   - venue: Lion's Lair
     start: 2016-05-07
-    image: old/shows/bulb.jpg
+    image: shows/old/bulb.jpg
     adr: Denver, CO
     with:
       - name: Before The Bulb
@@ -322,7 +322,7 @@ events:
 
   - venue: The Squire Lounge
     start: 2016-04-22
-    image: old/shows/squire.jpg
+    image: shows/old/squire.jpg
     image_position: top
     adr: Denver, CO
     with:
@@ -334,7 +334,7 @@ events:
   - venue: 7th Circle Music Collective
     url: https://www.facebook.com/events/194231020939688/
     start: 2016-02-28
-    image: old/shows/almost-young.jpg
+    image: shows/old/almost-young.jpg
     adr: Denver, CO
     with:
       - name: Island on the Moon
@@ -349,7 +349,7 @@ events:
   - venue: 7th Circle Music Collective
     url: https://www.facebook.com/events/1661588870774671/
     start: 2016-02-10
-    image: old/shows/north-by-north.jpg
+    image: shows/old/north-by-north.jpg
     adr: Denver, CO
     with:
       - name: NORTH BY NORTH
@@ -360,7 +360,7 @@ events:
   - venue: Lion's Lair
     venue_url: http://www.lionslairlounge.squarespace.com/
     start: 2015-11-05
-    image: old/shows/deadwoods.jpg
+    image: shows/old/deadwoods.jpg
     adr: Denver, CO
     with:
       - name: The Dead Woods
@@ -372,7 +372,7 @@ events:
     venue_url: http://www.lionslairlounge.squarespace.com/
     start: 2015-09-10
     adr: Denver, CO
-    image: old/shows/jack-coax.jpg
+    image: shows/old/jack-coax.jpg
     with:
       - name: Jack And The Coax
         url: http://www.jackandthecoax.com/
@@ -381,7 +381,7 @@ events:
     venue: Tennyson's Tap
     url: https://www.facebook.com/events/454599778045587/
     start: 2015-06-18
-    image: old/shows/troy-petty.jpg
+    image: shows/old/troy-petty.jpg
     adr: Denver, CO
     with:
       - name: Troy Petty
@@ -393,7 +393,7 @@ events:
     url: https://www.facebook.com/events/1438931603085393/
     venue_url: https://www.facebook.com/GypsyHouse
     start: 2015-05-11
-    image: old/shows/walkbysea.jpg
+    image: shows/old/walkbysea.jpg
     adr: Denver, CO
     with:
       - name: Brennan Mackey (King Cardinal)
@@ -417,7 +417,7 @@ events:
     url: https://www.facebook.com/events/978753592154777/
     venue: The Bakery
     start: 2015-01-24
-    image: old/shows/OttH_TCG.jpg
+    image: shows/old/OttH_TCG.jpg
     adr: Denver, CO
     with:
       - name: Open to the Hound

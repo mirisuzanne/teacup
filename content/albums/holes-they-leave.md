@@ -18,7 +18,7 @@ events:
     venue_url: http://www.hi-dive.com/
     start: 2015-07-09
     adr: Denver, CO
-    image: old/shows/blc.jpg
+    image: shows/old/blc.jpg
     with:
       - name: Bad Luck City
         url: https://www.facebook.com/badluckcity

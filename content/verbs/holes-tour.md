@@ -3,7 +3,7 @@ type: tour
 title: Holes / SideSaddle Midwest Tour
 sub: A hybrid evening of music & story
 hero:
-  img: old/shows/tour.jpg
+  img: shows/old/tour.jpg
   alt: |
     The Holes They Leave / Riding SideSaddle* --
     a hybrid evening of music & story

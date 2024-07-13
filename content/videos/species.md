@@ -6,7 +6,7 @@ venue: The Bakery
 url: /2015/07/02/species/
 adr: Denver, CO
 hero:
-  img: old/shows/sots.jpg
+  img: shows/old/sots.jpg
 tags:
   - _calendar
   - gigs

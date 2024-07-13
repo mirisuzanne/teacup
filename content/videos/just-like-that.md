@@ -15,7 +15,7 @@ tags:
 events:
   - title: Just Like That Video Release
     url: https://www.facebook.com/events/1845576042369221/
-    image: old/shows/release17.jpg
+    image: shows/old/release17.jpg
     venue: Lost Lake
     start: 2017-04-27
     adr: Denver, CO

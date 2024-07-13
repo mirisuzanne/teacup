@@ -25,7 +25,24 @@ summary: |
 
 <figure>
   <track-list>
-    <ol>
+    <menu slot="menu">
+      <li><button track-part="play">
+        <btn-icon aria-hidden="true">▶</btn-icon>
+        <btn-text>play</btn-text>
+      </button></li>
+      <li>
+        <button track-part="prev">
+          <btn-icon aria-hidden="true">&Lang;</btn-icon>
+          <btn-text>previous</btn-text>
+        </button>
+        <button track-part="next">
+          <btn-icon aria-hidden="true">&Rang;</btn-icon>
+          <btn-text>next</btn-text>
+        </button>
+      </li>
+    </menu>
+
+    <ol slot="tracks">
       <li>
         the <strong>foothills</strong>
         <audio controls preload src="/assets/files/w1-the-foothills.wav"></audio>
@@ -44,17 +61,18 @@ summary: |
       </li>
     </ol>
   </track-list>
+
+  <figcaption>
+    Words & music by Teacup Gorilla,
+    with contributions from Aaron Liechty & Jacob Curtis —
+    based on the novel
+    <a href="https://ridingsidesaddle.com">Riding SideSaddle*</a>
+    by Miriam Suzanne.
+    Cover art by Miriam Suzanne.
+    Recorded by Daniel Eisenstat.
+  </figcaption>
 </figure>
 
-<p>
-  Words & music by Teacup Gorilla,
-  with contributions from Aaron Liechty & Jacob Curtis —
-  based on the novel
-  <a href="https://ridingsidesaddle.com">Riding SideSaddle*</a>
-  by Miriam Suzanne.
-  Cover art by Miriam Suzanne.
-  Recorded by Daniel Eisenstat.
-</p>
 
 <style webc:keep>
 track-list {
@@ -67,6 +85,8 @@ track-list {
   audio {
     filter: var(--filter);
   }
+
+  li { display: inline; }
 }
 </style>
 
@@ -88,23 +108,25 @@ class TrackList extends HTMLElement {
   static #appendShadowTemplate = (node) => {
     const template = document.createElement("template");
     template.innerHTML = `
-      <menu part="menu">
-        <li><button part="play">
-          <btn-icon aria-hidden="true">${TrackList.icons.play}</btn-icon>
-          <btn-text>play</btn-text>
-        </button></li>
-        <li>
-          <button part="prev" disabled>
-            <btn-icon aria-hidden="true">←</btn-icon>
-            <btn-text>previous</btn-text>
-          </button>
-          <button part="next">
-            <btn-icon aria-hidden="true">→</btn-icon>
-            <btn-text>next</btn-text>
-          </button>
-        </li>
-      </menu>
-      <slot></slot>
+      <slot name="menu">
+        <menu part="menu" track-part="menu">
+          <li><button part="button play" track-part="play">
+            <btn-icon aria-hidden="true">${TrackList.icons.play}</btn-icon>
+            <btn-text>play</btn-text>
+          </button></li>
+          <li>
+            <button part="button prev" track-part="prev">
+              <btn-icon aria-hidden="true">&Lang;</btn-icon>
+              <btn-text>previous</btn-text>
+            </button>
+            <button part="button next" track-part="next">
+              <btn-icon aria-hidden="true">&Rang;</btn-icon>
+              <btn-text>next</btn-text>
+            </button>
+          </li>
+        </menu>
+      </slot>
+      <slot name="tracks"></slot>
     `;
     const shadowRoot = node.attachShadow({ mode: "open" });
     shadowRoot.appendChild(template.content.cloneNode(true));
@@ -119,10 +141,14 @@ class TrackList extends HTMLElement {
     node.shadowRoot.adoptedStyleSheets = [shadowStyle];
   }
 
+  #trackList;
   tracks;
+  menu;
   playBtn;
   playIcon;
   playText;
+  prevBtn;
+  nextBtn;
 
   constructor() {
     super();
@@ -134,7 +160,8 @@ class TrackList extends HTMLElement {
   }
 
   get currentTrack () {
-    return this.querySelector(':scope li[aria-current=true]');
+    return this.#trackList.querySelector('li[aria-current=true]')
+      || [...this.tracks].at(0);
   }
 
   set currentTrack (toTrack) {
@@ -154,7 +181,9 @@ class TrackList extends HTMLElement {
     this.#updateMenu();
   }
 
-  get playState() { return !this.currentTrack.audio.paused; }
+  get playState() {
+    return !this.currentTrack.audio.paused;
+  }
 
   set playState(playNow) {
     const currentAudio = this.currentTrack.audio;
@@ -170,12 +199,12 @@ class TrackList extends HTMLElement {
 
   get prevTrack() {
     const track = this.currentTrack.previousElementSibling;
-    if (track) track.audio = track.querySelector(':scope audio');
+    if (track) track.audio = track.querySelector('audio');
     return track;
   }
   get nextTrack() {
     const track = this.currentTrack.nextElementSibling;
-    if (track) track.audio = track.querySelector(':scope audio');
+    if (track) track.audio = track.querySelector('audio');
     return track;
   }
 
@@ -215,53 +244,8 @@ class TrackList extends HTMLElement {
   }
 
   connectedCallback() {
-    this.playBtn = this.shadowRoot.querySelector('button[part=play]');
-    this.playIcon = this.playBtn.querySelector(':scope btn-icon');
-    this.playText = this.playBtn.querySelector(':scope btn-text');
-
-    this.prevBtn = this.shadowRoot.querySelector('button[part=prev]');
-    this.nextBtn = this.shadowRoot.querySelector('button[part=next]');
-
-    this.tracks = this.querySelectorAll(':scope li');
-
-    this.tracks.forEach((track) => {
-      track.audio = track.querySelector(':scope audio');
-
-      if (!track.audio) {
-        console.error('Track is missing audio');
-        return;
-      }
-
-      track.audio.addEventListener('play', (e) => {
-        if (this.currentTrack !== track) this.currentTrack = track;
-        if (!this.playState) {
-          this.playState = true;
-        } else {
-          this.#updateMenu();
-        }
-      });
-
-      track.audio.addEventListener('pause', (e) => {
-        if (this.currentTrack === track && this.playState) {
-          this.playState = false;
-        } else {
-          this.#updateMenu();
-        }
-      });
-
-      track.audio.addEventListener('ended', (e) => {
-        const upNext = this.nextTrack;
-
-        if (upNext) {
-          this.currentTrack = upNext;
-          this.playState = true;
-        } else {
-          this.playState = false;
-        }
-      });
-    });
-
-    this.currentTrack = this.currentTrack || 0;
+    this.#menuSetup();
+    this.#trackSetup();
 
     this.playBtn.addEventListener('click', (e) => {
       this.playState = !this.playState;
@@ -272,6 +256,74 @@ class TrackList extends HTMLElement {
   }
 
   disconnectedCallback() {
+  }
+
+  #menuSetup = () => {
+    this.menu = this.querySelector(`[slot="menu"]`)
+      || this.shadowRoot.querySelector(`[track-part="menu"]`);
+
+    this.playBtn = this.menu.querySelector('button[track-part=play]');
+    this.playIcon = this.playBtn.querySelector('btn-icon');
+    this.playText = this.playBtn.querySelector('btn-text');
+
+    this.prevBtn = this.menu.querySelector('button[track-part=prev]');
+    this.nextBtn = this.menu.querySelector('button[track-part=next]');
+  }
+
+  #trackSetup = () => {
+    this.#trackList = this.querySelector('[slot=tracks]');
+    this.tracks = this.#trackList.querySelectorAll('li');
+
+    this.tracks.forEach((track) => {
+      track.audio = track.querySelector('audio');
+
+      if (!track.audio) {
+        console.error('Track is missing audio');
+        return;
+      }
+
+      track.audio.addEventListener('play', (e) => {
+        this.#trackOnPlay(track);
+      });
+
+      track.audio.addEventListener('pause', (e) => {
+        this.#trackOnPause(track);
+      });
+
+      track.audio.addEventListener('ended', (e) => {
+        this.#trackOnEnded(track);
+      });
+    });
+
+    this.currentTrack = this.currentTrack;
+  };
+
+  #trackOnPlay = (track) => {
+    if (this.currentTrack !== track) this.currentTrack = track;
+    if (!this.playState) {
+      this.playState = true;
+    } else {
+      this.#updateMenu();
+    }
+  };
+
+  #trackOnPause = (track) => {
+    if (this.currentTrack === track && this.playState) {
+      this.playState = false;
+    } else {
+      this.#updateMenu();
+    }
+  };
+
+  #trackOnEnded = (track) => {
+    const upNext = this.nextTrack;
+
+    if (upNext) {
+      this.currentTrack = upNext;
+      this.playState = true;
+    } else {
+      this.playState = false;
+    }
   }
 }
 
