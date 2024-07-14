@@ -17,9 +17,7 @@
   "type": "module",
   "scripts": {
     "js": "rollup -c",
-    "sass": "run-s sass:compile",
-    "sass:compile": "run-p sass:app",
-    "sass:app": "sass src/scss/screen.scss _built/css/screen.css",
+    "sass": "sass src/scss/screen.scss _built/css/screen.css",
     "prettier:js": "prettier --write \"**/*.js\"",
     "prettier:other": "prettier --write \"**/*.{json,yml}\"",
     "eslint": "eslint \"*.js\" \"**/*.js\" --fix",
@@ -34,7 +32,7 @@
     "watch:js": "run-p watch:js:*",
     "assets:clean": "rm -rf ./_built/",
     "serve": "npm-run-all build:assets -p eleventy:serve watch:js watch:sass",
-    "build:assets": "npm-run-all assets:clean -p js sass",
+    "build:assets": "npm-run-all js sass",
     "build": "npm-run-all build:assets eleventy"
   },
   "devDependencies": {
