@@ -1,0 +1,66 @@
+@use '../../../node_modules/accoutrement/sass/tools' with (
+  $font-path: '../assets/fonts/'
+);
+
+$body-font: (
+  name: 'Narrator',
+  normal: (
+    woff: 'narrator/greenmudnarrator-regular-webfont.woff',
+    ttf: 'narrator/greenmudnarrator-regular-webfont.ttf',
+  ),
+  bold: (
+    woff: 'narrator/greenmudnarrator-bold-webfont.woff',
+    ttf: 'narrator/greenmudnarrator-bold-webfont.ttf',
+  ),
+  stack: (
+    'Baskerville',
+    'Palatino',
+    'Cambria',
+    'Georgia',
+    'serif',
+  ),
+);
+
+@include tools.add-font('body', $body-font);
+
+$alt-font: (
+  name: 'Susy',
+  normal: (
+    woff: 'susy/greenmudsusy-regular-webfont.woff',
+    ttf: 'susy/greenmudsusy-regular-webfont.ttf',
+  ),
+  bold: (
+    woff: 'susy/greenmudsusy-bold-webfont.woff',
+    ttf: 'susy/greenmudsusy-bold-webfont.ttf',
+  ),
+  stack: (
+    'Baskerville',
+    'Palatino',
+    'Cambria',
+    'Georgia',
+    'serif',
+  ),
+);
+
+@include tools.add-font('alt', $alt-font);
+
+$caps-font: (
+  name: 'SusyCaps',
+  normal: (
+    woff: 'susy/greenmudsusy-smallcaps-webfont.woff',
+    ttf: 'susy/greenmudsusy-smallcaps-webfont.ttf',
+  ),
+  bold: (
+    woff: 'susy/greenmudsusy-smallcapsbold-webfont.woff',
+    ttf: 'susy/greenmudsusy-smallcapsbold-webfont.ttf',
+  ),
+  stack: (
+    'Baskerville',
+    'Palatino',
+    'Cambria',
+    'Georgia',
+    'serif',
+  ),
+);
+
+@include tools.add-font('caps', $caps-font);

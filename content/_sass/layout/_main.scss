@@ -1,0 +1,43 @@
+@use '../config';
+
+[data-main] {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  grid-row-gap: var(--gutter);
+  margin: var(--gutter) 0 var(--double-spacer);
+
+  > * {
+    grid-column: var(--type-column, main);
+
+    @supports (display: grid) {
+      margin-bottom: var(--margin-end, var(--margin-block, 0));
+      margin-top: var(--margin-start, var(--margin-block, 0));
+    }
+  }
+}
+
+.intro {
+  font-size: var(--font-large);
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+[data-meta] {
+  @include config.font-family('caps');
+}
+
+[data-meta='page'] {
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: 40em) {
+    --type-column: content / main-start;
+
+    color: var(--text-light);
+    margin-right: var(--gutter);
+    text-align: right;
+  }
+}

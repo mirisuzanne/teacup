@@ -1,0 +1,30 @@
+a {
+  &:link,
+  &:visited {
+    color: var(--link, var(--action));
+    text-decoration-color: var(--action-line, var(--ccs-accent--fg2-fade));
+    text-decoration-thickness: var(--line-weight, 0.05em);
+    text-underline-offset: var(--line-offset, 0.125em);
+    transition: text-decoration-thickness 150ms ease-in-out,
+      text-decoration-offset 150ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    --action-line: var(--ccs-accent);
+    --line-weight: 0.25em;
+    --line-offset: 0.125em;
+
+    color: var(--link--focus, var(--link, var(--action--focus)));
+  }
+
+  &[href*='://']
+  {
+    &::after {
+      content: ' ↗';
+      font-size: 0.5em;
+      font-weight: bold;
+    }
+  }
+}

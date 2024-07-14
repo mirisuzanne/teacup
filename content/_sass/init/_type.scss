@@ -1,0 +1,56 @@
+@use '../config';
+
+@include config.import-webfonts;
+
+html {
+  @include config.font-family('body');
+
+  --font-large: calc(1rem + 0.5vw);
+  --font-small: 0.75rem;
+  --font-smaller: 0.75em;
+  --line-ratio: 1.4;
+  --rhythm: 1.4rem;
+
+  font-size: calc(1em + 0.6vw);
+  letter-spacing: 0.05em;
+}
+
+[data-hidden] {
+  @include config.is-hidden;
+}
+
+blockquote {
+  @include config.font-family('alt');
+
+  margin-left: 0;
+
+  > *:first-child {
+    text-indent: -1em;
+    margin-top: 0;
+
+    &::before {
+      content: ' “ ';
+      color: var(--border);
+      font-size: var(--font-large);
+      font-weight: bold;
+    }
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+cite {
+  @include config.font-family('caps');
+
+  font-style: normal;
+}
+
+hr {
+  --type-column: wide / full;
+  --margin-block: var(--spacer);
+
+  border-top: var(--border-width) dashed var(--border);
+  width: 100%;
+}

@@ -1,0 +1,28 @@
+@mixin range-track {
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+
+  &::-moz-range-track {
+    @content;
+  }
+
+  &::-ms-track {
+    @content;
+  }
+}
+
+@mixin range-thumb {
+  &::-webkit-slider-thumb {
+    transform: translateY(-35%);
+    @content;
+  }
+
+  &::-moz-range-thumb {
+    @content;
+  }
+
+  &::-ms-thumb {
+    @content;
+  }
+}
