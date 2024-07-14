@@ -26,7 +26,7 @@ export default (eleventyConfig) => {
     // formats: ["auto"],
 
     // optional, output image widths
-    // widths: ["auto"],
+    widths: [1600],
 
     // optional, attributes assigned on <img> override these values.
     defaultAttributes: {
