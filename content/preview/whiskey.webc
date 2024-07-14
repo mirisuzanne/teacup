@@ -86,7 +86,7 @@ track-list {
     filter: var(--filter);
   }
 
-  li { display: inline; }
+  menu li { display: inline; }
 }
 </style>
 
