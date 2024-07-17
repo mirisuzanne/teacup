@@ -1,0 +1,15 @@
+Download as
+<template
+  webc:nokeep
+  webc:for="(format, i) of this.formats"
+>
+  <a
+    :href="`/assets/files/${this.file}.${this.format}`"
+    :aria-labelledby="this.file"
+    :download="`${this.as}.${format}`"
+    @text="format"
+  ></a><span
+    webc:nokeep
+    webc:if="i + 1 !== this.formats.length"
+  >,</span>
+</template>
