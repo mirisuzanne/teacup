@@ -16,7 +16,7 @@
   },
   "type": "module",
   "scripts": {
-    "serve": "eleventy --serve --incremental",
+    "dev": "eleventy --serve",
     "build": "eleventy"
   },
   "devDependencies": {
@@ -47,5 +47,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "@terriblemia/track-list": "^1.1.1"
   }
 }

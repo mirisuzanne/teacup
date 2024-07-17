@@ -19,6 +19,12 @@ html {
   @include config.is-hidden;
 }
 
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
 blockquote {
   @include config.font-family('alt');
 

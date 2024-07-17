@@ -9,10 +9,13 @@ import filters from './11ty/filters.js';
 
 export default (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
-  eleventyConfig.addPlugin(pluginWebc);
   eleventyConfig.addPlugin(hljs);
   eleventyConfig.addPlugin(sass);
   eleventyConfig.addPlugin(filters);
+
+  eleventyConfig.addPlugin(pluginWebc, {
+		components: "content/_includes/**/*.webc",
+	});
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     // which file extensions to process
@@ -42,6 +45,8 @@ export default (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('content/favicon.ico');
 
   // settings
+  eleventyConfig.setQuietMode(true);
+
   return {
     markdownTemplateEngine: 'njk',
     dir: {

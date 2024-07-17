@@ -1,29 +1,74 @@
 ---
 title: Whiskey From Strangers, Preview
-sub: Tracks from the upcoming album
+sub: Our new EP – a denver mythology in four movements
 date: 2024-08-20
 hero:
-  img: music/whiskey-ep.jpg
+  img: music/whiskey-jacket.jpg
   alt: >
     Album cover:
     A pond with cattail reeds and mountains,
     sketched in a single pencil line,
     with an electrical diagram sun reflecting in the water -
-    small red arrows form rays pointing in at the sun
+    small red arrows form rays pointing in at the sun.
+    The four songs are listed on the back,
+    along with credits and copyright.
+download: [mp3, flac, wav]
+tracks:
+  - pt: 1
+    name: the foothills
+    file: w1-the-foothills
+  - pt: 2
+    name: the garden
+    file: w2-the-garden
+  - pt: 3
+    name: the kitchen
+    file: w3-the-kitchen
+  - pt: 4
+    name: the opera
+    file: w4-the-opera
 summary: |
   For our second album,
   we revisit (and re-imagine)
   some of our oldest material --
-  a unified piece
-  of storytelling and music in four movements.
-  This is a modern Denver mythology,
+  the soundtrack and storytelling
+  that inspired our recent live show
+  with Grapefruit Lab.
+  This is a modern Denver mythology
+  in four parts,
   based on the Greek stories
   of Hermaphroditus and Salmacis.
-
-  Coming **August 20, 2024**!
 ---
 
+<h2>Public Release: August 20, 2024</h2>
+
+<p>
+  If you enjoy our music,
+  please consider supporting us:
+</p>
+
+<ul>
+  <li>
+    Leave a tip through
+    <a href="https://buy.stripe.com/00gcNg6BD6YBbpCbII">stripe</a>,
+    or
+    <a href="https://www.paypal.com/ncp/payment/DSTNNMNVVGVYG">paypal/venmo</a>
+  </li>
+  <li>
+    Pre-Save the EP
+    <a href="https://distrokid.com/hyperfollow/teacupgorilla/whiskey-from-strangers">on Spotify</a>
+  </li>
+  <li>
+    Pre-Order the EP
+    <a href="https://teacupgorilla.bandcamp.com/album/whiskey-from-strangers">on Bandcamp</a>
+  </li>
+</ul>
+
 <figure>
+  <figcaption>
+    <h2>Whiskey From Strangers</h2>
+    <p>Teacup Gorilla, 2024</p>
+  </figcaption>
+
   <track-list>
     <menu slot="menu">
       <li><button track-part="play">
@@ -42,290 +87,107 @@ summary: |
       </li>
     </menu>
 
-    <ol slot="tracks">
-      <li>
-        the <strong>foothills</strong>
-        <audio controls preload src="/assets/files/w1-the-foothills.wav"></audio>
-      </li>
-      <li>
-        the <strong>garden</strong>
-        <audio controls preload src="/assets/files/w2-the-garden.wav"></audio>
-      </li>
-      <li>
-        the <strong>kitchen</strong>
-        <audio controls preload src="/assets/files/w3-the-kitchen.wav"></audio>
-      </li>
-      <li>
-        the <strong>opera</strong>
-        <audio controls preload src="/assets/files/w4-the-opera.wav"></audio>
+    <ol slot="tracks" role="list">
+      <li webc:for="track of this.tracks">
+        <strong
+          @text="track.name"
+          :id="track.file"
+        ></strong>
+        <audio
+          controls
+          preload
+          :src="`/assets/files/${track.file}.mp3`"
+        ></audio>
+        <down-load
+          webc:keep
+          :@file="track.file"
+          :@as="`Teacup Gorilla - Whiskey From Strangers - pt ${track.pt} ${track.name}`"
+          :@formats="this.download">
+        </down-load>
       </li>
     </ol>
   </track-list>
-
-  <figcaption>
-    Words & music by Teacup Gorilla,
-    with contributions from Aaron Liechty & Jacob Curtis —
-    based on the novel
-    <a href="https://ridingsidesaddle.com">Riding SideSaddle*</a>
-    by Miriam Suzanne.
-    Cover art by Miriam Suzanne.
-    Recorded by Daniel Eisenstat.
-  </figcaption>
 </figure>
 
+<small>
+  Words & music by Teacup Gorilla,
+  with contributions from Aaron Liechty & Jacob Curtis —
+  based on the novel
+  <a href="https://ridingsidesaddle.com">Riding SideSaddle*</a>
+  by Miriam Suzanne.
+  Recorded by Daniel Eisenstat.
+</small>
 
 <style webc:keep>
+figcaption {
+  margin-block: 1lh;
+
+  * { margin: unset; }
+}
+
 track-list {
+  display: grid;
+  gap: 0.75lh 0.5ch;
+  grid-template-columns: auto 1fr;
+
+  &::before {
+    background: var(--overlay);
+    content: '';
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  menu {
+    background: unset;
+    grid-column: 2;
+    grid-row: 1;
+    margin: unset;
+    padding-inline-start: unset;
+
+    li { display: inline; }
+  }
+
+  ol {
+    counter-reset: tracks;
+    display: contents;
+
+    li {
+      counter-increment: tracks;
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: inherit;
+      grid-template-columns: subgrid;
+      row-gap: 0.25lh;
+
+      * { grid-column: 2; }
+    }
+
+    li::before {
+      content: 'pt ' counter(tracks) '.';
+    }
+  }
+
   [aria-current] {
     --filter: drop-shadow(0 0 3px currentColor);
-    color: var(--action);
-    font-style: italic;
+
+    strong {
+      color: var(--action);
+    }
   }
 
   audio {
     filter: var(--filter);
   }
 
-  menu li { display: inline; }
+  down-load {
+    font-style: italic;
+  }
 }
 </style>
 
-<script webc:keep>
-class TrackList extends HTMLElement {
-  static register(tagName) {
-    if ("customElements" in window) {
-      customElements.define(tagName || "track-list", TrackList);
-    }
-  }
-
-  static icons = {
-    play: '▶',
-    pause: '⏸',
-  };
-
-  static observedAttributes = [];
-
-  static #appendShadowTemplate = (node) => {
-    const template = document.createElement("template");
-    template.innerHTML = `
-      <slot name="menu">
-        <menu part="menu" track-part="menu">
-          <li><button part="button play" track-part="play">
-            <btn-icon aria-hidden="true">${TrackList.icons.play}</btn-icon>
-            <btn-text>play</btn-text>
-          </button></li>
-          <li>
-            <button part="button prev" track-part="prev">
-              <btn-icon aria-hidden="true">&Lang;</btn-icon>
-              <btn-text>previous</btn-text>
-            </button>
-            <button part="button next" track-part="next">
-              <btn-icon aria-hidden="true">&Rang;</btn-icon>
-              <btn-text>next</btn-text>
-            </button>
-          </li>
-        </menu>
-      </slot>
-      <slot name="tracks"></slot>
-    `;
-    const shadowRoot = node.attachShadow({ mode: "open" });
-    shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
-  static #adoptShadowStyles = (node) => {
-    const shadowStyle = new CSSStyleSheet();
-    shadowStyle.replaceSync(`
-      * { box-sizing: border-box; }
-      li { display: inline; }
-    `);
-    node.shadowRoot.adoptedStyleSheets = [shadowStyle];
-  }
-
-  #trackList;
-  tracks;
-  menu;
-  playBtn;
-  playIcon;
-  playText;
-  prevBtn;
-  nextBtn;
-
-  constructor() {
-    super();
-    TrackList.#appendShadowTemplate(this);
-    TrackList.#adoptShadowStyles(this);
-  }
-
-  attributeChangedCallback() {
-  }
-
-  get currentTrack () {
-    return this.#trackList.querySelector('li[aria-current=true]')
-      || [...this.tracks].at(0);
-  }
-
-  set currentTrack (toTrack) {
-    const toTrackEl = typeof toTrack === 'number'
-      ? [...this.tracks].at(toTrack)
-      : toTrack;
-
-    this.tracks.forEach((track) => {
-      if (track === toTrackEl) {
-        track.setAttribute('aria-current', 'true');
-      } else {
-        track.removeAttribute('aria-current');
-        track.audio.pause();
-      }
-    });
-
-    this.#updateMenu();
-  }
-
-  get playState() {
-    return !this.currentTrack.audio.paused;
-  }
-
-  set playState(playNow) {
-    const currentAudio = this.currentTrack.audio;
-
-    if (playNow) {
-      if (currentAudio.paused) currentAudio.play();
-    } else {
-      if (!currentAudio.paused) currentAudio.pause();
-    }
-
-    this.#updateMenu();
-  }
-
-  get prevTrack() {
-    const track = this.currentTrack.previousElementSibling;
-    if (track) track.audio = track.querySelector('audio');
-    return track;
-  }
-  get nextTrack() {
-    const track = this.currentTrack.nextElementSibling;
-    if (track) track.audio = track.querySelector('audio');
-    return track;
-  }
-
-  #updateMenu = () => {
-    if (this.playState) {
-      this.playIcon.innerHTML = TrackList.icons.pause;
-      this.playText.innerText = "pause";
-    } else {
-      this.playIcon.innerHTML = TrackList.icons.play;
-      this.playText.innerText = "play";
-    }
-
-    this.prevBtn.disabled = !this.prevTrack;
-    this.nextBtn.disabled = !this.nextTrack;
-  }
-
-  toPrev = () => {
-    this.prevTrack.audio.currentTime = 0;
-
-    if (this.playState) {
-      this.playState = false;
-      this.prevTrack.audio.play();
-    } else {
-      this.currentTrack = this.prevTrack;
-    }
-  }
-
-  toNext = () => {
-    this.nextTrack.audio.currentTime = 0;
-
-    if (this.playState) {
-      this.playState = false;
-      this.nextTrack.audio.play();
-    } else {
-      this.currentTrack = this.nextTrack;
-    }
-  }
-
-  connectedCallback() {
-    this.#menuSetup();
-    this.#trackSetup();
-
-    this.playBtn.addEventListener('click', (e) => {
-      this.playState = !this.playState;
-    });
-
-    this.prevBtn.addEventListener('click', (e) => this.toPrev());
-    this.nextBtn.addEventListener('click', (e) => this.toNext());
-  }
-
-  disconnectedCallback() {
-  }
-
-  #menuSetup = () => {
-    this.menu = this.querySelector(`[slot="menu"]`)
-      || this.shadowRoot.querySelector(`[track-part="menu"]`);
-
-    this.playBtn = this.menu.querySelector('button[track-part=play]');
-    this.playIcon = this.playBtn.querySelector('btn-icon');
-    this.playText = this.playBtn.querySelector('btn-text');
-
-    this.prevBtn = this.menu.querySelector('button[track-part=prev]');
-    this.nextBtn = this.menu.querySelector('button[track-part=next]');
-  }
-
-  #trackSetup = () => {
-    this.#trackList = this.querySelector('[slot=tracks]');
-    this.tracks = this.#trackList.querySelectorAll('li');
-
-    this.tracks.forEach((track) => {
-      track.audio = track.querySelector('audio');
-
-      if (!track.audio) {
-        console.error('Track is missing audio');
-        return;
-      }
-
-      track.audio.addEventListener('play', (e) => {
-        this.#trackOnPlay(track);
-      });
-
-      track.audio.addEventListener('pause', (e) => {
-        this.#trackOnPause(track);
-      });
-
-      track.audio.addEventListener('ended', (e) => {
-        this.#trackOnEnded(track);
-      });
-    });
-
-    this.currentTrack = this.currentTrack;
-  };
-
-  #trackOnPlay = (track) => {
-    if (this.currentTrack !== track) this.currentTrack = track;
-    if (!this.playState) {
-      this.playState = true;
-    } else {
-      this.#updateMenu();
-    }
-  };
-
-  #trackOnPause = (track) => {
-    if (this.currentTrack === track && this.playState) {
-      this.playState = false;
-    } else {
-      this.#updateMenu();
-    }
-  };
-
-  #trackOnEnded = (track) => {
-    const upNext = this.nextTrack;
-
-    if (upNext) {
-      this.currentTrack = upNext;
-      this.playState = true;
-    } else {
-      this.playState = false;
-    }
-  }
-}
-
-TrackList.register();
+<script
+  src="../../node_modules/@terriblemia/track-list/track-list.js"
+  webc:bucket="track-list">
 </script>
+
+<script @raw="getBundle('js', 'track-list')" webc:keep></script>
