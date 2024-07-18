@@ -80,12 +80,12 @@ summary: |
       </button></li>
       <li>
         <button track-part="prev">
-          <btn-icon aria-hidden="true">&Lang;</btn-icon>
+          <btn-icon aria-hidden="true">&ll;</btn-icon>
           <btn-text>previous</btn-text>
         </button>
         <button track-part="next">
-          <btn-icon aria-hidden="true">&Rang;</btn-icon>
           <btn-text>next</btn-text>
+          <btn-icon aria-hidden="true">&gg;</btn-icon>
         </button>
       </li>
     </menu>
@@ -130,14 +130,22 @@ figcaption {
 
 track-list {
   display: grid;
-  gap: 0.75lh 0.5ch;
+  gap: var(--gutter) 0.5ch;
   grid-template-columns: auto 1fr;
 
   menu {
+    display: flex;
+    gap: var(--gutter);
     grid-column: 1 / -1;
+    justify-content: space-between;
     margin: unset;
 
-    li { display: inline; }
+    li {
+      display: flex;
+      flex-flow: wrap;
+      gap: var(--shim);
+      justify-content: end;
+    }
   }
 
   ol {
@@ -176,6 +184,10 @@ track-list {
     font-style: italic;
     text-transform: lowercase;
   }
+}
+
+button[track-part] {
+  display: flex;
 }
 </style>
 
