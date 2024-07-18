@@ -48,17 +48,20 @@ summary: |
 
 <ul>
   <li>
-    Leave a tip through
+    <strong>Leave a tip</strong>
+    through
     <a href="https://buy.stripe.com/00gcNg6BD6YBbpCbII">stripe</a>,
     or
     <a href="https://www.paypal.com/ncp/payment/DSTNNMNVVGVYG">paypal/venmo</a>
   </li>
   <li>
-    Pre-Save the EP
+    <strong>Pre-Save</strong>
+    the EP
     <a href="https://distrokid.com/hyperfollow/teacupgorilla/whiskey-from-strangers">on Spotify</a>
   </li>
   <li>
-    Pre-Order the EP
+    <strong>Pre-Order</strong>
+    the EP
     <a href="https://teacupgorilla.bandcamp.com/album/whiskey-from-strangers">on Bandcamp</a>
   </li>
 </ul>
@@ -130,19 +133,9 @@ track-list {
   gap: 0.75lh 0.5ch;
   grid-template-columns: auto 1fr;
 
-  &::before {
-    background: var(--overlay);
-    content: '';
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
   menu {
-    background: unset;
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1 / -1;
     margin: unset;
-    padding-inline-start: unset;
 
     li { display: inline; }
   }
@@ -181,6 +174,7 @@ track-list {
 
   down-load {
     font-style: italic;
+    text-transform: lowercase;
   }
 }
 </style>
