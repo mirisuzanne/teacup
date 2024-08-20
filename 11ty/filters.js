@@ -2,7 +2,7 @@ import { typeCheck, objectKeys, jsonString, only, domain } from '../src/filters/
 import { get, count, groupNames } from '../src/filters/events.cjs';
 import { fromCollection, getPublic, seriesNav, titleSort, getVideos, mergeMedia } from '../src/filters/pages.cjs';
 import { publicTags, getTags, groupTags, hasTag, withTag, displayName, tagLink, topCount } from '../src/filters/tags.cjs';
-import { getDate, rssDate, rssLatest, now } from '../src/filters/time.cjs';
+import { dateFormat, rssDate, rssLatest, now } from '../src/filters/time.cjs';
 import { amp, set, render, inline, mdown } from '../src/filters/type.cjs';
 
 export default (eleventyConfig) => {
@@ -12,7 +12,7 @@ export default (eleventyConfig) => {
   eleventyConfig.addFilter('only', only);
   eleventyConfig.addFilter('domain', domain);
 
-  eleventyConfig.addFilter('getDate', getDate);
+  eleventyConfig.addFilter('dateFormat', dateFormat);
   eleventyConfig.addFilter('rssDate', rssDate);
   eleventyConfig.addFilter('rssLatest', rssLatest);
 
@@ -47,10 +47,6 @@ export default (eleventyConfig) => {
   // shortcodes
   eleventyConfig.addPairedShortcode('md', render);
   eleventyConfig.addPairedShortcode('mdInline', inline);
-  eleventyConfig.addShortcode(
-    'getDate',
-    (format) => `${getDate(now, format)}`,
-  );
 
   // markdown
   eleventyConfig.setLibrary('md', mdown);

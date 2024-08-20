@@ -1,0 +1,110 @@
+<figure album-embed>
+  <figcaption>
+    <slot><h2 @text="this.title"></h2></slot>
+    <p>
+      Teacup Gorilla —
+      <time
+        webc:if="this.release"
+        :datetime="this.dateFormat(this.release, 'iso')"
+        @text="this.dateFormat(this.release, 'long')"></time>
+    </p>
+  </figcaption>
+
+  <track-list>
+    <menu slot="menu">
+      <li><button track-part="play">
+        <btn-icon aria-hidden="true">▶</btn-icon>
+        <btn-text>play</btn-text>
+      </button></li>
+      <li>
+        <button track-part="prev">
+          <btn-icon aria-hidden="true">&ll;</btn-icon>
+          <btn-text>previous</btn-text>
+        </button>
+        <button track-part="next">
+          <btn-text>next</btn-text>
+          <btn-icon aria-hidden="true">&gg;</btn-icon>
+        </button>
+      </li>
+    </menu>
+
+    <ol slot="tracks" role="list">
+      <li
+        webc:for="(track, index) of this.trackList"
+      >
+        <span @text="track.number || `${index + 1}.`"></span>
+        <strong
+          @text="track.name"
+          :id="track.file"
+        ></strong>
+        <audio
+          controls
+          preload
+          :src="`/assets/files/${track.file}.mp3`"
+        ></audio>
+        <down-load
+          webc:keep
+          webc:if="this.download"
+          :@file="track.file"
+          :@as="`Teacup Gorilla - ${this.title} - ${track.number || index + 1} ${track.name}`"
+          :@formats="this.download">
+        </down-load>
+      </li>
+    </ol>
+  </track-list>
+</figure>
+
+<style webc:keep>
+  figcaption {
+    margin-block: 1lh;
+
+    * { margin: unset; }
+  }
+
+  track-list {
+    display: grid;
+    gap: var(--gutter) 0.5ch;
+
+    menu {
+      display: flex;
+      gap: var(--gutter);
+      justify-content: space-between;
+      margin: unset;
+
+      li {
+        display: flex;
+        flex-flow: wrap;
+        gap: var(--shim);
+        justify-content: end;
+      }
+    }
+
+    [aria-current] {
+      --filter: drop-shadow(0 0 3px currentColor);
+
+      strong {
+        color: var(--action);
+      }
+    }
+
+    audio {
+      filter: var(--filter);
+    }
+
+    down-load {
+      font-style: italic;
+      text-transform: lowercase;
+    }
+  }
+
+  button[track-part] {
+    display: flex;
+  }
+</style>
+
+<script
+  src="../../../node_modules/@terriblemia/track-list/track-list.js"
+  webc:bucket="track-list">
+</script>
+
+<script @raw="getBundle('js', 'track-list')" webc:keep></script>

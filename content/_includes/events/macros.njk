@@ -58,7 +58,7 @@
   all,
   self
 ) %}
-  {% set this_year = none | getDate('year') %}
+  {% set this_year = none | dateFormat('year') %}
 
   {% for segment in events %}
     {% if (segment.group == this_year) and not loop.first %}

@@ -56,10 +56,11 @@ figure {
 
   > * {
     border: var(--border-default);
+    grid-column: var(--span);
   }
 
-  > *:nth-last-child(odd) {
-    grid-column: 1 / -1;
+  > *:last-child:nth-child(odd) {
+    --span: 1 / -1;
   }
 
   img,
@@ -69,7 +70,6 @@ figure {
 
   [style] {
     align-self: var(--align);
-    grid-column: var(--span, initial);
     width: var(--width, 100%);
   }
 }

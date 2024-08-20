@@ -41,13 +41,13 @@ const buildEvent = (page, event, index) => {
   }
 
   // set group…
-  const end_iso = time.getDate(end, 'iso');
-  const start_iso = time.getDate(start, 'iso');
-  const now_iso = time.getDate(time.now, 'iso');
-  let group = time.getDate(date, 'year');
+  const end_iso = time.dateFormat(end, 'iso');
+  const start_iso = time.dateFormat(start, 'iso');
+  const now_iso = time.dateFormat(time.now, 'iso');
+  let group = time.dateFormat(date, 'year');
 
   if (end_iso >= now_iso) {
-    const endYear = `${time.getDate(end, 'year')}`;
+    const endYear = `${time.dateFormat(end, 'year')}`;
     if (groupNames[endYear]) {
       group = endYear;
     } else {

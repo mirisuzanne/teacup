@@ -65,17 +65,17 @@ const formatDate = (date, format) => {
     rfc: `${iso}T12:00:00-06:00`,
   };
 
-  return formats[format];
+  return formats[format] || formats.iso;
 };
 
-const getDate = (date, format) => {
+const dateFormat = (date, format) => {
   date = typeof date === 'string' ? new Date(date) : date || now;
   return format ? formatDate(date, format) : date;
 };
 
 const rssDate = (page) => {
   const date = page.data ? page.data.start || page.date : page.date;
-  return getDate(date, 'rfc');
+  return dateFormat(date, 'rfc');
 };
 
 const rssLatest = (collection) => {
@@ -85,7 +85,7 @@ const rssLatest = (collection) => {
 
 module.exports = {
   now,
-  getDate,
+  dateFormat,
   rssDate,
   rssLatest,
 };

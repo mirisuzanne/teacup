@@ -6,7 +6,7 @@
   data-layout="footer">
 
   {% set title %}
-    Copyright © {% getDate 'year' %}
+    Copyright © {{ now | dateFormat('year') }} %}
   {% endset %}
 
   <p data-footer="copyright">

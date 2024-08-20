@@ -1,0 +1,70 @@
+---
+feature: true
+title: Whiskey From Strangers
+sub: our new EP, a Denver mythology
+date: 2024-08-20
+hero:
+  img: music/whiskey-jacket.jpg
+  alt: >
+    Album cover:
+    A pond with cattail reeds and mountains,
+    sketched in a single pencil line,
+    with an electrical diagram sun reflecting in the water -
+    small red arrows form rays pointing in at the sun.
+    The four songs are listed on the back,
+    along with credits and copyright.
+tracks:
+  - number: pt 1
+    name: the foothills
+    file: whiskey/w1-the-foothills
+  - number: pt 2
+    name: the garden
+    file: whiskey/w2-the-garden
+  - number: pt 3
+    name: the kitchen
+    file: whiskey/w3-the-kitchen
+  - number: pt 4
+    name: the opera
+    file: whiskey/w4-the-opera
+services:
+  - bandcamp: https://teacupgorilla.bandcamp.com/album/whiskey-from-strangers
+  - apple: https://music.apple.com/us/album/whiskey-from-strangers-ep/1757212487
+tags:
+  - _calendar
+  - music
+  - album
+  - audio
+audio:
+  - iframe: https://bandcamp.com/EmbeddedPlayer/album=988751339/size=large/bgcol=ffffff/linkcol=de270f/artwork=small/transparent=true/
+    width: 100%
+    height: 315
+summary: |
+  For our second album,
+  we revisit some of our oldest material --
+  a unified piece
+  of storytelling and music in four movements.
+  This is a modern Denver mythology,
+  based on the Greek stories
+  of Hermaphroditus and Salmacis.
+---
+
+<embed-album
+  :@title="this.title"
+  :@release="this.date"
+  :@track-list="this.tracks"
+  :@download="['mp3', 'flac', 'wav']"
+></embed-album>
+
+<support-us></support-us>
+
+<hr>
+
+<small>
+  Words & music by Teacup Gorilla,
+  with contributions from Aaron Liechty & Jacob Curtis —
+  based on the novel
+  <a href="https://ridingsidesaddle.com">Riding SideSaddle*</a>
+  by Miriam Suzanne.
+  Recorded by Daniel Eisenstat.
+</small>
+
