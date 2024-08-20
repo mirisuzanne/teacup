@@ -1,6 +1,18 @@
 <figure album-embed>
   <figcaption>
-    <slot><h2 @text="this.title"></h2></slot>
+    <slot>
+      <h2>
+        <a
+          webc:if="this.linkTo"
+          :href="this.linkTo"
+          @text="this.title"
+        ></a>
+        <span
+          webc:else
+          @text="this.title"
+        ></span>
+      </h2>
+    </slot>
     <p>
       Teacup Gorilla —
       <time

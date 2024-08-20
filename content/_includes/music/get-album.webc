@@ -1,0 +1,17 @@
+<script webc:setup>
+  const album = (url) => {
+    return getPage($data.collections.all, url)[0];
+  };
+</script>
+
+<template
+  webc:if="album(this.pageUrl)"
+  webc:nokeep
+>
+  <embed-album
+    :@title="album(this.pageUrl).data.title"
+    :@link-to="this.pageUrl"
+    :@release="album(this.pageUrl).data.date"
+    :@track-list="album(this.pageUrl).data.tracks"
+  ></embed-album>
+</template>
