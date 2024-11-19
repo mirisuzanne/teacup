@@ -1,0 +1,79 @@
+---
+feature: true
+title: Jane/Eyre, No Net Ensnares Me
+sub: original music for the Grapefruit Lab adaptation
+date: 2025-01-10
+hero:
+  img: music/jane-jacket.jpg
+  alt: >
+    Album cover,
+    designed with text on torn paper
+    layered over a yellowed sketch
+    from the original novel
+tracks:
+  - number: 1
+    name: Bewick's History of British Birds (Jane's Theme)
+  - number: 2
+    name: Kind Angels Only (Gateshead Hall)
+  - number: 3
+    name: Resurgam (Helen's Theme)
+  - number: 4
+    name: And Where in Summer
+  - number: 5
+    name: Paintings of the Sea
+  - number: 6
+    name: Some Scorched Desire
+  - number: 7
+    name: I Am No Bird and No Net Ensnares Me
+  - number: 8
+    name: There in the Darkness She Kindled the Bed
+tags:
+  - _calendar
+  - music
+  - album
+  - audio
+summary: |
+  A full length vinyl release
+  of our original Jane Eyre adaptation,
+  written along side
+  [Grapefruit Lab's](https://grapefruitlab.com/shows/jane-eyre-2025/)
+  production.
+  Pre-order now,
+  and then come enjoy the show in January!
+---
+
+<p>
+  <a href="https://buy.stripe.com/dR6bKTcc13Vx3ni28e">
+    Pre-order the album now
+  </a>
+  on Vinyl.
+  Digital singles are coming soon!
+</p>
+
+<!-- <embed-album
+  :@title="this.title"
+  :@release="this.date"
+  :@track-list="this.tracks"
+  :@download="['mp3', 'flac', 'wav']"
+></embed-album> -->
+
+<!-- <support-us></support-us> -->
+
+<hr>
+
+<small>
+  Words & music by Teacup Gorilla and Dameon Merkl,
+  based on the
+  <a href="https://grapefruitlab.com/shows/jane-eyre-2025/">
+    Grapefruit Lab stage adaptation
+  </a>
+  of Jane Eyre, by Charlotte Brontë.
+  Recorded by Daniel Eisenstat.
+  Illustrations by F.H. Townsend.
+  Design by Miriam Suzanne.
+  Resurgam is heavily inspired
+  by Funkadelic's Maggot Brain.
+  Josselyn Cool was involved in the
+  initial process for the original 2018 production.
+</small>
+

@@ -27,7 +27,7 @@ signup_note: >
   caption='Stream or buy on bandcamp, itunes, spotify, etc…'
 ) -}}
 
-{% set whiskey = collections.all | getPage('/albums/whiskey-from-strangers/') | first %}
+{% set whiskey = collections.all | getPage('/albums/jane-eyre/') | first %}
 
 {{- content.feature(whiskey) -}}
 
