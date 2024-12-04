@@ -1,0 +1,51 @@
+---
+title: Jane/Eyre, Preview
+sub: Music from the novel and performance
+date: 2024-12-03
+hero:
+  img: music/jane-jacket.jpg
+  alt: >
+    Album cover,
+    designed with text on torn paper
+    layered over a yellowed sketch
+    from the original novel
+tracks:
+  - number: 1
+    name: Bewick's History of British Birds (Jane's Theme)
+    file: jane/1-british-birds
+  - number: 2
+    name: Kind Angels Only (Gateshead Hall)
+    file: jane/2-kind-angels
+  - number: 3
+    name: Resurgam (Helen's Theme)
+    file: jane/3-resurgam
+  - number: 4
+    name: And Where in Summer
+    file: jane/4-in-summer
+  - number: 5
+    name: Paintings of the Sea
+    file: jane/5-paintings
+  - number: 6
+    name: Some Scorched Desire
+    file: jane/6-scorched-desire
+  - number: 7
+    name: I Am No Bird and No Net Ensnares Me
+    file: jane/7-no-bird
+  - number: 8
+    name: There in the Darkness She Kindled the Bed
+    file: jane/8-in-the-darkness
+tags:
+  - _calendar
+  - music
+  - album
+  - audio
+summary: |
+  A preview of our original Jane Eyre adaptation.
+---
+
+<embed-album
+  :@title="this.title"
+  :@release="this.date"
+  :@track-list="this.tracks"
+  :@download="['mp3', 'wav']"
+></embed-album>

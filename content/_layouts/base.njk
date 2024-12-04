@@ -39,6 +39,8 @@
 
     {% include 'site/og.njk' %}
     {% include 'site/feed.njk' %}
+
+    {% if no_bots %}<meta name="robots" content="noindex">{% endif %}
   </head>
 
   <body

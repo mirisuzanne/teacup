@@ -1,4 +1,5 @@
 {
   "layout": "base",
-  "type": "music"
+  "type": "music",
+  "no_bots": "true"
 }

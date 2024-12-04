@@ -41,6 +41,7 @@ export default (eleventyConfig) => {
   // pass-through
   eleventyConfig.addPassthroughCopy({ 'src/fonts': 'assets/fonts' });
   eleventyConfig.addPassthroughCopy({ 'src/files': 'assets/files' });
+  eleventyConfig.addPassthroughCopy({ 'src/images/site': 'img/site' });
   eleventyConfig.addPassthroughCopy('content/**/*.txt');
   eleventyConfig.addPassthroughCopy('content/favicon.ico');
 
