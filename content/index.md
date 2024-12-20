@@ -17,6 +17,9 @@ signup_note: >
 {% import "content.macros.njk" as content %}
 {% import "contact.macros.njk" as contact %}
 
+{% set whiskey = collections.all | getPage('/albums/jane-eyre/') | first %}
+{{- content.feature(whiskey) -}}
+
 {% set whiskey = collections.all | getPage('/albums/whiskey-from-strangers/') | first %}
 {% set thtl = collections.all | getPage('/albums/holes-they-leave/') | first %}
 {% set jlt = collections.all | getPage('/videos/just-like-that/') | first %}
@@ -26,10 +29,6 @@ signup_note: >
   media,
   caption='Stream or buy on bandcamp, itunes, spotify, etc…'
 ) -}}
-
-{% set whiskey = collections.all | getPage('/albums/jane-eyre/') | first %}
-
-{{- content.feature(whiskey) -}}
 
 {{- contact.signup(
   note=signup_note

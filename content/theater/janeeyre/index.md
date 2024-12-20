@@ -46,18 +46,16 @@ summary: |
 ---
 {% import "content.macros.njk" as content %}
 
-[Read the script](https://www.miriamsuzanne.com/theater/janeeyre/script/)
+The original production in 2018
+was a huge success,
+so we're [bringing it back in 2025](/theater/janeeyre/2025/) --
+along with a [full-length album](/albums/jane-eyre/)
+of our original score.
 
 ------
 
-Our first full production
-under the [Grapefruit Lab][lab] name
-(collaborating with [Teacup Gorilla][teacup])
-was a huge success.
-thanks to our wonderful ensemble:
-
-[lab]: http://grapefruitlab.com/
-[teacup]: http://teacupgorilla.com/
+Thanks to our wonderful ensemble
+from the 2018 production:
 
 - **Lindsey Pierce** as Jane
 - **Meghan Frank** as Mrs Reed/Helen/Rochester/Diana

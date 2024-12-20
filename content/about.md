@@ -61,18 +61,24 @@ Often compared to early
 Modest Mouse, Low,
 or Velvet Underground --
 Teacup Gorilla formed to create and underscore
-the **Missa Populi** theater production in 2010,
-and released a debut EP --
-([The Holes They Leave][thtl]) --
-in the summer of 2015,
-along with the multimedia novel
-[Riding SideSaddle\*](http://ridingsidesaddle.com).
-Their second EP --
-_Whiskey From Strangers_ --
-will be released
-on **August 20, 2024**.
+the **Missa Populi** theater production in 2010.
+Since then we've underscored
+many shows with different theater companies around Denver,
+and released several EPs
+and a full length soundtrack.
 
-[thtl]: /2015/07/09/holes-they-leave/
+- 2015, [_The Holes They Leave_][thtl] (EP) --
+  along side the multimedia novel
+  [_Riding SideSaddle\*_](http://ridingsidesaddle.com).
+- 2024, [_Whiskey From Strangers_][whiskey] (EP) --
+  adapted into [a full-length play](/theater/whiskey/).
+- 2025, [_Jane/Eyre: No Net Ensnares Me_] --
+  in collaboration with Dameon Merkl,
+  along side the [Grapefruit Lab production](/theater/janeeyre/).
+
+[thtl]: /albums/holes-they-leave/
+[whiskey]: /albums/whiskey-from-strangers/
+[jane]: /albums/jane-eyre/
 
 In addition to playing festivals and venues
 in Denver and across the Midwest,
@@ -83,10 +89,11 @@ including:
 - The [Clyfford Still Museum](https://clyffordstillmuseum.org/)
 - [Buntport Theater](http://buntport.com/archive/10myths.htm)
   (winning a [True West Award][twest] in 2016)
-- [Grapefruit Lab][glab]
-- Hoarded Stuff
+- [Grapefruit Lab][glab] (several productions)
+- Pandemic Theater
+- [Hoarded Stuff](https://www.lauraannsamuelson.com/) (LA Samuelson)
 - Screw Tooth
-- Lost Walks
+- [Lost Walks](https://www.lostwalksband.com/)
 
 [twest]: http://www.denvercenter.org/blog-posts/news-center/2016/12/18/2016-true-west-award-miriam-suzanne
 [glab]: http://grapefruitlab.com/

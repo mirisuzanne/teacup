@@ -8,11 +8,10 @@
 
   {% set go_to = utility.link_if(venue or 'the interwebz', url) if url else none %}
   {% set go_to = ['@', go_to] | join(' ') if go_to else none %}
-	{% set sub_md = sub | mdInline if sub else sub -%}
 
   {% if sub or go_to %}
     <p class="subtitle">
-      {{ sub | typogr | safe }}
+      {{ sub | mdInline | safe if sub else '' }}
       {{ go_to | typogr | safe }}
     </p>
   {% endif %}

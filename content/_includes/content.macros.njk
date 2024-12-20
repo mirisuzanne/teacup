@@ -190,15 +190,15 @@
     <h2>
     <a href="{{ page.url }}">{{ page.data.banner or page.data.title }}</a>
     </h2>
-    {%- if page.data.sub -%}
-    <p class="media-subtitle">{{ page.data.sub | typogr | safe }}</p>
-    {%- endif -%}
     {{- utility.datetime(
       pubdate=page.date,
       start=page.data.start,
       end=page.data.end,
       format='md'
     ) | safe -}}
+    {%- if page.data.sub -%}
+    —<em>{{ page.data.sub | mdInline | safe }}</em>
+    {%- endif -%}
   </header>
   {{ page.data.summary | md | safe }}
 </div>
