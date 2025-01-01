@@ -47,16 +47,17 @@
         <span @text="track.number || `${index + 1}.`"></span>
         <strong
           @text="track.name"
-          :id="track.file"
+          :id="track.file || `track-${index}`"
         ></strong>
         <audio
           controls
           preload
+          webc:if="track.file"
           :src="`/assets/files/${track.file}.mp3`"
         ></audio>
         <down-load
           webc:keep
-          webc:if="this.download"
+          webc:if="this.download && track.file"
           :@file="track.file"
           :@as="`Teacup Gorilla - ${this.title} - ${track.number || index + 1} ${track.name}`"
           :@formats="this.download">

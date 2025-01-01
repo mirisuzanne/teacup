@@ -6,19 +6,18 @@ sub: dark indie-rock band -- “too moody for pride”
 type: album
 calendar: all
 signup_note: >
-  New EP
-  _[Whiskey From Strangers](/albums/whiskey-from-strangers/)_
-  is live,
-  and we're working on the next
-  **Grapefruit Lab** production.
-  Signup for details!
+  Follow along with the release of
+  [Jane/Eyre](/albums/jane-eyre/),
+  and get discounts on the vinyl record!
 ---
 
 {% import "content.macros.njk" as content %}
 {% import "contact.macros.njk" as contact %}
 
-{% set whiskey = collections.all | getPage('/albums/jane-eyre/') | first %}
-{{- content.feature(whiskey) -}}
+{% set bewicks = collections.all | getPage('/2025/01/01/bewicks-birds/') | first %}
+{{- content.feature(bewicks) -}}
+{% set jane_show = collections.all | getPage('/albums/jane-eyre/') | first %}
+{{- content.feature(jane_show) -}}
 
 {% set whiskey = collections.all | getPage('/albums/whiskey-from-strangers/') | first %}
 {% set thtl = collections.all | getPage('/albums/holes-they-leave/') | first %}
