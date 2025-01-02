@@ -6,7 +6,7 @@ html {
     [main-end] var(--wide-end, 0) [wide-end] minmax(0, 1fr) [content-end]
     var(--gutter) [full-end];
 
-  background-image: url('/img/site/dust.png');
+  background-image: url('/img/full/site/dust.png');
   background-attachment: fixed;
 
   @media (min-width: 38em) {

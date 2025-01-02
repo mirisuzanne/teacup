@@ -1,4 +1,4 @@
-{%- set og_image = [site.url, '/images/', hero.img or site.og.img] | join -%}
+{%- set og_image = [site.url, '/img/full/', hero.img or site.og.img] | join -%}
 
 <meta property="og:locale" content="{{ site.og.locale }}" />
 <meta property="og:type" content="{{ og.type or site.og.type }}" />
