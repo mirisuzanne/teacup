@@ -44,10 +44,10 @@ our full-length original score based on the book,
 and underscoring
 the [Grapefruit Lab adaptation](/theater/janeeyre/2025/).
 
-You can also stream these songs
-on [Spotify](https://open.spotify.com/album/1jqlpJwu5bAgiNpIvyvGGk?si=sIzc7kWaSm2YpaR3sFm6Hw),
-[Apple](https://music.apple.com/us/album/bewicks-history-of-british-birds-janes-theme-single/1785095697),
-or anywhere else you listen to music.
+You can also listen to our singles
+on [Spotify](https://open.spotify.com/album/6bM0wixKcszqPkVBH3k0I1),
+[Apple Music](https://music.apple.com/us/album/resurgam-helens-theme-single/1785110053),
+or anywhere else you stream sounds.
 [Pre-order the album on vinyl](https://buy.stripe.com/dR6bKTcc13Vx3ni28e),
 and then
 [come enjoy the show](https://grapefruitlab.com/shows/jane-eyre-2025/) --
