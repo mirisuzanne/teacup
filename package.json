@@ -49,6 +49,6 @@
     ]
   },
   "dependencies": {
-    "@terriblemia/track-list": "^1.1.1"
+    "@terriblemia/track-list": "^1.2.0"
   }
 }
