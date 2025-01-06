@@ -14,8 +14,6 @@ signup_note: >
 {% import "content.macros.njk" as content %}
 {% import "contact.macros.njk" as contact %}
 
-{% set bewicks = collections.all | getPage('/2025/01/01/bewicks-birds/') | first %}
-{{- content.feature(bewicks) -}}
 {% set jane_show = collections.all | getPage('/albums/jane-eyre/') | first %}
 {{- content.feature(jane_show) -}}
 

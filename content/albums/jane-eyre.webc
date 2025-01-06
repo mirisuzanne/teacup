@@ -12,13 +12,14 @@ hero:
     from the original novel
 index: jane/eyre
 tracks:
-  - number: Single –
+  - number: 1 –
     name: Bewick's History of British Birds (Jane's Theme)
     file: jane/1-british-birds
   - number: 2 –
     name: Kind Angels Only (Gateshead Hall)
   - number: 3 –
     name: Resurgam (Helen's Theme)
+    file: jane/3-resurgam
   - number: 4 –
     name: And Where in Summer
   - number: 5 –
@@ -34,15 +35,15 @@ tags:
   - music
   - album
   - audio
+  - jane/eyre
 summary: |
-  A full length vinyl release
-  of our original Jane Eyre adaptation,
+  Our original Jane Eyre adaptation,
   written along side
   Grapefruit Lab's production.
-  [Pre-order on vinyl](https://buy.stripe.com/dR6bKTcc13Vx3ni28e),
+  Listen to the singles (out now!),
+  [Pre-order the vinyl record](https://buy.stripe.com/dR6bKTcc13Vx3ni28e),
   and then
-  [come enjoy the show](https://grapefruitlab.com/shows/jane-eyre-2025/)
-  in January!
+  [join us for the stage show](https://grapefruitlab.com/shows/jane-eyre-2025/)!
 ---
 
 <embed-album
