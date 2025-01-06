@@ -47,7 +47,15 @@ Charlotte Brontë has been called the
 and the Jane Eyre novel is one of the first to follow
 the inner thoughts of a woman coming of age.
 
-You can also stream this single
+------
+
+This is one of three 'singles' from
+[Jane/Eyre: No Net Ensnares Me](/albums/jane-eyre/) --
+our full-length original score based on the book,
+and underscoring
+the [Grapefruit Lab adaptation](/theater/janeeyre/2025/).
+
+You can also stream these songs
 on [Spotify](https://open.spotify.com/album/1jqlpJwu5bAgiNpIvyvGGk?si=sIzc7kWaSm2YpaR3sFm6Hw),
 [Apple](https://music.apple.com/us/album/bewicks-history-of-british-birds-janes-theme-single/1785095697),
 or anywhere else you listen to music.
@@ -55,3 +63,4 @@ or anywhere else you listen to music.
 and then
 [come enjoy the show](https://grapefruitlab.com/shows/jane-eyre-2025/) --
 opening January 17!
+
