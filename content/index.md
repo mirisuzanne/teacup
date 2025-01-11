@@ -17,10 +17,11 @@ signup_note: >
 {% set jane_show = collections.all | getPage('/albums/jane-eyre/') | first %}
 {{- content.feature(jane_show) -}}
 
+{% set jane = collections.all | getPage('/albums/jane-eyre/') | first %}
 {% set whiskey = collections.all | getPage('/albums/whiskey-from-strangers/') | first %}
 {% set thtl = collections.all | getPage('/albums/holes-they-leave/') | first %}
 {% set jlt = collections.all | getPage('/videos/just-like-that/') | first %}
-{% set media = [whiskey.data.audio, thtl.data.audio, jlt.data.video] | mergeMedia %}
+{% set media = [jane.data.audio, whiskey.data.audio, thtl.data.audio, jlt.data.video] | mergeMedia %}
 
 {{- content.fig(
   media,

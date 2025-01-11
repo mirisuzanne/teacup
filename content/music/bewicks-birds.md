@@ -8,6 +8,7 @@ tags:
   - single
   - audio
   - jane/eyre
+calendar: jane/eyre
 hero:
   img: music/british-birds.jpg
   alt: >
