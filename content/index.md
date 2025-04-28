@@ -5,14 +5,9 @@ banner: Soundscapes & Poetry
 sub: dark indie-rock band -- “too moody for pride”
 type: album
 calendar: all
-signup_note: >
-  Follow along with the release of
-  [Jane/Eyre](/albums/jane-eyre/),
-  and get discounts on the vinyl record!
 ---
 
 {% import "content.macros.njk" as content %}
-{% import "contact.macros.njk" as contact %}
 
 {% set jane_show = collections.all | getPage('/albums/jane-eyre/') | first %}
 {{- content.feature(jane_show) -}}
@@ -28,6 +23,10 @@ signup_note: >
   caption='Stream or buy on bandcamp, itunes, spotify, etc…'
 ) -}}
 
-{{- contact.signup(
-  note=signup_note
-) -}}
+<section style="--type-column: main;">
+
+If you're interested in occasional updates
+on future shows and albums,
+[sign up for our email newsletter](http://eepurl.com/in4yEg)
+
+</section>
