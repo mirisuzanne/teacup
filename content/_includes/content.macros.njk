@@ -196,8 +196,8 @@
       end=page.data.end,
       format='md'
     ) | safe -}}
-    {%- if page.data.sub %}
-    | <em>{{ page.data.sub | mdInline | safe }}</em>
+    {%- if page.data.sub %},
+    <em>{{ page.data.sub | mdInline | safe }}</em>
     {%- endif -%}
   </header>
   {{ page.data.summary | md | safe }}

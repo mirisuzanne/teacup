@@ -1,14 +1,14 @@
 ---
 feature: true
 title: Banned Practice
-sub: 2-night benefit house show
+sub: a two-night benefit house show
 hero:
   img: theater/banned-practice.jpg
   alt: >
     Banned practice in bold over a picture of Julie
     clutching their head in frustration
 url: https://grapefruitlab.com/shows/banned-practice/
-venue: A basement in Lakewood, CO
+venue: a basement in Lakewood, CO
 date: 2025-11-21
 end: 2025-11-22
 tags:

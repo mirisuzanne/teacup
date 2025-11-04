@@ -138,7 +138,7 @@
     {%- set same = 'same-m' if same and (start_m == end_m) else same -%}
 
     {{ start | dateFormat(ranges[same].start or 'range') }}
-    {{- '---' | typogr | safe -}}
+    {{- '--' | typogr | safe -}}
     {{ end | dateFormat(ranges[same].end or 'range') }}
 
   {%- else -%}
