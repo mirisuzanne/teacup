@@ -9,6 +9,16 @@ hero:
 tags:
   - gigs
 events:
+  - title: Green Typewriters
+    venue: Skylark Lounge
+    image: shows/2026/skylark-jan16.jpg
+    url: https://link.dice.fm/E881b64a7808
+    start: 2026-01-16
+    adr: Denver, CO
+    with:
+      - name: Green Typewriters
+      - name: Salads And Sunbeams
+
   - title: Music & Poetry Showcase
     image: shows/2019/joel.jpg
     venue: The Bakery
