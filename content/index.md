@@ -9,6 +9,9 @@ calendar: all
 
 {% import "content.macros.njk" as content %}
 
+{% set featured = collections.all | getPage('/theater/pity-library/') | first %}
+{{- content.feature(featured) -}}
+
 {% set jane = collections.all | getPage('/albums/jane-eyre/') | first %}
 {% set whiskey = collections.all | getPage('/albums/whiskey-from-strangers/') | first %}
 {% set thtl = collections.all | getPage('/albums/holes-they-leave/') | first %}
